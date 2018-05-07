@@ -23,7 +23,7 @@ namespace Rimchallenge
 
 		private void DrawLeftRect(Rect leftOutRect)
         {
-			if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, true))
+			if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, ModLoader.instance.currentChallenge is NoneChallenge))
             {
 				ModLoader.instance.StartChallenge(new TestChallenge());
             }

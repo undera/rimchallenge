@@ -32,9 +32,7 @@ namespace Rimchallenge
         public override void DefsLoaded()
 		{
 			base.DefsLoaded();
-			Logger.Message("Logger Test");
 			EventBridge.Hook(this);
-			// TODO: inject harmony patches here
 		}
 
 		internal void StartChallenge(ChallengeBase challenge)

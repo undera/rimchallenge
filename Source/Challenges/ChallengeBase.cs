@@ -11,12 +11,8 @@ namespace Rimchallenge.Challenges
 			ModLoader.instance.ClearChallenge();
 
 			IntVec3 dropSpot = DropCellFinder.RandomDropSpot(Find.VisibleMap);
-
-			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatSmall, Find.VisibleMap);
-			incidentParms.faction = Faction.OfPlayer;
-			incidentParms.spawnCenter = dropSpot;
-
-			//Find.Storyteller.TryFire(new FiringIncident(new ChallengeCompleteIncident(this), null, incidentParms));
+			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.VisibleMap, false);
+			Find.LetterStack.ReceiveLetter("Challenge Complete 1".Translate(), "Challenge Complete 2".Translate(), LetterDefOf.PositiveEvent, targetInfo, null);
 			DropPodUtility.DropThingsNear(dropSpot, Find.VisibleMap, GetGratification());
 		}
 
