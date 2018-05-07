@@ -1,17 +1,27 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Rimchallenge.Challenges;
+using Verse;
 
 namespace Rimchallenge
 {
 	public class ModLoader: HugsLib.ModBase
 	{
 		public static ModLoader instance { get; private set; }
-		public ChallengeBase currentChallenge { get; private set; }
-        
+		public ChallengeBase currentChallenge { get; private set; } = new NoneChallenge();
+        private readonly List<ChallengeBase> allChallenges = new List<ChallengeBase>();
+
         public ModLoader()
         {
 			instance = this;
-			currentChallenge = new NoneChallenge();
+
+			foreach (Type current in typeof(ChallengeBase).AllLeafSubclasses())
+            {
+				this.allChallenges.Add((ChallengeBase)Activator.CreateInstance(current));
+            }
+
         }
 
 		public override string ModIdentifier
@@ -23,13 +33,23 @@ namespace Rimchallenge
 		{
 			base.DefsLoaded();
 			Logger.Message("Logger Test");
+			EventBridge.Hook(this);
 			// TODO: inject harmony patches here
 		}
 
-		public ChallengeBase GetCurrentChallenge()
+		internal void StartChallenge(ChallengeBase challenge)
 		{
-			return currentChallenge;
+			// TODO: check no challenge is chosen yet
+			// TODO: check it is known and enabled
+			currentChallenge = challenge;
+			currentChallenge.Initialize();
+			Log.Message("set current challenge to "+currentChallenge);
 		}
+
+		public void ClearChallenge()
+        {
+            currentChallenge = new NoneChallenge();
+        }
 	}
 
 }

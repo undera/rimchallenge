@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MainButtonDef>
+    <defName>ChallengesTab</defName>
+    <label>challenges</label>
+    <description>TODO</description>
+    <tabWindowClass>rimchallenge.ChallengesTab</tabWindowClass>
+    <order>100</order>
+  </MainButtonDef>
+
+</Defs>

@@ -4,33 +4,38 @@ using Verse;
 
 namespace Rimchallenge.Challenges
 {
-    public abstract class ChallengeBase
-    {
-        public ChallengeBase()
-        {
-        }
+	public abstract class ChallengeBase
+	{
+		public virtual void Complete()
+		{
+			ModLoader.instance.ClearChallenge();
 
-		internal void Complete() {
-			IntVec3 dropSpot = DropCellFinder.RandomDropSpot(Find.VisibleMap);           
+			IntVec3 dropSpot = DropCellFinder.RandomDropSpot(Find.VisibleMap);
 
 			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatSmall, Find.VisibleMap);
 			incidentParms.faction = Faction.OfPlayer;
 			incidentParms.spawnCenter = dropSpot;
 
-			Find.Storyteller.TryFire(new FiringIncident(new ChallengeCompleteIncident(this), null, incidentParms));
+			//Find.Storyteller.TryFire(new FiringIncident(new ChallengeCompleteIncident(this), null, incidentParms));
 			DropPodUtility.DropThingsNear(dropSpot, Find.VisibleMap, GetGratification());
 		}
 
-		internal void Interrupt() { }
+		public virtual void Initialize()
+		{
+			Log.Message("Initialize challenge " + this);
+		}
+
+		public virtual void Interrupt()
+		{
+			ModLoader.instance.ClearChallenge();
+		}
 
 		abstract public List<Thing> GetGratification();
 
-		public bool IsMapApplicable(Map map) // for challenges on biomes and map conditions
+		public virtual void OnPawnKilled(Pawn pawn)
 		{
-			return true;
 		}
-
-    }
+	}
 
 	public class ChallengeCompleteIncident : IncidentDef
 	{
@@ -46,5 +51,4 @@ namespace Rimchallenge.Challenges
 			throw new System.NotImplementedException();
 		}
 	}
-
 }
