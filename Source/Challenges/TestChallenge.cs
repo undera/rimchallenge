@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -10,9 +11,9 @@ namespace Rimchallenge.Challenges
 		public override List<Thing> GetGratification()
 		{
 			List<Thing> ret = new List<Thing>();
-			Thing silver = ThingMaker.MakeThing(ThingDefOf.Silver);
-			silver.stackCount = 100;
-			ret.Add(silver);
+			ret.Add(MakeThing(ThingDefOf.MealSurvivalPack, 20));
+			ret.Add(MakeThing(ThingDefOf.Medicine, 10));
+			ret.Add(MakeThing(ThingDefOf.Component, 5));
 			return ret;
 		}
 
@@ -30,10 +31,16 @@ namespace Rimchallenge.Challenges
                     result++;
             }
 			Log.Message("Size "+result);
-			if (result == 2) {
+			if (result == 4) {
 				Complete();
 			}
 		}
+
+		public override void OnPawnFactionSet(Pawn pawn)
+        {
+			Log.Message("Pawn "+pawn+" gets faction "+pawn.Faction);
+			OnPawnKilled(pawn);
+        }
 
 		protected IEnumerable<Pawn> AllColonists
 		{

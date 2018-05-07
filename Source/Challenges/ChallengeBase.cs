@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -12,7 +13,7 @@ namespace Rimchallenge.Challenges
 
 			IntVec3 dropSpot = DropCellFinder.RandomDropSpot(Find.VisibleMap);
 			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.VisibleMap, false);
-			Find.LetterStack.ReceiveLetter("Challenge Complete 1".Translate(), "Challenge Complete 2".Translate(), LetterDefOf.PositiveEvent, targetInfo, null);
+			Find.LetterStack.ReceiveLetter("Challenge Complete".Translate(), "Challenge Complete! Get the prize!".Translate(), LetterDefOf.PositiveEvent, targetInfo, null);
 			DropPodUtility.DropThingsNear(dropSpot, Find.VisibleMap, GetGratification());
 		}
 
@@ -27,8 +28,18 @@ namespace Rimchallenge.Challenges
 		}
 
 		abstract public List<Thing> GetGratification();
+		protected Thing MakeThing(ThingDef def, int count)
+		{
+			Thing thing = ThingMaker.MakeThing(def);
+			thing.stackCount = count;
+			return thing;
+		}
 
 		public virtual void OnPawnKilled(Pawn pawn)
+		{
+		}
+
+		public virtual void OnPawnFactionSet(Pawn pawn)
 		{
 		}
 	}
