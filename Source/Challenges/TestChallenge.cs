@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace Rimchallenge.Challenges
+namespace Verse
 {
-	public class TestChallenge : ChallengeDef
+	public class TestChallenge : ChallengeWorker
 	{
-
-		public override List<Thing> GetGratification()
+        public TestChallenge(ChallengeDef def) : base(def)
 		{
-			List<Thing> ret = new List<Thing>();
-			ret.Add(MakeThing(ThingDefOf.MealSurvivalPack, 20));
-			ret.Add(MakeThing(ThingDefOf.Medicine, 10));
-			ret.Add(MakeThing(ThingDefOf.Component, 5));
-			return ret;
 		}
 
 		public override void Initialize()
@@ -31,7 +25,7 @@ namespace Rimchallenge.Challenges
                     result++;
             }
 			Log.Message("Size "+result);
-			if (result == 4) {
+			if (result == 2) {
 				Complete();
 			}
 		}

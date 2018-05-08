@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Defs>
     <ChallengeDef>
+        <defName>TestChallenge</defName>
+        <workerClass>TestChallenge</workerClass>
+        <label>Testing Challenge</label>
+        <description>Hooray!</description>
+        <messageComplete>Hooray!</messageComplete>
+        <gratificationThings>
+            <MealSurvivalPack>20</MealSurvivalPack>
+            <Medicine>10</Medicine>
+            <Component>5</Component>
+        </gratificationThings>            
     </ChallengeDef>
 </Defs>

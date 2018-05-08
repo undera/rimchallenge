@@ -29,13 +29,12 @@
       <HintPath>Lib\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="HugsLib">
-      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="0Harmony">
       <HintPath>Lib\0Harmony.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +44,7 @@
     <Compile Include="Challenges\TestChallenge.cs" />
     <Compile Include="ChallengesTab.cs" />
     <Compile Include="EventBridge.cs" />
+    <Compile Include="Challenges\ChallengeWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

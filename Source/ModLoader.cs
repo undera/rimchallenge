@@ -1,52 +1,38 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Rimchallenge.Challenges;
+﻿using System;
 using Verse;
 
 namespace Rimchallenge
 {
-	public class ModLoader: HugsLib.ModBase
+	public class ModLoader: Mod
 	{
 		public static ModLoader instance { get; private set; }
-		public ChallengeDef currentChallenge { get; private set; } = new NoneChallenge();
-        private readonly List<ChallengeDef> allChallenges = new List<ChallengeDef>();
+		public ChallengeWorker currentChallenge { get; private set; } = null;
 
-        public ModLoader()
+		public ModLoader(ModContentPack content) : base(content)
         {
+			Log.Message("Starting Challenge Mod");
 			instance = this;
 
-			foreach (Type current in typeof(ChallengeDef).AllLeafSubclasses())
-            {
-				this.allChallenges.Add((ChallengeDef)Activator.CreateInstance(current));
-            }
-
-        }
-
-		public override string ModIdentifier
-        {
-            get { return "RimChallenges"; }
-        }
-
-        public override void DefsLoaded()
-		{
-			base.DefsLoaded();
 			EventBridge.Hook(this);
+        }
+
+		internal bool HasChallenge()
+		{
+			return currentChallenge != null;
 		}
 
-		internal void StartChallenge(ChallengeDef challenge)
+		internal void StartChallenge(ChallengeDef challengeDef)
 		{
 			// TODO: check no challenge is chosen yet
 			// TODO: check it is known and enabled
-			currentChallenge = challenge;
+			currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
 			currentChallenge.Initialize();
 			Log.Message("set current challenge to "+currentChallenge);
 		}
 
 		public void ClearChallenge()
         {
-            currentChallenge = new NoneChallenge();
+			currentChallenge = null;
         }
 	}
 
