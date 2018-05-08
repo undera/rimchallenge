@@ -5,7 +5,7 @@ using Verse;
 
 namespace Rimchallenge.Challenges
 {
-	public class TestChallenge : ChallengeBase
+	public class TestChallenge : ChallengeDef
 	{
 
 		public override List<Thing> GetGratification()

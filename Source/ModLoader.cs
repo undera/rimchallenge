@@ -10,16 +10,16 @@ namespace Rimchallenge
 	public class ModLoader: HugsLib.ModBase
 	{
 		public static ModLoader instance { get; private set; }
-		public ChallengeBase currentChallenge { get; private set; } = new NoneChallenge();
-        private readonly List<ChallengeBase> allChallenges = new List<ChallengeBase>();
+		public ChallengeDef currentChallenge { get; private set; } = new NoneChallenge();
+        private readonly List<ChallengeDef> allChallenges = new List<ChallengeDef>();
 
         public ModLoader()
         {
 			instance = this;
 
-			foreach (Type current in typeof(ChallengeBase).AllLeafSubclasses())
+			foreach (Type current in typeof(ChallengeDef).AllLeafSubclasses())
             {
-				this.allChallenges.Add((ChallengeBase)Activator.CreateInstance(current));
+				this.allChallenges.Add((ChallengeDef)Activator.CreateInstance(current));
             }
 
         }
@@ -35,7 +35,7 @@ namespace Rimchallenge
 			EventBridge.Hook(this);
 		}
 
-		internal void StartChallenge(ChallengeBase challenge)
+		internal void StartChallenge(ChallengeDef challenge)
 		{
 			// TODO: check no challenge is chosen yet
 			// TODO: check it is known and enabled
@@ -51,3 +51,5 @@ namespace Rimchallenge
 	}
 
 }
+// TODO: save challenge into save file
+// TODO: save challenge revealed state globally
