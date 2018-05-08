@@ -13,7 +13,9 @@ namespace Verse
 		public string messageComplete = "Challenge Complete! Get the prize!";
 
 		public List<ThingCountClass> gratificationThings=new List<ThingCountClass>(0);
-        
+
+		internal int targetValue=0;
+
         public ChallengeDef()
 		{
 		}

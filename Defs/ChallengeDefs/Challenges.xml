@@ -6,6 +6,7 @@
         <label>Testing Challenge</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
+        <targetValue>4</targetValue>
         <gratificationThings>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>

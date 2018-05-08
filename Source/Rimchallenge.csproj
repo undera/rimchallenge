@@ -45,6 +45,7 @@
     <Compile Include="ChallengesTab.cs" />
     <Compile Include="EventBridge.cs" />
     <Compile Include="Challenges\ChallengeWorker.cs" />
+    <Compile Include="ChallengesTabWorker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

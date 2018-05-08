@@ -7,29 +7,40 @@ namespace Verse
 {
 	public class TestChallenge : ChallengeWorker
 	{
-        public TestChallenge(ChallengeDef def) : base(def)
+		public TestChallenge(ChallengeDef def) : base(def)
 		{
 		}
 
 		public override void OnPawnKilled(Pawn pawn)
 		{
-			int result = 0;
-			using (IEnumerator<Pawn> enumerator = AllColonists.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                    result++;
-            }
-			Log.Message("Size "+result);
-			if (result == 2) {
+			if (getPawnCount() >= def.targetValue)
+			{
 				Complete();
 			}
 		}
 
 		public override void OnPawnFactionSet(Pawn pawn)
-        {
-			Log.Message("Pawn "+pawn+" gets faction "+pawn.Faction);
+		{
+			Log.Message("Pawn " + pawn + " gets faction " + pawn.Faction);
 			OnPawnKilled(pawn);
-        }
+		}
+
+		private int getPawnCount()
+		{
+			int result = 0;
+			using (IEnumerator<Pawn> enumerator = AllColonists.GetEnumerator())
+			{
+				while (enumerator.MoveNext())
+					result++;
+			}
+			Log.Message("Pawn count " + result);
+			return result;
+		}
+
+		public override float getProgress()
+		{
+			return (float)getPawnCount() / def.targetValue;
+		}
 
 		protected IEnumerable<Pawn> AllColonists
 		{

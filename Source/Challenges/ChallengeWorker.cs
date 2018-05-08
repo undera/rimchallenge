@@ -8,7 +8,7 @@ namespace Verse
 {
     public abstract class ChallengeWorker
     {
-		private ChallengeDef def;
+		protected ChallengeDef def;
 
 		public ChallengeWorker(ChallengeDef def)
         {
@@ -28,7 +28,12 @@ namespace Verse
             return res;
         }
 
-		protected virtual void Complete()
+		public virtual float getProgress()
+        {
+			return 0f;
+        }
+
+        protected virtual void Complete()
         {
             ModLoader.instance.ClearChallenge();
 

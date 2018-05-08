@@ -5,7 +5,8 @@
     <defName>ChallengesTab</defName>
     <label>challenges</label>
     <description>TODO</description>
-    <tabWindowClass>rimchallenge.ChallengesTab</tabWindowClass>
+    <tabWindowClass>Rimchallenge.ChallengesTab</tabWindowClass>
+    <workerClass>Rimchallenge.ChallengesTabWorker</workerClass>        
     <order>100</order>
   </MainButtonDef>
 
