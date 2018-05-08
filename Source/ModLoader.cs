@@ -25,9 +25,8 @@ namespace Rimchallenge
 		{
 			// TODO: check no challenge is chosen yet
 			// TODO: check it is known and enabled
+			Log.Message("set current challenge to " + challengeDef);
 			currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
-			currentChallenge.Initialize();
-			Log.Message("set current challenge to "+currentChallenge);
 		}
 
 		public void ClearChallenge()

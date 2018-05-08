@@ -11,11 +11,6 @@ namespace Verse
 		{
 		}
 
-		public override void Initialize()
-        {
-        }
-        
-
 		public override void OnPawnKilled(Pawn pawn)
 		{
 			int result = 0;

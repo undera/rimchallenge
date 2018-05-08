@@ -15,7 +15,20 @@ namespace Verse
 			this.def = def;
         }
 
-		public virtual void Complete()
+		private IEnumerable<Thing> GetGratification()
+        {
+            List<Thing> res = new List<Thing>();
+            for (int j = 0; j < def.gratificationThings.Count; j++)
+            {
+                Thing thing = ThingMaker.MakeThing(def.gratificationThings[j].thingDef);
+                thing.stackCount = def.gratificationThings[j].count;
+                res.Add(thing);
+            }
+
+            return res;
+        }
+
+		protected virtual void Complete()
         {
             ModLoader.instance.ClearChallenge();
 
@@ -25,36 +38,7 @@ namespace Verse
             DropPodUtility.DropThingsNear(dropSpot, Find.VisibleMap, GetGratification());
         }
 
-		private IEnumerable<Thing> GetGratification()
-		{
-			List<Thing> res = new List<Thing>();
-			for (int j = 0; j < def.gratificationThings.Count; j++)
-            {
-				Thing thing=ThingMaker.MakeThing(def.gratificationThings[j].thingDef);
-				thing.stackCount = def.gratificationThings[j].count;
-				res.Add(thing);
-            }
-            
-			return res;
-		}
-
-		public virtual void Initialize()
-        {
-            Log.Message("Initialize challenge " + this);
-        }
-
-        public virtual void Interrupt()
-        {
-            ModLoader.instance.ClearChallenge();
-        }
-
-        protected Thing MakeThing(ThingDef def, int count)
-        {
-            Thing thing = ThingMaker.MakeThing(def);
-            thing.stackCount = count;
-            return thing;
-        }
-
+        
         public virtual void OnPawnKilled(Pawn pawn)
         {
         }
