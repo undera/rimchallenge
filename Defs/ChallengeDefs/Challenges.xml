@@ -6,7 +6,7 @@
         <label>Reach 10 Colonists</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
-        <targetValue>10</targetValue>
+        <targetValue>5</targetValue>
         <gratificationThings>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
@@ -28,8 +28,6 @@
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
-        <TabViewX>0</TabViewX>
-        <TabViewY>1</TabViewY>
     </ChallengeDef>
     <ChallengeDef>
         <defName>50colonists</defName>
@@ -46,7 +44,52 @@
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
-        <TabViewX>0</TabViewX>
-        <TabViewY>2</TabViewY>
     </ChallengeDef>
+
+    <ChallengeDef>
+        <defName>kill2animals</defName>
+        <workerClass>KillAnimalsChallenge</workerClass>
+        <label>Kill 2 Animals</label>
+        <description>Hooray!</description>
+        <messageComplete>Hooray!</messageComplete>
+        <targetValue>2</targetValue>
+        <gratificationThings>
+            <MealSurvivalPack>20</MealSurvivalPack>
+            <Medicine>10</Medicine>
+            <Component>5</Component>
+        </gratificationThings>            
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>kill5animals</defName>
+        <workerClass>KillAnimalsChallenge</workerClass>
+        <label>Kill 5 Animals</label>
+        <description>Hooray!</description>
+        <messageComplete>Hooray!</messageComplete>
+        <targetValue>5</targetValue>
+        <gratificationThings>
+            <MealSurvivalPack>20</MealSurvivalPack>
+            <Medicine>10</Medicine>
+            <Component>5</Component>
+        </gratificationThings>            
+        <prerequisites>
+             <li>kill2animals</li>
+        </prerequisites>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>kill10animals</defName>
+        <workerClass>KillAnimalsChallenge</workerClass>
+        <label>Kill 10 Animals</label>
+        <description>Hooray!</description>
+        <messageComplete>Hooray!</messageComplete>
+        <targetValue>10</targetValue>
+        <gratificationThings>
+            <MealSurvivalPack>20</MealSurvivalPack>
+            <Medicine>10</Medicine>
+            <Component>5</Component>
+        </gratificationThings>            
+        <prerequisites>
+             <li>kill5animals</li>
+        </prerequisites>
+    </ChallengeDef>
+    
 </Defs>

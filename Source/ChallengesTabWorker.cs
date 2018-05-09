@@ -10,11 +10,11 @@ namespace Rimchallenge
 		{
 			get
 			{
-				if (!ModLoader.instance.HasChallenge())
+				if (!ChallengeManager.instance.HasChallenge())
 				{
 					return 0f;
 				}
-				float progress = ModLoader.instance.currentChallenge.getProgress();
+				float progress = ChallengeManager.instance.currentChallenge.getProgressFloat();
 				return progress > 1f ? 1f : progress;
 			}
 		}

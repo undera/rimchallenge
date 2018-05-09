@@ -12,18 +12,23 @@ namespace Verse
 		{
 		}
 
-		public override void OnPawnKilled(Pawn pawn)
+		public override void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
 		{
-			colonistCount = -1;
-			if (getColonistCount() >= def.targetValue)
-			{
-				Complete();
-			}
+			Check();
 		}
 
 		public override void OnPawnFactionSet(Pawn pawn)
 		{
-			OnPawnKilled(pawn);
+			Check();
+		}
+
+		private void Check() { 
+			colonistCount = -1;
+            this.progress = getColonistCount();
+            if (this.progress >= def.targetValue)
+            {
+                Complete();
+            }
 		}
                
 		private int getColonistCount()
@@ -42,7 +47,7 @@ namespace Verse
 			return colonistCount;
 		}
 
-		public override float getProgress()
+		public override float getProgressFloat()
 		{
 			return (float)getColonistCount() / def.targetValue;
 		}
@@ -52,22 +57,5 @@ namespace Verse
 			return getColonistCount() < def.targetValue;
 		}
 
-		protected IEnumerable<Pawn> AllColonists
-		{
-			get
-			{
-				List<Map> maps = Find.Maps;
-				for (int i = 0; i < maps.Count; i++)
-				{
-					if (maps[i].IsPlayerHome)
-					{
-						foreach (Pawn p in maps[i].mapPawns.FreeColonistsSpawned)
-						{
-							yield return p;
-						}
-					}
-				}
-			}
-		}
 	}
 }

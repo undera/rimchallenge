@@ -39,12 +39,11 @@ namespace Rimchallenge
 
 		private void DrawLeftRect(Rect leftOutRect)
 		{
-			if (!ModLoader.instance.HasChallenge())
+			if (!ChallengeManager.instance.HasChallenge() && selectedChallenge != null && selectedChallenge.CanStartNow)
 			{
-				bool active = selectedChallenge!=null && selectedChallenge.CanStartNow;
-				if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, active))
+				if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, true))
 				{
-					ModLoader.instance.StartChallenge(DefDatabase<ChallengeDef>.GetRandom());
+					ChallengeManager.instance.StartChallenge(selectedChallenge);
 				}
 			}
 		}
@@ -123,7 +122,7 @@ namespace Rimchallenge
 				Color borderColor = default(Color);
 				bool canPickIt = aChallenge.CanStartNow;
 
-				if (aChallenge == ModLoader.instance.currentChallenge.def)
+				if (aChallenge == ChallengeManager.instance.currentChallenge.def)
 				{
 					color = TexUI.ActiveResearchColor;
 				}

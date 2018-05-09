@@ -8,7 +8,6 @@ namespace Rimchallenge
 	public static class EventBridge
     {
 		private static HarmonyInstance harmony = HarmonyInstance.Create("rimworld.undera4.challenge");
-		private static ModLoader modLoader;
 
 		private static void patch(Type type, string srcName, string preName, string postName) {
 			MethodBase srcMethod = AccessTools.Method(type, srcName);
@@ -17,10 +16,8 @@ namespace Rimchallenge
 			harmony.Patch(srcMethod, preMethod, postMethod);
 		}
 
-        public static void Hook(ModLoader modL)
+        public static void Hook(Controller modL)
         {
-            modLoader = modL;
-
 			patch(typeof(Map), "FinalizeInit", null, "OnMapLoaded");
 
 			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
@@ -33,16 +30,16 @@ namespace Rimchallenge
             // TODO load saved status
         }
 
-		public static void OnPawnKilled(Pawn __instance)
+		public static void OnPawnKilled(Pawn __instance, DamageInfo dinfo)
 		{
 			Log.Message("Pawn Killed "+__instance);
-			modLoader.currentChallenge.OnPawnKilled(__instance);
+			ChallengeManager.instance.currentChallenge.OnPawnKilled(__instance, dinfo);
 		}
 
 		public static void OnPawnFactionSet(Pawn __instance)
         {
             Log.Message("Pawn Faction Set " + __instance);
-            modLoader.currentChallenge.OnPawnFactionSet(__instance);
+			ChallengeManager.instance.currentChallenge.OnPawnFactionSet(__instance);
         }
 	}
 }

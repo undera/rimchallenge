@@ -20,68 +20,32 @@
     <OutputPath>..\Assemblies</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Lib\Assembly-CSharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>Lib\UnityEngine.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>Lib\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\usr\lib\mono\2.0-api\System.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>..\..\..\..\..\..\usr\lib\mono\2.0-api\mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-      <HintPath>..\..\..\..\..\..\usr\lib\mono\2.0-api\System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Lib\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>Lib\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>Lib\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Lib\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>Lib\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>Lib\0Harmony.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ModLoader.cs" />
+    <Compile Include="Controller.cs" />
     <Compile Include="Challenges\ChallengeDef.cs" />
     <Compile Include="Challenges\NColonistsChallenge.cs" />
     <Compile Include="ChallengesTab.cs" />
     <Compile Include="EventBridge.cs" />
     <Compile Include="Challenges\ChallengeWorker.cs" />
     <Compile Include="ChallengesTabWorker.cs" />
+    <Compile Include="ChallengeManager.cs" />
+    <Compile Include="Challenges\KillAnimalsChallenge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\media\bigdisk\games\steamapps\common\RimWorld\RimWorldLinux_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>Lib\0Harmony.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

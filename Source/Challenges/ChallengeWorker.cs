@@ -8,7 +8,18 @@ namespace Verse
 {
     public abstract class ChallengeWorker
     {		
-		public ChallengeDef def { get; private set; }
+		public ChallengeDef def { get; set; }
+		private int _progress = 0;
+
+        public int progress
+        {
+            get { return _progress; }
+            set
+            {
+                _progress = value;
+				ChallengeManager.instance.progress = _progress;
+            }
+        }
 
 		public ChallengeWorker(ChallengeDef def)
         {
@@ -28,14 +39,16 @@ namespace Verse
             return res;
         }
 
-		public virtual float getProgress()
+		public virtual float getProgressFloat()
         {
-			return 0f;
+            return (float)progress / def.targetValue;
         }
+        
 
         protected virtual void Complete()
         {
-            ModLoader.instance.ClearChallenge();
+			def.IsFinished = true;
+			ChallengeManager.instance.ClearChallenge();
 
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.VisibleMap); // drop around base
             TargetInfo targetInfo = new TargetInfo(dropSpot, Find.VisibleMap, false);
@@ -44,7 +57,7 @@ namespace Verse
         }
 
         
-        public virtual void OnPawnKilled(Pawn pawn)
+		public virtual void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
         {
         }
 
@@ -56,6 +69,25 @@ namespace Verse
 		{
 			return true;
 		}
+
+		public static IEnumerable<Pawn> AllColonists
+        {
+            get
+            {
+                List<Map> maps = Find.Maps;
+                for (int i = 0; i < maps.Count; i++)
+                {
+                    if (maps[i].IsPlayerHome)
+                    {
+                        foreach (Pawn p in maps[i].mapPawns.FreeColonistsSpawned)
+                        {
+                            yield return p;
+                        }
+                    }
+                }
+            }
+        }
+
 	}
 
 	public class ChallengeWorkerNone : ChallengeWorker

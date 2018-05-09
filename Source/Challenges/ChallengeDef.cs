@@ -44,10 +44,7 @@ namespace Verse
 
 		public bool IsFinished
         {
-            get
-            {
-				return false; // TODO remember and save
-            }
+			get; set; // TODO remember and save
         }
 
         public bool CanStartNow
@@ -56,6 +53,7 @@ namespace Verse
             {
 				if (IsFinished)
 				{
+					Log.Message("Already finished " + this);
 					return false;
 				}
 
@@ -64,6 +62,7 @@ namespace Verse
 					ChallengeDef required = this.prerequisites[m];
 					if (required != null && !required.IsFinished)
                     {
+						//Log.Message("Prerequisite not met for "+this+":"+required);
 						return false;
                     }
                 }
