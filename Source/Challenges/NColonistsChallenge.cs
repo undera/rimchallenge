@@ -7,13 +7,15 @@ namespace Verse
 {
 	public class NColonistsChallenge : ChallengeWorker
 	{
+		private int colonistCount = -1;
 		public NColonistsChallenge(ChallengeDef def) : base(def)
 		{
 		}
 
 		public override void OnPawnKilled(Pawn pawn)
 		{
-			if (getPawnCount() >= def.targetValue)
+			colonistCount = -1;
+			if (getColonistCount() >= def.targetValue)
 			{
 				Complete();
 			}
@@ -21,30 +23,33 @@ namespace Verse
 
 		public override void OnPawnFactionSet(Pawn pawn)
 		{
-			Log.Message("Pawn " + pawn + " gets faction " + pawn.Faction);
 			OnPawnKilled(pawn);
 		}
-
-		private int getPawnCount()
+               
+		private int getColonistCount()
 		{
-			int result = 0;
+			if (colonistCount >= 0) {
+				return colonistCount;
+			}
+
+			colonistCount = 0;
 			using (IEnumerator<Pawn> enumerator = AllColonists.GetEnumerator())
 			{
 				while (enumerator.MoveNext())
-					result++;
+					colonistCount++;
 			}
-			Log.Message("Pawn count " + result);
-			return result;
+			Log.Message("Colonist count " + colonistCount);
+			return colonistCount;
 		}
 
 		public override float getProgress()
 		{
-			return (float)getPawnCount() / def.targetValue;
+			return (float)getColonistCount() / def.targetValue;
 		}
         
 		public override bool CanPick()
 		{
-			return getPawnCount()<def.targetValue;
+			return getColonistCount() < def.targetValue;
 		}
 
 		protected IEnumerable<Pawn> AllColonists
@@ -64,6 +69,5 @@ namespace Verse
 				}
 			}
 		}
-
 	}
 }

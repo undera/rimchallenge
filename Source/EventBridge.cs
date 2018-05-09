@@ -21,9 +21,17 @@ namespace Rimchallenge
         {
             modLoader = modL;
 
+			patch(typeof(Map), "FinalizeInit", null, "OnMapLoaded");
+
 			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
 			patch(typeof(Pawn), "SetFaction", null, "OnPawnFactionSet");
 		}
+
+		public static void OnMapLoaded()
+        {
+			ChallengeDef.GenerateNonOverlappingCoordinates();
+            // TODO load saved status
+        }
 
 		public static void OnPawnKilled(Pawn __instance)
 		{

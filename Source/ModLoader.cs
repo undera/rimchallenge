@@ -16,16 +16,14 @@ namespace Rimchallenge
 			EventBridge.Hook(this);
         }
 
-		internal bool HasChallenge()
+		public bool HasChallenge()
 		{
 			return currentChallenge != null && !(currentChallenge is ChallengeWorkerNone);
 		}
 
-		internal void StartChallenge(ChallengeDef challengeDef)
+		public void StartChallenge(ChallengeDef challengeDef)
 		{
-			// TODO: check no challenge is chosen yet
-			// TODO: check it is known and enabled
-			Log.Message("set current challenge to " + challengeDef);
+			Log.Message("Picked a challenge: " + challengeDef);
 			currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
 		}
 

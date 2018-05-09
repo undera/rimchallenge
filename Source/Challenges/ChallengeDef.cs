@@ -69,13 +69,10 @@ namespace Verse
                 }
 
 				if (checker == null) { 
-					checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this);
-				}
-				if (!checker.CanPick()) {
-					return false;
+					checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this); // TODO: won't constructors do undesired resource hogs?
 				}
 
-				return true;
+				return checker.CanPick();
             }
         }
 

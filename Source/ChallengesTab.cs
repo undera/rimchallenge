@@ -8,7 +8,7 @@ namespace Rimchallenge
 {
 	public class ChallengesTab : MainTabWindow
 	{
-		protected ChallengeDef selectedProject;
+		protected ChallengeDef selectedChallenge;
 
 		private Vector2 leftScrollPosition = Vector2.zero;
 
@@ -22,7 +22,6 @@ namespace Rimchallenge
 
         public ChallengesTab()
 		{
-			ChallengeDef.GenerateNonOverlappingCoordinates();
 		}
 
 		public override void DoWindowContents(Rect inRect)
@@ -42,7 +41,8 @@ namespace Rimchallenge
 		{
 			if (!ModLoader.instance.HasChallenge())
 			{
-				if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, true))
+				bool active = selectedChallenge!=null && selectedChallenge.CanStartNow;
+				if (Widgets.ButtonText(leftOutRect, "Pick This Challenge".Translate(), true, false, active))
 				{
 					ModLoader.instance.StartChallenge(DefDatabase<ChallengeDef>.GetRandom());
 				}
@@ -78,7 +78,7 @@ namespace Rimchallenge
 			Vector2 start = default(Vector2);
 			Vector2 end = default(Vector2);
 
-			for (int i = 0; i < 2; i++)
+			for (int passN = 0; passN < 2; passN++)
 			{
 				for (int j = 0; j < allDefsListForReading.Count; j++)
 				{
@@ -92,14 +92,14 @@ namespace Rimchallenge
 						{
 							end.x = this.PosX(prerequisite) + 140f;
 							end.y = this.PosY(prerequisite) + 25f;
-							if (this.selectedProject == challengeDef || this.selectedProject == prerequisite)
+							if (this.selectedChallenge == challengeDef || this.selectedChallenge == prerequisite)
 							{
-								if (i == 1)
+								if (passN == 1)
 								{
 									Widgets.DrawLine(start, end, TexUI.HighlightLineResearchColor, 4f);
 								}
 							}
-							else if (i == 0)
+							else if (passN == 0)
 							{
 								Widgets.DrawLine(start, end, TexUI.DefaultLineResearchColor, 2f);
 							}
@@ -121,7 +121,8 @@ namespace Rimchallenge
 				Color textColor = Widgets.NormalOptionColor;
 				Color color = default(Color);
 				Color borderColor = default(Color);
-				bool canPickIt = !aChallenge.IsFinished && !aChallenge.CanStartNow;
+				bool canPickIt = aChallenge.CanStartNow;
+
 				if (aChallenge == ModLoader.instance.currentChallenge.def)
 				{
 					color = TexUI.ActiveResearchColor;
@@ -130,7 +131,7 @@ namespace Rimchallenge
 				{
 					color = TexUI.FinishedResearchColor;
 				}
-				else if (canPickIt)
+				else if (!canPickIt)
 				{
 					color = TexUI.LockedResearchColor;
 				}
@@ -138,7 +139,8 @@ namespace Rimchallenge
 				{
 					color = TexUI.AvailResearchColor;
 				}
-				if (this.selectedProject == aChallenge)
+
+				if (this.selectedChallenge == aChallenge)
 				{
 					color += TexUI.HighlightBgResearchColor;
 					borderColor = TexUI.HighlightBorderResearchColor;
@@ -148,7 +150,7 @@ namespace Rimchallenge
 					borderColor = TexUI.DefaultBorderResearchColor;
 				}
 
-				if (canPickIt)
+				if (!canPickIt)
 				{
 					textColor = Color.gray;
 				}
@@ -156,7 +158,7 @@ namespace Rimchallenge
 				for (int m = 0; m < aChallenge.prerequisites.CountAllowNull<ChallengeDef>(); m++)
 				{
 					ChallengeDef researchProjectDef4 = aChallenge.prerequisites[m];
-					if (researchProjectDef4 != null && this.selectedProject == researchProjectDef4)
+					if (researchProjectDef4 != null && this.selectedChallenge == researchProjectDef4)
 					{
 						borderColor = TexUI.HighlightLineResearchColor;
 					}
@@ -178,7 +180,7 @@ namespace Rimchallenge
 				if (Widgets.CustomButtonText(ref btnRect, label, color, textColor, borderColor, true, 1, true, true))
 				{
 					SoundDefOf.Click.PlayOneShotOnCamera(null);
-					this.selectedProject = aChallenge;
+					this.selectedChallenge = aChallenge;
 				}
 			}
 		}
