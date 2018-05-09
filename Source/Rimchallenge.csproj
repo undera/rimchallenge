@@ -41,7 +41,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="Challenges\ChallengeDef.cs" />
-    <Compile Include="Challenges\TestChallenge.cs" />
+    <Compile Include="Challenges\NColonistsChallenge.cs" />
     <Compile Include="ChallengesTab.cs" />
     <Compile Include="EventBridge.cs" />
     <Compile Include="Challenges\ChallengeWorker.cs" />

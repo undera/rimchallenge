@@ -7,8 +7,8 @@ using Verse;
 namespace Verse
 {
     public abstract class ChallengeWorker
-    {
-		protected ChallengeDef def;
+    {		
+		public ChallengeDef def { get; private set; }
 
 		public ChallengeWorker(ChallengeDef def)
         {
@@ -51,5 +51,17 @@ namespace Verse
         public virtual void OnPawnFactionSet(Pawn pawn)
         {
         }
-    }
+
+		public virtual bool CanPick()
+		{
+			return true;
+		}
+	}
+
+	public class ChallengeWorkerNone : ChallengeWorker
+	{
+		public ChallengeWorkerNone() : base(null)
+		{
+		}
+	}
 }

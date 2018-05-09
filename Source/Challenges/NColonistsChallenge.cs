@@ -5,9 +5,9 @@ using Verse;
 
 namespace Verse
 {
-	public class TestChallenge : ChallengeWorker
+	public class NColonistsChallenge : ChallengeWorker
 	{
-		public TestChallenge(ChallengeDef def) : base(def)
+		public NColonistsChallenge(ChallengeDef def) : base(def)
 		{
 		}
 
@@ -40,6 +40,11 @@ namespace Verse
 		public override float getProgress()
 		{
 			return (float)getPawnCount() / def.targetValue;
+		}
+        
+		public override bool CanPick()
+		{
+			return getPawnCount()<def.targetValue;
 		}
 
 		protected IEnumerable<Pawn> AllColonists

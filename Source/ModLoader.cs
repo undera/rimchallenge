@@ -6,7 +6,7 @@ namespace Rimchallenge
 	public class ModLoader: Mod
 	{
 		public static ModLoader instance { get; private set; }
-		public ChallengeWorker currentChallenge { get; private set; } = null;
+		public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone();
 
 		public ModLoader(ModContentPack content) : base(content)
         {
@@ -18,7 +18,7 @@ namespace Rimchallenge
 
 		internal bool HasChallenge()
 		{
-			return currentChallenge != null;
+			return currentChallenge != null && !(currentChallenge is ChallengeWorkerNone);
 		}
 
 		internal void StartChallenge(ChallengeDef challengeDef)
@@ -31,7 +31,7 @@ namespace Rimchallenge
 
 		public void ClearChallenge()
         {
-			currentChallenge = null;
+			currentChallenge = new ChallengeWorkerNone();
         }
 	}
 
