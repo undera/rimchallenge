@@ -5,6 +5,8 @@
     <url>https://github.com/undera/rimchallenge</url>
     <targetVersion>0.18.0</targetVersion>
     <description>
-        TODO
+        Mod adds challenge choice to the game. After you complete the challenge, you get the reward.
+
+	It is under development for now, so has just few challenges to play with.
     </description>
 </ModMetaData>
