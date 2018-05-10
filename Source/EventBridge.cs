@@ -21,6 +21,7 @@ namespace Rimchallenge
 			patch(typeof(Map), "FinalizeInit", null, "OnMapLoaded");
 
 			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
+			patch(typeof(Pawn), "Destroy", null, "OnPawnDestroyed");
 			patch(typeof(Pawn), "SetFaction", null, "OnPawnFactionSet");
 		}
 
@@ -32,14 +33,17 @@ namespace Rimchallenge
 
 		public static void OnPawnKilled(Pawn __instance, DamageInfo dinfo)
 		{
-			Log.Message("Pawn Killed "+__instance);
 			ChallengeManager.instance.currentChallenge.OnPawnKilled(__instance, dinfo);
 		}
 
 		public static void OnPawnFactionSet(Pawn __instance)
         {
-            Log.Message("Pawn Faction Set " + __instance);
 			ChallengeManager.instance.currentChallenge.OnPawnFactionSet(__instance);
         }
-	}
+
+		public static void OnPawnDestroyed(Pawn __instance)
+        {
+            ChallengeManager.instance.currentChallenge.OnPawnDestroyed(__instance);
+        }
+}
 }

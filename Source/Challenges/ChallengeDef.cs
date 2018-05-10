@@ -11,7 +11,7 @@ namespace Verse
         [MustTranslate]
 		public string messageComplete = "Challenge Complete! Get the prize!";
 
-		public List<ThingCountClass> gratificationThings=new List<ThingCountClass>(0);
+		public List<ThingCountClass> reward=new List<ThingCountClass>(0);
 
 		internal int targetValue=0;
 
@@ -24,7 +24,17 @@ namespace Verse
 
         private float y = 1f;
 
-		private ChallengeWorker checker;
+		private ChallengeWorker _checker;
+
+		public ChallengeWorker checkerInstance { 
+			get { 
+				if (_checker == null)
+                {
+                    _checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this); // TODO: won't constructors do undesired resource hogs?
+                }
+				return _checker;
+			}
+		}
 
 		public float TabViewFlexX
         {
@@ -53,7 +63,6 @@ namespace Verse
             {
 				if (IsFinished)
 				{
-					Log.Message("Already finished " + this);
 					return false;
 				}
 
@@ -62,17 +71,17 @@ namespace Verse
 					ChallengeDef required = this.prerequisites[m];
 					if (required != null && !required.IsFinished)
                     {
-						//Log.Message("Prerequisite not met for "+this+":"+required);
 						return false;
                     }
                 }
 
-				if (checker == null) { 
-					checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this); // TODO: won't constructors do undesired resource hogs?
-				}
-
-				return checker.CanPick();
+				return checkerInstance.CanPick();
             }
+        }
+
+		public float EstimateProgressFloat()
+        {
+			return checkerInstance.getProgressFloat();
         }
 
 		public static void GenerateNonOverlappingCoordinates()
@@ -158,5 +167,6 @@ namespace Verse
                 rp.y = 6.5f;
             }
         }
+
 	}
 }

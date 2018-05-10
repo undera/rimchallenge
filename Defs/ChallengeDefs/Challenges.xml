@@ -2,45 +2,45 @@
 <Defs>
     <ChallengeDef>
         <defName>10colonists</defName>
-        <workerClass>NColonistsChallenge</workerClass>
+        <workerClass>Challenge_NColonists</workerClass>
         <label>Reach 10 Colonists</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>5</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
     </ChallengeDef>
     <ChallengeDef>
         <defName>20colonists</defName>
-        <workerClass>NColonistsChallenge</workerClass>
+        <workerClass>Challenge_NColonists</workerClass>
         <label>Reach 20 Colonists</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>20</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
     </ChallengeDef>
     <ChallengeDef>
         <defName>50colonists</defName>
-        <workerClass>NColonistsChallenge</workerClass>
+        <workerClass>Challenge_NColonists</workerClass>
         <label>Reach 50 Colonists</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>50</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
@@ -48,48 +48,60 @@
 
     <ChallengeDef>
         <defName>kill2animals</defName>
-        <workerClass>KillAnimalsChallenge</workerClass>
+        <workerClass>Challenge_KillAnimals</workerClass>
         <label>Kill 2 Animals</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>2</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
     </ChallengeDef>
     <ChallengeDef>
         <defName>kill5animals</defName>
-        <workerClass>KillAnimalsChallenge</workerClass>
+        <workerClass>Challenge_KillAnimals</workerClass>
         <label>Kill 5 Animals</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>5</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
         <prerequisites>
              <li>kill2animals</li>
         </prerequisites>
     </ChallengeDef>
     <ChallengeDef>
         <defName>kill10animals</defName>
-        <workerClass>KillAnimalsChallenge</workerClass>
+        <workerClass>Challenge_KillAnimals</workerClass>
         <label>Kill 10 Animals</label>
         <description>Hooray!</description>
         <messageComplete>Hooray!</messageComplete>
         <targetValue>10</targetValue>
-        <gratificationThings>
+        <reward>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Component>5</Component>
-        </gratificationThings>            
+        </reward>            
         <prerequisites>
              <li>kill5animals</li>
         </prerequisites>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>killAllAnimals</defName>
+        <workerClass>Challenge_KillAnimalsAll</workerClass>
+        <label>Kill All Animals</label>
+        <description>Hooray!</description>
+        <messageComplete>Hooray!</messageComplete>
+        <reward>
+            <MealSurvivalPack>20</MealSurvivalPack>
+            <Medicine>10</Medicine>
+            <Component>5</Component>
+        </reward>            
     </ChallengeDef>
     
 </Defs>

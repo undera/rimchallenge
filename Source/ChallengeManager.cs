@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using Verse;
 
 namespace Rimchallenge
@@ -17,6 +16,7 @@ namespace Rimchallenge
 			Log.Message("Constructed ChallengeManager");
 			instance = this;
 		}
+
 		public override void StartedNewGame()
 		{
 			Log.Message("Started new Game");
@@ -51,6 +51,7 @@ namespace Rimchallenge
 				Log.Message("Picked a challenge: " + challengeDef);
 				currentChallengeDef = challengeDef;
 				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
+				Log.Message("Current progress: "+currentChallenge.getProgressFloat());
 			}
 		}
 

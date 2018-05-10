@@ -11,8 +11,8 @@ namespace Rimchallenge
     {
         public Alert_NeedChallenge()
         {
-			this.defaultLabel = "NeedChallenge".Translate();
-            this.defaultExplanation = "NeedChallengeDesc".Translate();			
+			this.defaultLabel = "NeedChallenge";
+            this.defaultExplanation = "NeedChallengeDesc";			
         }
 
 		public override Rect DrawAt(float topY, bool minimized)

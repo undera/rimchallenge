@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 namespace Verse
 {
-	public class KillAnimalsChallenge : ChallengeWorker
+	public class Challenge_KillAnimals : ChallengeWorker
 	{
-		public KillAnimalsChallenge(ChallengeDef def) : base(def)
+		public Challenge_KillAnimals(ChallengeDef def) : base(def)
 		{
 		}
 

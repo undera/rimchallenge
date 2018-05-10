@@ -5,10 +5,10 @@ using Verse;
 
 namespace Verse
 {
-	public class NColonistsChallenge : ChallengeWorker
+	public class Challenge_NColonists : ChallengeWorker
 	{
 		private int colonistCount = -1;
-		public NColonistsChallenge(ChallengeDef def) : base(def)
+		public Challenge_NColonists(ChallengeDef def) : base(def)
 		{
 		}
 
