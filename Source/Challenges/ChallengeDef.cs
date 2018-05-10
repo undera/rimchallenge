@@ -9,7 +9,7 @@ namespace Verse
 		public Type workerClass=typeof(ChallengeWorker);
 
         [MustTranslate]
-		public string messageComplete = "Challenge Complete! Get the prize!";
+		public string messageComplete = "You have completed the challenge! Get your well-deserved reward!";
 
 		public List<ThingCountClass> reward=new List<ThingCountClass>(0);
 

@@ -7,7 +7,7 @@
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 </node>
-<node COLOR="#0033ff" CREATED="1525593736847" ID="ID_1668290456" MODIFIED="1525628107145" POSITION="left" TEXT="Challenges">
+<node COLOR="#0033ff" CREATED="1525593736847" ID="ID_1668290456" MODIFIED="1525948197751" POSITION="left" TEXT="Challenge Ideas">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 <node COLOR="#00b439" CREATED="1525593740841" FOLDED="true" ID="ID_672335507" MODIFIED="1525938087634" TEXT="Make player to learn each game aspect">
@@ -389,11 +389,20 @@
 <node COLOR="#00b439" CREATED="1525887150592" ID="ID_1307498734" MODIFIED="1525887161229" TEXT="Left Side of Challenge Tab">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1525887194108" ID="ID_298791388" MODIFIED="1525938755696" TEXT="Display description of challenge">
+<node COLOR="#990000" CREATED="1525887194108" ID="ID_298791388" MODIFIED="1525948081183" TEXT="Display description of challenge">
 <font NAME="SansSerif" SIZE="14"/>
 <icon BUILTIN="full-1"/>
-<node COLOR="#111111" CREATED="1525887242957" ID="ID_880635626" MODIFIED="1525887246016" TEXT="And reward"/>
-<node COLOR="#111111" CREATED="1525937422052" ID="ID_991866160" MODIFIED="1525937429892" TEXT="And why it&apos;s not enabled"/>
+<icon BUILTIN="button_ok"/>
+<node COLOR="#111111" CREATED="1525887242957" ID="ID_880635626" MODIFIED="1525948077231" TEXT="And reward">
+<icon BUILTIN="button_ok"/>
+</node>
+<node COLOR="#111111" CREATED="1525937422052" ID="ID_991866160" MODIFIED="1525948086820" TEXT="And why it&apos;s not enabled">
+<icon BUILTIN="full-2"/>
+</node>
+</node>
+<node COLOR="#990000" CREATED="1525948094817" ID="ID_1559833715" MODIFIED="1525948104964" TEXT="Debug button to complete">
+<font NAME="SansSerif" SIZE="14"/>
+<icon BUILTIN="button_ok"/>
 </node>
 <node COLOR="#990000" CREATED="1525887383758" ID="ID_1306067206" MODIFIED="1525887392108" TEXT="Debug button to reset state">
 <font NAME="SansSerif" SIZE="14"/>
@@ -408,11 +417,6 @@
 <node COLOR="#990000" CREATED="1525893351375" ID="ID_112989422" MODIFIED="1525893357841" TEXT="Improve connector display">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
-</node>
-<node COLOR="#00b439" CREATED="1525887161760" ID="ID_1218053978" MODIFIED="1525938900468" TEXT="Translation files">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
-<icon BUILTIN="full-1"/>
 </node>
 <node COLOR="#00b439" CREATED="1525887260815" ID="ID_1225351784" MODIFIED="1525887266368" TEXT="Challenfe Definitions">
 <edge STYLE="bezier" WIDTH="thin"/>
@@ -430,9 +434,15 @@
 <font NAME="SansSerif" SIZE="14"/>
 <icon BUILTIN="full-1"/>
 </node>
-<node COLOR="#990000" CREATED="1525887267164" ID="ID_1013438559" MODIFIED="1525887268793" TEXT="Add more">
+<node COLOR="#990000" CREATED="1525887267164" ID="ID_1013438559" MODIFIED="1525948236943" TEXT="Add more">
 <font NAME="SansSerif" SIZE="14"/>
+<icon BUILTIN="full-2"/>
 </node>
+</node>
+<node COLOR="#00b439" CREATED="1525938948803" ID="ID_497635054" MODIFIED="1525948228619" TEXT="Perma-Save">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+<icon BUILTIN="full-2"/>
 </node>
 <node COLOR="#00b439" CREATED="1525887365368" ID="ID_417261231" MODIFIED="1525887374835" TEXT="Failable challenge">
 <edge STYLE="bezier" WIDTH="thin"/>
@@ -442,10 +452,6 @@
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <icon BUILTIN="button_ok"/>
-</node>
-<node COLOR="#00b439" CREATED="1525938948803" ID="ID_497635054" MODIFIED="1525938960375" TEXT="Perma-Save">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
 </node>
 <node COLOR="#00b439" CREATED="1525938970169" ID="ID_455287776" MODIFIED="1525938995351" TEXT="How to save challenges like &quot;have all kinds of goods&quot;?">
 <edge STYLE="bezier" WIDTH="thin"/>

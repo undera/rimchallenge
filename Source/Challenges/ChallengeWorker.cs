@@ -54,7 +54,7 @@ namespace Verse
 
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.AnyPlayerHomeMap); // drop around base
 			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.AnyPlayerHomeMap, false);
-			Find.LetterStack.ReceiveLetter("Challenge Complete".Translate(), def.messageComplete, LetterDefOf.PositiveEvent, targetInfo, null);
+			Find.LetterStack.ReceiveLetter("Challenge Complete", def.messageComplete, LetterDefOf.PositiveEvent, targetInfo, null);
 			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, GetReward());
 		}
 
