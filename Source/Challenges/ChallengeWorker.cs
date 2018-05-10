@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Rimchallenge;
 using RimWorld;
 using Verse;
+using System;
 
 namespace Verse
 {
@@ -71,6 +72,11 @@ namespace Verse
 		{
 		}
 
+		public virtual void OnDestroyMined(Mineable block)
+        {
+        }
+
+
 		public virtual bool CanPick()
 		{
 			return true;
@@ -94,7 +100,7 @@ namespace Verse
 			}
 		}
 
-		public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
+        public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
 	}
 
 	public class ChallengeWorkerNone : ChallengeWorker

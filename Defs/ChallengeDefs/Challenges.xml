@@ -102,5 +102,58 @@
         <TabViewX>1</TabViewX>
         <TabViewY>3</TabViewY>
     </ChallengeDef>
-    
+
+    <ChallengeDef>
+        <defName>mineOut100</defName>
+        <workerClass>Challenge_MineOutN</workerClass>
+        <label>Mine Out 100 Tiles</label>
+        <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
+        <targetValue>100</targetValue>
+        <reward>
+            <BlocksSandstone>20</BlocksSandstone>
+            <BlocksGranite>20</BlocksGranite>
+            <BlocksLimestone>20</BlocksLimestone>
+            <BlocksSlate>20</BlocksSlate>
+            <BlocksMarble>20</BlocksMarble>
+        </reward>            
+        <TabViewX>3</TabViewX>
+        <TabViewY>0</TabViewY>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>mineOutResources</defName>
+        <workerClass>Challenge_MineOutResources</workerClass>
+        <label>Mine Out All Resources</label>
+        <description>Mine out all of resources hidden in rocks on the map</description>
+        <reward>
+            <BlocksSandstone>20</BlocksSandstone>
+            <BlocksGranite>20</BlocksGranite>
+            <BlocksLimestone>20</BlocksLimestone>
+            <BlocksSlate>20</BlocksSlate>
+            <BlocksMarble>20</BlocksMarble>
+        </reward>            
+        <prerequisites>
+             <li>mineOut100</li>
+        </prerequisites>
+        <TabViewX>3</TabViewX>
+        <TabViewY>1</TabViewY>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>mineOutAll</defName>
+        <workerClass>Challenge_MineOutAll</workerClass>
+        <label>Mine Out All</label>
+        <description>Yo dwarves! There is some rock ahead! Don't leave a single mineable tile!</description>
+        <targetValue>100</targetValue>
+        <reward>
+            <BlocksSandstone>20</BlocksSandstone>
+            <BlocksGranite>20</BlocksGranite>
+            <BlocksLimestone>20</BlocksLimestone>
+            <BlocksSlate>20</BlocksSlate>
+            <BlocksMarble>20</BlocksMarble>
+        </reward>            
+        <prerequisites>
+             <li>mineOutResources</li>
+        </prerequisites>
+        <TabViewX>3</TabViewX>
+        <TabViewY>2</TabViewY>
+    </ChallengeDef>
 </Defs>

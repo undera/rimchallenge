@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Harmony;
+using RimWorld;
 using Verse;
 
 namespace Rimchallenge
@@ -23,6 +24,7 @@ namespace Rimchallenge
 			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
 			patch(typeof(Pawn), "Destroy", null, "OnPawnDestroyed");
 			patch(typeof(Pawn), "SetFaction", null, "OnPawnFactionSet");
+			patch(typeof(Mineable), "DestroyMined", null, "OnDestroyMined");
 		}
 
 		public static void OnMapLoaded()
@@ -45,5 +47,11 @@ namespace Rimchallenge
         {
             ChallengeManager.instance.currentChallenge.OnPawnDestroyed(__instance);
         }
+
+		public static void OnDestroyMined(Mineable __instance)
+        {
+			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance);
+        }
+
 }
 }

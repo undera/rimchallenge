@@ -30,7 +30,7 @@ namespace Verse
 
 		public override bool CanPick()
 		{
-			if (Find.AnyPlayerHomeMap.Biome.animalDensity < 1.0f)
+			if (Find.AnyPlayerHomeMap.Biome.animalDensity < 1.5f)
 			{
 				return false;
 			}

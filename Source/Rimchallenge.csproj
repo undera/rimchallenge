@@ -31,6 +31,9 @@
     <Compile Include="ChallengeManager.cs" />
     <Compile Include="Challenges\Challenge_KillAnimals.cs" />
     <Compile Include="Challenges\Challenge_KillAnimalsAll.cs" />
+    <Compile Include="Challenges\Challenge_MineOutN.cs" />
+    <Compile Include="Challenges\Challenge_MineOutResources.cs" />
+    <Compile Include="Challenges\Challenge_MineOutAll.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />
