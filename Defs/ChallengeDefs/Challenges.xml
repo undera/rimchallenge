@@ -64,9 +64,9 @@
     <ChallengeDef>
         <defName>kill500animals</defName>
         <workerClass>Challenge_KillAnimals</workerClass>
-        <label>Kill 5 Animals</label>
+        <label>Kill 500 Animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
-        <targetValue>5</targetValue>
+        <targetValue>500</targetValue>
         <reward>
             <Gun_AssaultRifle>2</Gun_AssaultRifle>
         </reward>            
@@ -81,7 +81,7 @@
         <workerClass>Challenge_KillAnimals</workerClass>
         <label>Kill 1000 Animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
-        <targetValue>10</targetValue>
+        <targetValue>1000</targetValue>
         <reward>
             <Gun_ChargeRifle>3</Gun_ChargeRifle>
         </reward>            
