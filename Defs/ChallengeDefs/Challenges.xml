@@ -114,11 +114,11 @@
         <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
         <reward>
-            <BlocksSandstone>20</BlocksSandstone>
-            <BlocksGranite>20</BlocksGranite>
-            <BlocksLimestone>20</BlocksLimestone>
-            <BlocksSlate>20</BlocksSlate>
-            <BlocksMarble>20</BlocksMarble>
+            <Jade>200</Jade>
+            <Uranium>100</Uranium>
+            <Steel>50</Steel>
+            <Plasteel>20</Plasteel>
+            <Gold>10</Gold>
         </reward>            
         <TabViewX>3</TabViewX>
         <TabViewY>0</TabViewY>
@@ -130,11 +130,11 @@
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
         <reward>
-            <BlocksSandstone>20</BlocksSandstone>
-            <BlocksGranite>20</BlocksGranite>
-            <BlocksLimestone>20</BlocksLimestone>
-            <BlocksSlate>20</BlocksSlate>
-            <BlocksMarble>20</BlocksMarble>
+            <Jade>500</Jade>
+            <Uranium>250</Uranium>
+            <Steel>500</Steel>
+            <Plasteel>200</Plasteel>
+            <Gold>100</Gold>
         </reward>            
         <prerequisites>
              <li>mineOut100</li>
@@ -148,13 +148,12 @@
         <label>Mine Out All</label>
         <description>Yo dwarves! There is some rock ahead! Don't leave a single mineable tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <targetValue>100</targetValue>
         <reward>
-            <BlocksSandstone>20</BlocksSandstone>
-            <BlocksGranite>20</BlocksGranite>
-            <BlocksLimestone>20</BlocksLimestone>
-            <BlocksSlate>20</BlocksSlate>
-            <BlocksMarble>20</BlocksMarble>
+            <Jade>2000</Jade>
+            <Uranium>1000</Uranium>
+            <Steel>500</Steel>
+            <Plasteel>200</Plasteel>
+            <Gold>1000</Gold>
         </reward>            
         <prerequisites>
              <li>mineOutResources</li>

@@ -7,11 +7,11 @@ namespace Verse
 {
 	public class Challenge_MineOutResources : Challenge_MineOutN
 	{
-		private int totalTiles = 0;
-		private int count = -1;
+		protected int totalTiles = 0;
+		protected int count = -1;
 		public Challenge_MineOutResources(ChallengeDef def) : base(def)
 		{
-			totalTiles = targetTiles;
+			totalTiles = TileCount(false);
 		}
 
 		public override void OnDestroyMined(Mineable block)
@@ -32,7 +32,7 @@ namespace Verse
 			return (float)(totalTiles - targetTiles) / totalTiles;
 		}
 
-		public int targetTiles
+		protected virtual int targetTiles
 		{
 			get
 			{
