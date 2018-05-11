@@ -146,7 +146,7 @@
         <defName>mineOutAll</defName>
         <workerClass>Challenge_MineOutAll</workerClass>
         <label>Mine Out All</label>
-        <description>Yo dwarves! There is some rock ahead! Don't leave a single mineable tile!</description>
+        <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
         <reward>
             <Jade>2000</Jade>
