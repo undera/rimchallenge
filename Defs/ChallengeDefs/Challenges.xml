@@ -95,7 +95,10 @@
         <defName>killAllAnimals</defName>
         <workerClass>Challenge_KillAnimalsAll</workerClass>
         <label>Kill All Animals</label>
-        <description>Okay, that's enough of them eating your crops, getting mad and attacking colonists. Just clean up the map, and your pets too.</description>
+        <description>Okay, that's enough of them eating your crops, getting mad and attacking colonists. 
+            Just clean up the map, and your pets too.
+        </description>
+        <applicability>Only available on maps with a lot of wildlife.</applicability>
         <reward>
             <Gun_Minigun>1</Gun_Minigun>
         </reward>            
@@ -108,6 +111,7 @@
         <workerClass>Challenge_MineOutN</workerClass>
         <label>Mine Out 100 Tiles</label>
         <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
+        <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
         <reward>
             <BlocksSandstone>20</BlocksSandstone>
@@ -124,6 +128,7 @@
         <workerClass>Challenge_MineOutResources</workerClass>
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
+        <applicability>Only available on maps with high hills or mountains</applicability>
         <reward>
             <BlocksSandstone>20</BlocksSandstone>
             <BlocksGranite>20</BlocksGranite>
@@ -142,6 +147,7 @@
         <workerClass>Challenge_MineOutAll</workerClass>
         <label>Mine Out All</label>
         <description>Yo dwarves! There is some rock ahead! Don't leave a single mineable tile!</description>
+        <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
         <reward>
             <BlocksSandstone>20</BlocksSandstone>

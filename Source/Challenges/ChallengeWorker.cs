@@ -47,7 +47,6 @@ namespace Verse
 			return (float)progress / def.targetValue;
 		}
 
-
 		public virtual void Complete()
 		{
 			def.IsFinished = true;
@@ -100,7 +99,7 @@ namespace Verse
 			}
 		}
 
-        public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
+        
 	}
 
 	public class ChallengeWorkerNone : ChallengeWorker

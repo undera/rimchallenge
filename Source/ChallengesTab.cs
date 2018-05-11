@@ -106,18 +106,29 @@ namespace Rimchallenge
 			Widgets.LabelCacheHeight(ref detailsRect, text, true, false);
 			leftHeight = detailsRect.yMax + 10f;
 
-            /*
 			Rect prereqsRect = new Rect(0f, leftHeight, viewRect.width, 500f);
 			float num3 = 0;this.DrawResearchPrereqs(this.selectedChallenge, prereqsRect);
             if (num3 > 0f)
             {
                 leftHeight += num3 + 15f;
             }
-            Rect rect5 = new Rect(0f, leftHeight, viewRect.width, 500f);
-            leftHeight += this.DrawResearchBenchRequirements(this.selectedChallenge, rect5);
-            */
-            
 		}
+
+		private float DrawResearchPrereqs(ChallengeDef project, Rect rect)
+        {
+			if (project.checkerInstance.CanPick() || project.applicability=="")
+            {
+                return 0f;
+            }
+            float yMin = rect.yMin;
+            Widgets.LabelCacheHeight(ref rect, "Not available:", true, false);
+            rect.yMin += rect.height;
+			GUI.color = Color.red;
+			Widgets.LabelCacheHeight(ref rect, "  " + project.applicability, true, false);
+            rect.yMin += rect.height;
+            GUI.color = Color.white;
+            return rect.yMin - yMin;
+        }
 
 		private string RewardsText(ChallengeDef challenge)
         {
@@ -133,7 +144,7 @@ namespace Rimchallenge
 
 		private void DrawButtonsAndProgress(Rect position, Rect outRect)
 		{			
-			bool showDebugBtns = Prefs.DevMode && this.selectedChallenge != ChallengeManager.instance.currentChallengeDef && !this.selectedChallenge.IsFinished;
+			bool showDebugBtns = Prefs.DevMode && this.selectedChallenge == ChallengeManager.instance.currentChallengeDef && !this.selectedChallenge.IsFinished;
             Rect rect6 = new Rect(0f, 0f, 90f, 50f);
             if (showDebugBtns)
             {

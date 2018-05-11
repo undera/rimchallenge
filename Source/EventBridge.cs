@@ -24,7 +24,9 @@ namespace Rimchallenge
 			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
 			patch(typeof(Pawn), "Destroy", null, "OnPawnDestroyed");
 			patch(typeof(Pawn), "SetFaction", null, "OnPawnFactionSet");
+
 			patch(typeof(Mineable), "DestroyMined", null, "OnDestroyMined");
+			patch(typeof(Mineable), "Destroy", null, "OnDestroyMined");
 		}
 
 		public static void OnMapLoaded()
@@ -50,6 +52,7 @@ namespace Rimchallenge
 
 		public static void OnDestroyMined(Mineable __instance)
         {
+			Log.Message("Mined out "+__instance);
 			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance);
         }
 

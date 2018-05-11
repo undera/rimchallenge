@@ -6,5 +6,7 @@ namespace Verse
 		public Challenge_MineOutAll(ChallengeDef def) : base(def)
 		{
 		}
+
+  
 	}
 }

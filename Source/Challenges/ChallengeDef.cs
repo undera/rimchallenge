@@ -25,7 +25,9 @@ namespace Verse
         private float y = 1f;
 
 		private ChallengeWorker _checker;
+        internal string applicability="";
 
+     
 		public ChallengeWorker checkerInstance { 
 			get { 
 				if (_checker == null)

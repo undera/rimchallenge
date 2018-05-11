@@ -16,5 +16,7 @@ namespace Verse
 				}
 			}
 		}
+
+		public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
 	}
 }

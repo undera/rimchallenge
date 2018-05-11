@@ -11,12 +11,16 @@ namespace Verse
 
         public override void OnDestroyMined(Mineable block)
 		{
-			base.OnDestroyMined(block);
+			progress++;
+            if (progress >= def.targetValue)
+            {
+                Complete();
+            }
 		}
 
         public override bool CanPick()
-		{
-			return Find.AnyPlayerHomeMap.TileInfo.hilliness>=Hilliness.LargeHills;
-		}
+        {
+            return Find.AnyPlayerHomeMap.TileInfo.hilliness >= Hilliness.LargeHills;
+        }
 	}
 }
