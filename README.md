@@ -11,6 +11,6 @@ It adds a button in bottom button line called "Challenges", click on it to open 
 ![](About/scr1.png)
 
 
-It is under development for now, so has just few challenges to play with.
+It is under development for now, so has just few challenges to play with. I collect all challenge ideas for potential implemeting [here](Challenges.md).
 
 
