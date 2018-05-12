@@ -24,5 +24,10 @@ namespace Rimchallenge
         {
 			return challenges.Contains(def);
         }
-    }
+
+		internal void Reset()
+		{
+			challenges.Clear();
+		}
+	}
 }
