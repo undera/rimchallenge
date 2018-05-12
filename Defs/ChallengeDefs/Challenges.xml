@@ -120,7 +120,7 @@
             <Plasteel>20</Plasteel>
             <Gold>10</Gold>
         </reward>            
-        <TabViewX>3</TabViewX>
+        <TabViewX>2</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
     <ChallengeDef>
@@ -139,7 +139,7 @@
         <prerequisites>
              <li>mineOut100</li>
         </prerequisites>
-        <TabViewX>3</TabViewX>
+        <TabViewX>2</TabViewX>
         <TabViewY>1</TabViewY>
     </ChallengeDef>
     <ChallengeDef>
@@ -158,7 +158,7 @@
         <prerequisites>
              <li>mineOutResources</li>
         </prerequisites>
-        <TabViewX>3</TabViewX>
+        <TabViewX>2</TabViewX>
         <TabViewY>2</TabViewY>
     </ChallengeDef>
 </Defs>

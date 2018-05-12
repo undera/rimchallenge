@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 
 namespace Rimchallenge
-{
+{   
+	[StaticConstructorOnStartup]
 	public class ChallengesTab : MainTabWindow
 	{
 		protected ChallengeDef selectedChallenge;

@@ -15,6 +15,9 @@ namespace Rimchallenge
 		{
 			Log.Message("Constructed ChallengeManager");
 			instance = this;
+			foreach (ChallengeDef def in DefDatabase<ChallengeDef>.AllDefs) {
+				Controller.checkFinished(def);
+			}
 		}
 
 		public override void StartedNewGame()
@@ -33,7 +36,7 @@ namespace Rimchallenge
 
 		public override void ExposeData()
 		{
-			Log.Message("Expose data called");
+			Log.Message("Expose data called for ChallengeManager");
 
 			Scribe_Defs.Look<ChallengeDef>(ref this.currentChallengeDef, "currentChallenge");
 			Scribe_Values.Look<int>(ref this.progress, "progress");

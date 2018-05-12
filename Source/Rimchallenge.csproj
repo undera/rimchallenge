@@ -34,6 +34,7 @@
     <Compile Include="Challenges\Challenge_MineOutN.cs" />
     <Compile Include="Challenges\Challenge_MineOutResources.cs" />
     <Compile Include="Challenges\Challenge_MineOutAll.cs" />
+    <Compile Include="CompletedChallengesList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

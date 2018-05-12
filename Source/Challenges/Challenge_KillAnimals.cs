@@ -9,7 +9,7 @@ namespace Verse
 
 		public override void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
 		{
-			if (pawn.AnimalOrWildMan() && ChallengeWorker.AllColonists.Cast<Thing>().Contains(dinfo.Instigator)) {
+			if (pawn.AnimalOrWildMan() && Challenge_NColonists.AllColonists.Cast<Thing>().Contains(dinfo.Instigator)) {
 				progress++;
 				if (progress >= def.targetValue) {
 					Complete();

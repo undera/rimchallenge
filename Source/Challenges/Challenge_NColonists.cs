@@ -57,5 +57,23 @@ namespace Verse
 			return getColonistCount() < def.targetValue;
 		}
 
+		public static IEnumerable<Pawn> AllColonists
+        {
+            get
+            {
+                List<Map> maps = Find.Maps;
+                for (int i = 0; i < maps.Count; i++)
+                {
+                    if (maps[i].IsPlayerHome)
+                    {
+                        foreach (Pawn p in maps[i].mapPawns.FreeColonistsSpawned)
+                        {
+                            yield return p;
+                        }
+                    }
+                }
+            }
+        }
+
 	}
 }

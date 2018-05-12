@@ -47,10 +47,11 @@ namespace Verse
 			return (float)progress / def.targetValue;
 		}
 
-		public virtual void Complete()
+		public void Complete()
 		{
 			def.IsFinished = true;
 			ChallengeManager.instance.ClearChallenge();
+			Controller.ChallengeComplete(def);
 
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.AnyPlayerHomeMap); // drop around base
 			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.AnyPlayerHomeMap, false);
@@ -75,31 +76,10 @@ namespace Verse
         {
         }
 
-
 		public virtual bool CanPick()
 		{
 			return true;
 		}
-
-		public static IEnumerable<Pawn> AllColonists
-		{
-			get
-			{
-				List<Map> maps = Find.Maps;
-				for (int i = 0; i < maps.Count; i++)
-				{
-					if (maps[i].IsPlayerHome)
-					{
-						foreach (Pawn p in maps[i].mapPawns.FreeColonistsSpawned)
-						{
-							yield return p;
-						}
-					}
-				}
-			}
-		}
-
-        
 	}
 
 	public class ChallengeWorkerNone : ChallengeWorker
