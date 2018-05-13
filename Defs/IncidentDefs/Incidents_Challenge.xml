@@ -4,6 +4,14 @@
 	<IncidentDef>
 		<defName>ChallengeAvailable</defName>
 		<label>Challenge Available</label>
+        <letterLabel>Challenge Available</letterLabel>
+
+        <!--
+        <letterText>Challenge Available Descr</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        
+        <minRefireDays>1</minRefireDays>
+        -->
 		<category>Misc</category>
         <targetTypes>
           <li>MapPlayerHome</li>
