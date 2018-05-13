@@ -59,28 +59,31 @@ namespace Verse
 			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, GetReward());
 		}
 
-
-		public virtual void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
-		{
-		}
-
-		public virtual void OnPawnDestroyed(Pawn pawn)
-		{
-		}
-
-		public virtual void OnPawnFactionSet(Pawn pawn)
-		{
-		}
-
-		public virtual void OnDestroyMined(Mineable block)
-        {
-        }
-
-		public virtual bool CanPick()
+        public virtual bool CanPick()
 		{
 			return true;
 		}
-	}
+
+		public virtual void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
+        {
+        }
+
+        public virtual void OnPawnDestroyed(Pawn pawn)
+        {
+        }
+
+        public virtual void OnPawnFactionSet(Pawn pawn)
+        {
+        }
+
+        public virtual void OnDestroyMined(Mineable block)
+        {
+        }
+
+        internal void OnSkillLearned(SkillRecord skill)
+        {
+        }
+   	}
 
 	public class ChallengeWorkerNone : ChallengeWorker
 	{

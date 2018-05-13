@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RimWorld;
 using UnityEngine;
 
 namespace Verse
@@ -153,6 +154,17 @@ namespace Verse
         Block_4:
             Log.Error("Couldn't relax research project coordinates apart after " + 200 + " passes.");
         }
+
+		internal string RewardsText()
+		{
+            string stringBuilder = "Rewards: \n";
+            foreach (ThingCountClass current in reward)
+            {
+                string stringLabel = GenLabel.ThingLabel(current.thingDef, null, current.count).CapitalizeFirst();
+                stringBuilder += ("   -" + stringLabel + "\n");
+            }
+            return stringBuilder;
+		}
 
 		private static void ClampInCoordinateLimits(ChallengeDef rp)
         {

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>ChallengeAvailable</defName>
+		<label>Challenge Available</label>
+		<category>Misc</category>
+        <targetTypes>
+          <li>MapPlayerHome</li>
+        </targetTypes>
+		<workerClass>IncidentWorker_ChallengeAvailable</workerClass>
+		<baseChance>100</baseChance>
+	</IncidentDef>
+
+</Defs>

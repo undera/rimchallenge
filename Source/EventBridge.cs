@@ -27,6 +27,8 @@ namespace Rimchallenge
 
 			patch(typeof(Mineable), "DestroyMined", null, "OnDestroyMined");
 			patch(typeof(Mineable), "Destroy", null, "OnDestroyMined");
+
+			patch(typeof(SkillRecord), "Learn", null, "OnSkillLearned");
 		}
 
 		public static void OnMapLoaded()
@@ -52,9 +54,13 @@ namespace Rimchallenge
 
 		public static void OnDestroyMined(Mineable __instance)
         {
-			Log.Message("Mined out "+__instance);
 			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance);
         }
 
+		public static void SkillLearned(SkillRecord __instance)
+        {
+            Log.Message("Skill learned " + __instance);
+            ChallengeManager.instance.currentChallenge.OnSkillLearned(__instance);
+        }
 }
 }

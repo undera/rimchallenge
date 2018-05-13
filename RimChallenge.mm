@@ -299,7 +299,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1525593205490" ID="ID_1200966691" MODIFIED="1525593212228" POSITION="right" TEXT="Research-like screen">
+<node COLOR="#0033ff" CREATED="1525593205490" ID="ID_1200966691" MODIFIED="1526152113931" POSITION="right" TEXT="Research-like screen">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 <node COLOR="#00b439" CREATED="1525593212977" ID="ID_1182112776" MODIFIED="1525593227736" TEXT="Tabs of kinds">
@@ -323,22 +323,12 @@
 <font NAME="SansSerif" SIZE="16"/>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1525596424225" ID="ID_501675297" MODIFIED="1525596438218" POSITION="right" TEXT="Able to fail challenge? How to restart it?">
+<node COLOR="#0033ff" CREATED="1526152090825" ID="ID_921020640" MODIFIED="1526152115883" POSITION="right" TEXT="Maybe also &quot;Quest Giver&quot; way to enable it?">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1525597061068" ID="ID_25670968" MODIFIED="1525597069019" TEXT="Allow to change challenge mid-game?">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1525597070438" ID="ID_623201421" MODIFIED="1525597072225" TEXT="Nonono">
-<font NAME="SansSerif" SIZE="14"/>
+<icon BUILTIN="help"/>
 </node>
-</node>
-<node COLOR="#00b439" CREATED="1525597092650" ID="ID_110891123" MODIFIED="1525597124080" TEXT="Some challenges can&apos;t be restarted mid-game? Some sign of challenge branch failed...">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
-</node>
-</node>
-<node COLOR="#0033ff" CREATED="1525627738568" ID="ID_1372767184" MODIFIED="1525627742095" POSITION="right" TEXT="Lifecycle">
+<node COLOR="#0033ff" CREATED="1525627738568" ID="ID_1372767184" MODIFIED="1526152121838" POSITION="right" TEXT="Lifecycle">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 <node COLOR="#00b439" CREATED="1525627743280" ID="ID_833651697" MODIFIED="1525627761739" TEXT="Popup to pick challenge at the beginning of the game">
@@ -349,11 +339,26 @@
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 </node>
-<node COLOR="#00b439" CREATED="1525627862575" ID="ID_1681712286" MODIFIED="1525627869009" TEXT="Challenge can be failed">
+<node COLOR="#00b439" CREATED="1525627862575" FOLDED="true" ID="ID_1681712286" MODIFIED="1526152124881" TEXT="Challenge can be failed">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525627869843" ID="ID_244280740" MODIFIED="1525627875503" TEXT="Can&apos;t be re-enabled after that">
 <font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1525596424225" ID="ID_501675297" MODIFIED="1526152123979" TEXT="Able to fail challenge? How to restart it?">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="14"/>
+<node COLOR="#111111" CREATED="1525597061068" ID="ID_25670968" MODIFIED="1526152123980" TEXT="Allow to change challenge mid-game?">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="12"/>
+<node COLOR="#111111" CREATED="1525597070438" ID="ID_623201421" MODIFIED="1526152123980" TEXT="Nonono">
+<font NAME="SansSerif" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#111111" CREATED="1525597092650" ID="ID_110891123" MODIFIED="1526152123980" TEXT="Some challenges can&apos;t be restarted mid-game? Some sign of challenge branch failed...">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="12"/>
+</node>
 </node>
 </node>
 <node COLOR="#00b439" CREATED="1525627877655" ID="ID_526946919" MODIFIED="1525627890664" TEXT="Challenge can be completed">
@@ -404,7 +409,7 @@
 <node COLOR="#0033ff" CREATED="1525887136776" ID="ID_260091036" MODIFIED="1525887138458" POSITION="right" TEXT="TODO">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1525887150592" ID="ID_1307498734" MODIFIED="1525887161229" TEXT="Left Side of Challenge Tab">
+<node COLOR="#00b439" CREATED="1525887150592" FOLDED="true" ID="ID_1307498734" MODIFIED="1526153119677" TEXT="Left Side of Challenge Tab">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525887194108" ID="ID_298791388" MODIFIED="1525948081183" TEXT="Display description of challenge">
@@ -429,14 +434,14 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525887182488" ID="ID_1701862817" MODIFIED="1525887188892" TEXT="Right side of CHallenge tab">
+<node COLOR="#00b439" CREATED="1525887182488" FOLDED="true" ID="ID_1701862817" MODIFIED="1526153124820" TEXT="Right side of CHallenge tab">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525893351375" ID="ID_112989422" MODIFIED="1525893357841" TEXT="Improve connector display">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525887260815" ID="ID_1225351784" MODIFIED="1525887266368" TEXT="Challenfe Definitions">
+<node COLOR="#00b439" CREATED="1525887260815" FOLDED="true" ID="ID_1225351784" MODIFIED="1526153127613" TEXT="Challenfe Definitions">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525887269169" ID="ID_410206311" MODIFIED="1525938911613" TEXT="Write proper descriptions">
@@ -457,23 +462,25 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525938948803" ID="ID_497635054" MODIFIED="1525948228619" TEXT="Perma-Save">
+<node COLOR="#00b439" CREATED="1525938970169" ID="ID_455287776" MODIFIED="1526153134441" TEXT="How to save challenges like &quot;have all kinds of goods&quot;?">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <icon BUILTIN="full-2"/>
 </node>
-<node COLOR="#00b439" CREATED="1525887365368" ID="ID_417261231" MODIFIED="1525887374835" TEXT="Failable challenge">
+<node COLOR="#00b439" CREATED="1525887365368" ID="ID_417261231" MODIFIED="1526153138580" TEXT="Failable challenge">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
+<icon BUILTIN="full-2"/>
+</node>
+<node COLOR="#00b439" CREATED="1525938948803" ID="ID_497635054" MODIFIED="1526144383651" TEXT="Perma-Save">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+<icon BUILTIN="button_ok"/>
 </node>
 <node COLOR="#00b439" CREATED="1525893403175" ID="ID_890069094" MODIFIED="1525938064366" TEXT="Map applicability">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <icon BUILTIN="button_ok"/>
-</node>
-<node COLOR="#00b439" CREATED="1525938970169" ID="ID_455287776" MODIFIED="1525938995351" TEXT="How to save challenges like &quot;have all kinds of goods&quot;?">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
 </node>
 </node>
 <node COLOR="#0033ff" CREATED="1525601730869" ID="ID_1400941" MODIFIED="1526125060873" POSITION="right" TEXT="Challenge set per skill">
@@ -491,6 +498,10 @@
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 </node>
+</node>
+<node COLOR="#0033ff" CREATED="1526194037485" ID="ID_1289351056" MODIFIED="1526194047855" POSITION="right" TEXT="Randomize challenge def somehow?">
+<edge STYLE="sharp_bezier" WIDTH="8"/>
+<font NAME="SansSerif" SIZE="18"/>
 </node>
 </node>
 </map>

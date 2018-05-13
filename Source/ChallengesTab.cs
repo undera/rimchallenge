@@ -47,7 +47,7 @@ namespace Rimchallenge
 		{
 			Rect position = leftOutRect;
             GUI.BeginGroup(position);
-            if (this.selectedChallenge != null)
+			if (this.selectedChallenge != null)
 			{
 				Rect outRect = new Rect(0f, 0f, position.width, 500f);
 				Rect viewRect = new Rect(0f, 0f, outRect.width - 16f, this.leftScrollViewHeight);
@@ -75,12 +75,16 @@ namespace Rimchallenge
 				Widgets.EndScrollView();
 				DrawButtonsAndProgress(position, outRect);
 			}
+			else {
+				string text = "Wait for challenge to be offered by strangers or incoming message...";
+				Widgets.LabelCacheHeight(ref leftOutRect, text, true, false);
+			}
 			GUI.EndGroup();
 		}
 
 		private void DrawChallengeDetails(ref Rect viewRect, ref float leftHeight)
 		{
-			string text = this.RewardsText(this.selectedChallenge);
+			string text = this.selectedChallenge.RewardsText();
 
             /*
 			float num2 = this.selectedChallenge.targetValue;
@@ -108,11 +112,7 @@ namespace Rimchallenge
 			leftHeight = detailsRect.yMax + 10f;
 
 			Rect prereqsRect = new Rect(0f, leftHeight, viewRect.width, 500f);
-			float num3 = 0;this.DrawResearchPrereqs(this.selectedChallenge, prereqsRect);
-            if (num3 > 0f)
-            {
-                leftHeight += num3 + 15f;
-            }
+			this.DrawResearchPrereqs(this.selectedChallenge, prereqsRect);
 		}
 
 		private float DrawResearchPrereqs(ChallengeDef project, Rect rect)
@@ -131,17 +131,6 @@ namespace Rimchallenge
             return rect.yMin - yMin;
         }
 
-		private string RewardsText(ChallengeDef challenge)
-        {
-			string stringBuilder = "Rewards: \n";
-			foreach (ThingCountClass current in challenge.reward)
-            {
-				string stringLabel = GenLabel.ThingLabel(current.thingDef, null, current.count).CapitalizeFirst();
-				stringBuilder+=("   -" + stringLabel+"\n");
-            }
-            return stringBuilder;
-        }
-
 
 		private void DrawButtonsAndProgress(Rect position, Rect outRect)
 		{			
@@ -155,7 +144,6 @@ namespace Rimchallenge
             {
                 rect6.x = (outRect.width - rect6.width) / 2f;
             }
-
 
 			rect6.y = outRect.y + outRect.height + 20f;
 			if (this.selectedChallenge.IsFinished)
@@ -179,7 +167,7 @@ namespace Rimchallenge
 				Widgets.Label(rect6, "Locked".Translate());
 				Text.Anchor = TextAnchor.UpperLeft;
 			}
-			else if (!ChallengeManager.instance.HasChallenge() && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
+			else if (showDebugBtns && !ChallengeManager.instance.HasChallenge() && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
 			{
 				SoundDef.Named("ResearchStart").PlayOneShotOnCamera(null);
 				ChallengeManager.instance.StartChallenge(selectedChallenge);

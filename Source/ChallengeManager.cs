@@ -1,5 +1,8 @@
 ﻿using System;
 using Verse;
+using System.Linq;
+using System.Collections.Generic;
+using RimWorld;
 
 namespace Rimchallenge
 {
@@ -20,7 +23,13 @@ namespace Rimchallenge
 			}
 		}
 
-		public override void StartedNewGame()
+		internal ChallengeDef GetOfferedChallenge()
+        {
+			IEnumerable<ChallengeDef> possible = DefDatabase<ChallengeDef>.AllDefs.Where(x => x.CanStartNow);
+			return possible.RandomElementWithFallback(null);
+        }
+
+        public override void StartedNewGame()
 		{
 			Log.Message("Started new Game");
 			ClearChallenge();
