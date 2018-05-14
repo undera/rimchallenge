@@ -2,7 +2,7 @@
 <Defs>
 
   <JobDef>
-	<defName>ChallengeGiver</defName>
+	<defName>ChallengeGiverJob</defName>
 	<driverClass>JobDriver_Challenge</driverClass>
 	<reportString>checking for quests with TargetA.</reportString>
   </JobDef>

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{72AF871F-7661-43AF-989C-C0B7695937AD}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>rimchallenge</RootNamespace>
+    <RootNamespace>Rimchallenge</RootNamespace>
     <AssemblyName>rimchallenge</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -38,6 +38,8 @@
     <Compile Include="IncidentWorker_ChallengeAvailable.cs" />
     <Compile Include="ChallengeAvailableLetter.cs" />
     <Compile Include="JobDriver_Challenge.cs" />
+    <Compile Include="UITools.cs" />
+    <Compile Include="ChallengeJobDefOf.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Rimchallenge;
 using Verse;
 using Verse.AI;
 
@@ -29,17 +30,22 @@ namespace RimWorld
             giveChallenge.initAction = delegate
             {
                 Pawn actor = giveChallenge.actor;
-                if (this.TargetPawn.CanTradeNow)
-                {
-                    Find.WindowStack.Add(new Dialog_Trade(actor, this.TargetPawn));
-                }
+
+				Log.Message("Actor: "+actor);
+				Log.Message("Target: " + TargetPawn);
+				Log.Message("Quest owner: " + ChallengeManager.instance.questOwner);
+
+                //if (this.TargetPawn.CanTradeNow)
+                //{
+                //    Find.WindowStack.Add(new Dialog_Trade(actor, this.TargetPawn));
+                //}
             };
             yield return giveChallenge;
         }
 
 		private bool hasChallengeToOffer(Pawn targetPawn)
 		{
-			throw new NotImplementedException();
+			return ChallengeManager.instance.currentChallengeDef != null && ChallengeManager.instance.questOwner==targetPawn;
 		}
 	}
 }

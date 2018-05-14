@@ -11,7 +11,7 @@ namespace Rimchallenge
 		public Controller(ModContentPack content) : base(content)
         {
 			instance = this;
-			EventBridge.Hook(this);
+			EventBridge.Hook();
         }
 
 		internal static void ChallengeComplete(ChallengeDef def)

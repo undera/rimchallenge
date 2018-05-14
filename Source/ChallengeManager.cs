@@ -15,8 +15,8 @@ namespace Rimchallenge
 		public int progress = 0;
 		public static ChallengeManager instance { get; private set; }
 
-		public Pawn questOwner { get; private set; }
-		public ChallengeDef questOwnerChallenge { get; private set; }
+		public Pawn questOwner;
+		public ChallengeDef questOwnerChallenge;
 
 		public ChallengeManager(Game game)
 		{
@@ -58,6 +58,8 @@ namespace Rimchallenge
 
 			Scribe_Defs.Look<ChallengeDef>(ref this.currentChallengeDef, "currentChallenge");
 			Scribe_Values.Look<int>(ref this.progress, "progress");
+			Scribe_References.Look<Pawn>(ref this.questOwner, "questOwner");
+			Scribe_Defs.Look<ChallengeDef>(ref this.questOwnerChallenge, "questOwnerChallenge");
 		}
 
 		public bool HasChallenge()
@@ -99,36 +101,6 @@ namespace Rimchallenge
 					questOwner = null;
 				}
 			}
-		}
-
-		private static Material asterisk;
-
-		public static void RenderAsteriskOverlay(Pawn t)
-		{
-			if (!t.Spawned) return;
-			var drawPos = t.DrawPos;
-			drawPos.y = Altitudes.AltitudeFor(AltitudeLayer.MetaOverlays) + 0.28125f;
-			if (t is Pawn)
-			{
-				drawPos.x += (float)t.def.size.x - 0.52f;
-				drawPos.z += (float)t.def.size.z - 0.45f;
-			}
-
-			if (asterisk == null)
-			{
-				asterisk = MaterialPool.MatFrom("UI/Overlays/asterisk", ShaderDatabase.MetaOverlay);
-			}
-
-			RenderPulsing(t, asterisk, drawPos, MeshPool.plane05);
-		}
-
-		private static void RenderPulsing(Thing thing, Material mat, Vector3 drawPos, Mesh mesh)
-		{
-			var num = (Time.realtimeSinceStartup + 397f * (float)(thing.thingIDNumber % 571)) * 4f;
-			var num2 = ((float)Math.Sin((double)num) + 1f) * 0.5f;
-			num2 = 0.3f + num2 * 0.7f;
-			var material = FadedMaterialPool.FadedVersionOf(mat, num2);
-			Graphics.DrawMesh(mesh, drawPos, Quaternion.identity, material, 0);
-		}
+		}  
 	}
 }
