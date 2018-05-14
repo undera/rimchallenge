@@ -16,7 +16,7 @@ namespace Rimchallenge
 
 		public ChallengeManager(Game game)
 		{
-			Log.Message("Constructed ChallengeManager");
+			//Log.Message("Constructed ChallengeManager");
 			instance = this;
 			foreach (ChallengeDef def in DefDatabase<ChallengeDef>.AllDefs) {
 				Controller.checkFinished(def);
@@ -25,7 +25,10 @@ namespace Rimchallenge
 
 		internal ChallengeDef GetOfferedChallenge()
         {
-			IEnumerable<ChallengeDef> possible = DefDatabase<ChallengeDef>.AllDefs.Where(x => x.CanStartNow);
+			IEnumerable<ChallengeDef> possible = DefDatabase<ChallengeDef>.AllDefs.Where(x => x.CanStartNow).ToList();
+			foreach (ChallengeDef def in possible) {
+				Log.Message("Possible: "+def);
+			}
 			return possible.RandomElementWithFallback(null);
         }
 

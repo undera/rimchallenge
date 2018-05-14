@@ -41,6 +41,7 @@ namespace RimWorld
 			letter.text = text;
 			letter.radioMode = true;
 			letter.challenge = challenge;
+			letter.StartTimeout(60000);
             
 			return letter;
 		}
