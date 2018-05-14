@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Harmony;
 using RimWorld;
+using UnityEngine;
 using Verse;
+using Verse.AI.Group;
 
 namespace Rimchallenge
 {
@@ -19,16 +22,23 @@ namespace Rimchallenge
 
         public static void Hook(Controller modL)
         {
-			patch(typeof(Map), "FinalizeInit", null, "OnMapLoaded");
+			patch(typeof(Map), nameof(Map.FinalizeInit), null, nameof(OnMapLoaded));
 
-			patch(typeof(Pawn), "Kill", null, "OnPawnKilled");
-			patch(typeof(Pawn), "Destroy", null, "OnPawnDestroyed");
-			patch(typeof(Pawn), "SetFaction", null, "OnPawnFactionSet");
+			patch(typeof(Pawn), nameof(Pawn.Kill), null, nameof(OnPawnKilled));
+			patch(typeof(Pawn), nameof(Pawn.Destroy), null, nameof(OnPawnDestroyed));
+			patch(typeof(Pawn), nameof(Pawn.SetFaction), null, nameof(OnPawnFactionSet)); 
+			// TODO when escape pod colonist joins, nothing happens
 
-			patch(typeof(Mineable), "DestroyMined", null, "OnDestroyMined");
-			patch(typeof(Mineable), "Destroy", null, "OnDestroyMined");
+			patch(typeof(Mineable), nameof(Mineable.DestroyMined), null, nameof(OnDestroyMined));
+			patch(typeof(Mineable), nameof(Mineable.Destroy), null, nameof(OnDestroyMined));
 
-			patch(typeof(SkillRecord), "Learn", null, "OnSkillLearned");
+			//patch(typeof(SkillRecord), nameof(SkillRecord.Learn), null, nameof(OnSkillLearned));
+
+			patch(typeof(IncidentWorker_NeutralGroup), "SpawnPawns", null, nameof(OnGroupSpawned));
+
+			MethodInfo dst = AccessTools.Method(typeof(PawnRenderer), nameof(PawnRenderer.RenderPawnAt), new[] { typeof(Vector3), typeof(RotDrawMode), typeof(bool) });
+			HarmonyMethod met = new HarmonyMethod(typeof(EventBridge), nameof(RenderPawnAt));
+			harmony.Patch(dst, null, met);
 		}
 
 		public static void OnMapLoaded()
@@ -49,6 +59,10 @@ namespace Rimchallenge
 
 		public static void OnPawnDestroyed(Pawn __instance)
         {
+			if (ChallengeManager.instance.questOwner == __instance) {
+				ChallengeManager.instance.SetQuestOwner(null);
+			}
+
             ChallengeManager.instance.currentChallenge.OnPawnDestroyed(__instance);
         }
 
@@ -62,5 +76,23 @@ namespace Rimchallenge
             Log.Message("Skill learned " + __instance);
             ChallengeManager.instance.currentChallenge.OnSkillLearned(__instance);
         }
-}
+
+		public static void OnGroupSpawned(IncidentWorker_NeutralGroup __instance, List<Pawn> __result) {
+			Log.Message("Spawned group by "+__instance);
+			foreach (Pawn p in __result)
+            {
+                Log.Message(p + " can trade " + p.CanTradeNow);
+            }
+			ChallengeManager.instance.SetQuestOwner(__result.RandomElement());
+		}
+
+		public static void RenderPawnAt(PawnRenderer __instance, Vector3 drawLoc, RotDrawMode bodyDrawType, bool headStump)
+        {
+            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+			if (ChallengeManager.instance.questOwner==pawn)
+			{
+				ChallengeManager.RenderAsteriskOverlay(pawn);
+			}
+        }
+    }
 }

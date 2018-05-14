@@ -37,6 +37,7 @@
     <Compile Include="CompletedChallengesList.cs" />
     <Compile Include="IncidentWorker_ChallengeAvailable.cs" />
     <Compile Include="ChallengeAvailableLetter.cs" />
+    <Compile Include="JobDriver_Challenge.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

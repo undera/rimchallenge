@@ -8,3 +8,4 @@ mkdir -p $DEST
 cp -r ./About $DEST
 cp -r ./Assemblies $DEST
 cp -r ./Defs $DEST
+cp -r ./Textures $DEST

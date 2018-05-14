@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+	<defName>ChallengeGiver</defName>
+	<driverClass>JobDriver_Challenge</driverClass>
+	<reportString>checking for quests with TargetA.</reportString>
+  </JobDef>
+  
+</Defs>
