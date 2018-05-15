@@ -11,7 +11,7 @@ namespace RimWorld
 
 		protected override bool CanFireNowSub(IIncidentTarget target)
 		{
-			if (ChallengeManager.instance.HasChallenge()) {
+			if (Prefs.DevMode && ChallengeManager.instance.HasChallenge()) {
 				IncidentParms incidentParms = new IncidentParms();
 				incidentParms.target = Find.VisibleMap;
 				QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.TravelerGroup, null, incidentParms), Find.TickManager.TicksGame);

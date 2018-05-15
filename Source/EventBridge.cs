@@ -52,8 +52,11 @@ namespace Rimchallenge
 			foreach (Pawn p in __result)
 			{
 				Log.Message(p + " can trade " + (p.trader == null));
+				if (p.trader != null) {
+					return;
+				}
 			}
-			ChallengeManager.instance.SetQuestOwner(__result.Where(x => x.trader==null).RandomElementWithFallback(null));
+			ChallengeManager.instance.SetQuestOwner(__result.RandomElementWithFallback(null));
 		}
 
 		public static void RenderPawnAt(PawnRenderer __instance)
