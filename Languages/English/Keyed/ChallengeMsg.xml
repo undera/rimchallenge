@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ChallengeAvailable>Challenge Available</ChallengeAvailable>
+    <ChallengeAccepted>Challenge Accepted!</ChallengeAccepted>
+    <ChallengeCompleted>Challenge Completed</ChallengeCompleted>
+    <ChallengeDescr>
+    Hey survivor!\n
+    \n
+    I'm interested in changing this world to better, 
+    and would appreciate your help by sharing some goods. Here's the task:\n
+    \n
+    {0}\n
+    \n
+    {1}\n
+    \n
+    Are you capable of doing this?
+    </ChallengeDescr>
+    <ResetComplete>Reset Complete Challenges</ResetComplete>
+    <TalkTo>Talk to {0}</TalkTo>
+    <CantTalk>Can't talk</CantTalk>
+</LanguageData>
