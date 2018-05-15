@@ -37,7 +37,7 @@ namespace Rimchallenge
 			patch(typeof(Mineable), nameof(Mineable.DestroyMined), null, nameof(OnDestroyMined));
 			patch(typeof(Mineable), nameof(Mineable.Destroy), null, nameof(OnDestroyMined));
 
-			patch(typeof(SkillRecord), nameof(SkillRecord.Learn), null, nameof(OnSkillLearned));
+			patch(typeof(SkillRecord), nameof(SkillRecord.Learn), nameof(BeforeSkillLearned), nameof(OnSkillLearned));
 		}
 
 		public static void OnMapLoaded()
@@ -51,7 +51,7 @@ namespace Rimchallenge
 			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				Log.Message(p + " can trade " + (p.trader == null));
+				Log.Message(p + " can trade " + (p.trader != null));
 				if (p.trader != null) {
 					return;
 				}
@@ -106,10 +106,14 @@ namespace Rimchallenge
 			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance);
 		}
 
-		public static void OnSkillLearned(SkillRecord __instance)
+		public static void BeforeSkillLearned(SkillRecord __instance, ref int __state) {
+			__state = __instance.levelInt;
+		}
+
+		public static void OnSkillLearned(SkillRecord __instance, ref int __state)
 		{
-			//Log.Message("Skill learned " + __instance);
-			ChallengeManager.instance.currentChallenge.OnSkillLearned(__instance);
+			Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+			ChallengeManager.instance.currentChallenge.OnSkillLearned(__instance, pawn, __state);
 		}
 	}
 }

@@ -5,6 +5,10 @@
     <url>https://github.com/undera/rimchallenge</url>
     <targetVersion>0.18.0</targetVersion>
     <description>
-        Mod adds challenge choice to the game. After you complete the challenge, you get the reward.
+Mod adds challenge concept to the RimWorld game.
+
+Challenge is a condition in game that you have to complete. Like "Kill 100 animals" or "Create a masterpiece sculpture". Challenges are meant to be not easy, and you are rewarded for completing them.
+
+Completed challenges are remembered by game and not available for choice in any storyline. You can reset completed challenges back via mod settings menu.
     </description>
 </ModMetaData>

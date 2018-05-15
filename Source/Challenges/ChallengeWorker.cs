@@ -27,19 +27,6 @@ namespace Verse
 			this.def = def;
 		}
 
-		private IEnumerable<Thing> GetReward()
-		{
-			List<Thing> res = new List<Thing>();
-			for (int j = 0; j < def.reward.Count; j++)
-			{
-				Thing thing = ThingMaker.MakeThing(def.reward[j].thingDef);
-				thing.stackCount = def.reward[j].count;
-				res.Add(thing);
-			}
-
-			return res;
-		}
-
 		public virtual float getProgressFloat()
 		{
 			//Log.Message("Def "+def);
@@ -56,7 +43,7 @@ namespace Verse
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.AnyPlayerHomeMap); // drop around base
 			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.AnyPlayerHomeMap, false);
 			Find.LetterStack.ReceiveLetter("ChallengeCompleted".Translate(), def.messageComplete, LetterDefOf.PositiveEvent, targetInfo, null);
-			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, GetReward());
+			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, def.GetReward());
 		}
 
         public virtual bool CanPick()
@@ -80,7 +67,7 @@ namespace Verse
         {
         }
 
-        internal void OnSkillLearned(SkillRecord skill)
+		public virtual void OnSkillLearned(SkillRecord skill, Pawn pawn, int oldSkillLevel)
         {
         }
    	}

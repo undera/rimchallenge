@@ -469,6 +469,16 @@
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 </node>
+<node COLOR="#00b439" CREATED="1526382668862" ID="ID_1278518863" MODIFIED="1526382673314" TEXT="Randomize rewards">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font NAME="SansSerif" SIZE="16"/>
+<node COLOR="#990000" CREATED="1526382674296" ID="ID_921904621" MODIFIED="1526382675116" TEXT="ItemCollectionGeneratorUtility">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1526382692479" ID="ID_55859762" MODIFIED="1526382693229" TEXT="ItemCollectionGenerator_Rewards">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+</node>
 </node>
 <node COLOR="#0033ff" CREATED="1525601730869" ID="ID_1400941" MODIFIED="1526125060873" POSITION="right" TEXT="Challenge set per skill">
 <edge STYLE="sharp_bezier" WIDTH="8"/>

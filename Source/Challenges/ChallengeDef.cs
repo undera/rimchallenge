@@ -12,7 +12,8 @@ namespace Verse
         [MustTranslate]
 		public string messageComplete = "You have completed the challenge! Get your well-deserved reward!";
 
-		public List<ThingCountClass> reward=new List<ThingCountClass>(0);
+		private List<ThingCountClass> rewardDef=new List<ThingCountClass>(0);
+		private List<Thing> reward = new List<Thing>(0);
 
 		internal int targetValue=0;
 
@@ -157,12 +158,32 @@ namespace Verse
 		internal string RewardsText()
 		{
             string stringBuilder = "";
-            foreach (ThingCountClass current in reward)
+			foreach (Thing current in GetReward())
             {
-                string stringLabel = GenLabel.ThingLabel(current.thingDef, null, current.count).CapitalizeFirst();
+				string stringLabel = GenLabel.ThingLabel(current.def, null, current.stackCount).CapitalizeFirst();
                 stringBuilder += ("   -" + stringLabel + "\n");
             }
             return stringBuilder;
+		}
+
+		public IEnumerable<Thing> GetReward()
+		{
+			if (reward.NullOrEmpty())
+			{
+				if (rewardDef.NullOrEmpty())
+				{
+					ItemCollectionGenerator_Rewards gen = new ItemCollectionGenerator_Rewards();
+					reward = gen.Generate(default(ItemCollectionGeneratorParams));
+				}
+				else {
+					foreach (ThingCountClass t in rewardDef) {
+						Thing thing = ThingMaker.MakeThing(t.thingDef);
+                        thing.stackCount = t.count;
+						reward.Add(thing);					
+					}
+				}
+			}
+			return reward;
 		}
 
 		private static void ClampInCoordinateLimits(ChallengeDef rp)

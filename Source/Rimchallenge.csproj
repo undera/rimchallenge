@@ -24,10 +24,8 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Challenges\ChallengeDef.cs" />
     <Compile Include="Challenges\Challenge_NColonists.cs" />
-    <Compile Include="ChallengesTab.cs" />
     <Compile Include="EventBridge.cs" />
     <Compile Include="Challenges\ChallengeWorker.cs" />
-    <Compile Include="ChallengesTabWorker.cs" />
     <Compile Include="ChallengeManager.cs" />
     <Compile Include="Challenges\Challenge_KillAnimals.cs" />
     <Compile Include="Challenges\Challenge_KillAnimalsAll.cs" />
@@ -35,14 +33,18 @@
     <Compile Include="Challenges\Challenge_MineOutResources.cs" />
     <Compile Include="Challenges\Challenge_MineOutAll.cs" />
     <Compile Include="CompletedChallengesList.cs" />
-    <Compile Include="IncidentWorker_ChallengeAvailable.cs" />
-    <Compile Include="ChallengeAvailableLetter.cs" />
-    <Compile Include="JobDriver_Challenge.cs" />
-    <Compile Include="UITools.cs" />
-    <Compile Include="ChallengeJobDefOf.cs" />
+    <Compile Include="Challenges.UI\ChallengeAvailableLetter.cs" />
+    <Compile Include="Challenges.UI\ChallengeJobDefOf.cs" />
+    <Compile Include="Challenges.UI\ChallengesTab.cs" />
+    <Compile Include="Challenges.UI\ChallengesTabWorker.cs" />
+    <Compile Include="Challenges.UI\IncidentWorker_ChallengeAvailable.cs" />
+    <Compile Include="Challenges.UI\JobDriver_Challenge.cs" />
+    <Compile Include="Challenges.UI\UITools.cs" />
+    <Compile Include="Challenges\Challenge_SkillLevel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />
+    <Folder Include="Challenges.UI\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

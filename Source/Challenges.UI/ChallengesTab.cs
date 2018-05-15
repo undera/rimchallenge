@@ -168,7 +168,7 @@ namespace Rimchallenge
 				Widgets.Label(rect6, "Locked".Translate());
 				Text.Anchor = TextAnchor.UpperLeft;
 			}
-			else if (showDebugBtns && !ChallengeManager.instance.HasChallenge() && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
+			else if (Prefs.DevMode && !ChallengeManager.instance.HasChallenge() && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
 			{
 				SoundDef.Named("ResearchStart").PlayOneShotOnCamera(null);
 				ChallengeManager.instance.StartChallenge(selectedChallenge);

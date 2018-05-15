@@ -6,11 +6,11 @@
         <label>Reach 10 Colonists</label>
         <description>Have 10 colonists at the same time</description>
         <targetValue>10</targetValue>
-        <reward>
+        <rewardDef>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>5</Medicine>
             <Silver>100</Silver>
-        </reward>    
+        </rewardDef>    
         <TabViewX>0</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -20,11 +20,11 @@
         <label>Reach 20 Colonists</label>
         <description>Have 20 colonists at the same time. Can you manage this to happen?</description>
         <targetValue>20</targetValue>
-        <reward>
+        <rewardDef>
             <MealSurvivalPack>20</MealSurvivalPack>
             <Medicine>10</Medicine>
             <Gold>50</Gold>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
@@ -37,11 +37,11 @@
         <label>Reach 50 Colonists</label>
         <description>Have 20 colonists at the same time. Is it possible at all?</description>
         <targetValue>50</targetValue>
-        <reward>
+        <rewardDef>
             <Component>20</Component>
             <GlitterworldMedicine>10</GlitterworldMedicine>
             <Gold>500</Gold>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
@@ -55,9 +55,9 @@
         <label>Kill 100 Animals</label>
         <description>You need some fresh meat to feed your growing colony. It's easy to get it from wildlife around.</description>
         <targetValue>100</targetValue>
-        <reward>
+        <rewardDef>
             <Gun_HeavySMG>1</Gun_HeavySMG>
-        </reward>            
+        </rewardDef>            
         <TabViewX>1</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -67,9 +67,9 @@
         <label>Kill 500 Animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
         <targetValue>500</targetValue>
-        <reward>
+        <rewardDef>
             <Gun_AssaultRifle>2</Gun_AssaultRifle>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>kill100animals</li>
         </prerequisites>
@@ -82,9 +82,9 @@
         <label>Kill 1000 Animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
         <targetValue>1000</targetValue>
-        <reward>
+        <rewardDef>
             <Gun_ChargeRifle>3</Gun_ChargeRifle>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>kill500animals</li>
         </prerequisites>
@@ -99,9 +99,9 @@
             Just clean up the map, and your pets too.
         </description>
         <applicability>Only available on maps with a lot of wildlife.</applicability>
-        <reward>
+        <rewardDef>
             <Gun_Minigun>1</Gun_Minigun>
-        </reward>            
+        </rewardDef>            
         <TabViewX>1</TabViewX>
         <TabViewY>3</TabViewY>
     </ChallengeDef>
@@ -113,13 +113,13 @@
         <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
-        <reward>
+        <rewardDef>
             <Jade>200</Jade>
             <Uranium>100</Uranium>
             <Steel>50</Steel>
             <Plasteel>20</Plasteel>
             <Gold>10</Gold>
-        </reward>            
+        </rewardDef>            
         <TabViewX>2</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -129,13 +129,13 @@
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <reward>
+        <rewardDef>
             <Jade>500</Jade>
             <Uranium>250</Uranium>
             <Steel>500</Steel>
             <Plasteel>200</Plasteel>
             <Gold>100</Gold>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>mineOut100</li>
         </prerequisites>
@@ -148,17 +148,39 @@
         <label>Mine Out All</label>
         <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <reward>
+        <rewardDef>
             <Jade>2000</Jade>
             <Uranium>1000</Uranium>
             <Steel>500</Steel>
             <Plasteel>200</Plasteel>
             <Gold>1000</Gold>
-        </reward>            
+        </rewardDef>            
         <prerequisites>
              <li>mineOutResources</li>
         </prerequisites>
         <TabViewX>2</TabViewX>
         <TabViewY>2</TabViewY>
+    </ChallengeDef>
+
+    <ChallengeDef>
+        <defName>reachSkill14</defName>
+        <workerClass>Challenge_SkillLevel</workerClass>
+        <label>Become a Master</label>
+        <description>Teach one of your colonists to be a master (level 14) in some skill</description>
+        <targetValue>14</targetValue>
+        <TabViewX>3</TabViewX>
+        <TabViewY>0</TabViewY>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>reachSkill20</defName>
+        <workerClass>Challenge_SkillLevel</workerClass>
+        <label>Become a Legendary Master</label>
+        <description>Teach one of your colonists to be a legendary master (level 20) in some skill</description>
+        <targetValue>20</targetValue>
+        <prerequisites>
+             <li>reachSkill14</li>
+        </prerequisites>
+        <TabViewX>3</TabViewX>
+        <TabViewY>1</TabViewY>
     </ChallengeDef>
 </Defs>

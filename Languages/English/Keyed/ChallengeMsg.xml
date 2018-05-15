@@ -19,4 +19,6 @@ Are you capable of doing this with no cries and no excuses?
     <ResetComplete>Reset Complete Challenges</ResetComplete>
     <TalkTo>Talk to {0}</TalkTo>
     <CantTalk>Can't talk</CantTalk>
+
+    <MessageSkillChanged>{0} has reached level {2}-{1} in {3} </MessageSkillChanged>
 </LanguageData>
