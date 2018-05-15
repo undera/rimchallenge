@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 using Harmony;
 using RimWorld;
 using UnityEngine;
 using Verse;
-using Verse.AI;
-using Verse.AI.Group;
 
 namespace Rimchallenge
 {
@@ -52,9 +51,9 @@ namespace Rimchallenge
 			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				Log.Message(p + " can trade " + p.trader);
+				Log.Message(p + " can trade " + (p.trader == null));
 			}
-			ChallengeManager.instance.SetQuestOwner(__result.RandomElement());
+			ChallengeManager.instance.SetQuestOwner(__result.Where(x => x.trader==null).RandomElementWithFallback(null));
 		}
 
 		public static void RenderPawnAt(PawnRenderer __instance)

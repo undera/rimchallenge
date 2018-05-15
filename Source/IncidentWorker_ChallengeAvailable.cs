@@ -17,7 +17,7 @@ namespace RimWorld
 				QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.TravelerGroup, null, incidentParms), Find.TickManager.TicksGame);
 				Find.Storyteller.incidentQueue.Add(qi);
 			}
-			return !ChallengeManager.instance.HasChallenge(); // TODO: remove when debugged, after lowering chance
+			return !ChallengeManager.instance.HasChallenge(); 
 		}
 
 		protected override bool TryExecuteWorker(IncidentParms parms)
@@ -29,7 +29,8 @@ namespace RimWorld
 				return false;
 			}
 
-			Find.LetterStack.ReceiveLetter(ChallengeManager.MakeLetter(offeredChallenge), null);
+			Letter letter = ChallengeManager.MakeLetter(offeredChallenge, Find.WorldPawns.AllPawnsAlive.RandomElement());
+			Find.LetterStack.ReceiveLetter(letter);
 
 			return true;
 		}

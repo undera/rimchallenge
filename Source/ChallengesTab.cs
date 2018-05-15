@@ -85,7 +85,7 @@ namespace Rimchallenge
 
 		private void DrawChallengeDetails(ref Rect viewRect, ref float leftHeight)
 		{
-			string text = this.selectedChallenge.RewardsText();
+			string text = "Rewards:\n"+this.selectedChallenge.RewardsText();
 
             /*
 			float num2 = this.selectedChallenge.targetValue;

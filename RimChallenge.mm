@@ -409,10 +409,10 @@
 <node COLOR="#0033ff" CREATED="1525887136776" ID="ID_260091036" MODIFIED="1525887138458" POSITION="right" TEXT="TODO">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1525887150592" FOLDED="true" ID="ID_1307498734" MODIFIED="1526153119677" TEXT="Left Side of Challenge Tab">
+<node COLOR="#00b439" CREATED="1525887150592" FOLDED="true" ID="ID_1307498734" MODIFIED="1526375378812" TEXT="Left Side of Challenge Tab">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1525887194108" ID="ID_298791388" MODIFIED="1525948081183" TEXT="Display description of challenge">
+<node COLOR="#990000" CREATED="1525887194108" ID="ID_298791388" MODIFIED="1526375361210" TEXT="Display description of challenge">
 <font NAME="SansSerif" SIZE="14"/>
 <icon BUILTIN="full-1"/>
 <icon BUILTIN="button_ok"/>
@@ -423,25 +423,18 @@
 <icon BUILTIN="full-2"/>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1525948094817" ID="ID_1559833715" MODIFIED="1525948104964" TEXT="Debug button to complete">
-<font NAME="SansSerif" SIZE="14"/>
-<icon BUILTIN="button_ok"/>
-</node>
-<node COLOR="#990000" CREATED="1525887383758" ID="ID_1306067206" MODIFIED="1525887392108" TEXT="Debug button to reset state">
-<font NAME="SansSerif" SIZE="14"/>
-</node>
 <node COLOR="#990000" CREATED="1525887394654" ID="ID_384210037" MODIFIED="1525887400744" TEXT="Debug button to interrupt">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525887182488" FOLDED="true" ID="ID_1701862817" MODIFIED="1526153124820" TEXT="Right side of CHallenge tab">
+<node COLOR="#00b439" CREATED="1525887182488" FOLDED="true" ID="ID_1701862817" MODIFIED="1526375381197" TEXT="Right side of CHallenge tab">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525893351375" ID="ID_112989422" MODIFIED="1525893357841" TEXT="Improve connector display">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525887260815" FOLDED="true" ID="ID_1225351784" MODIFIED="1526153127613" TEXT="Challenfe Definitions">
+<node COLOR="#00b439" CREATED="1525887260815" FOLDED="true" ID="ID_1225351784" MODIFIED="1526375353009" TEXT="Challenfe Definitions">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1525887269169" ID="ID_410206311" MODIFIED="1525938911613" TEXT="Write proper descriptions">
@@ -472,15 +465,9 @@
 <font NAME="SansSerif" SIZE="16"/>
 <icon BUILTIN="full-2"/>
 </node>
-<node COLOR="#00b439" CREATED="1525938948803" ID="ID_497635054" MODIFIED="1526144383651" TEXT="Perma-Save">
+<node COLOR="#00b439" CREATED="1526375421531" ID="ID_925430593" MODIFIED="1526375447715" TEXT="Make quest giver&apos;s faction relations to change on changing quest or completing the quest">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<icon BUILTIN="button_ok"/>
-</node>
-<node COLOR="#00b439" CREATED="1525893403175" ID="ID_890069094" MODIFIED="1525938064366" TEXT="Map applicability">
-<edge STYLE="bezier" WIDTH="thin"/>
-<font NAME="SansSerif" SIZE="16"/>
-<icon BUILTIN="button_ok"/>
 </node>
 </node>
 <node COLOR="#0033ff" CREATED="1525601730869" ID="ID_1400941" MODIFIED="1526125060873" POSITION="right" TEXT="Challenge set per skill">

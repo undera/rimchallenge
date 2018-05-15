@@ -4,16 +4,17 @@
     <ChallengeAccepted>Challenge Accepted!</ChallengeAccepted>
     <ChallengeCompleted>Challenge Completed</ChallengeCompleted>
     <ChallengeDescr>
-    Hey survivor!\n
-    \n
-    I'm interested in changing this world to better, 
-    and would appreciate your help by sharing some goods. Here's the task:\n
-    \n
-    {0}\n
-    \n
-    {1}\n
-    \n
-    Are you capable of doing this?
+Hey survivor!
+
+My name is {0} from {1}. I want to see what kind of neighbor you are. Are you weak and not worth talking to, or you are man of a word? I wanna challenge you!
+        
+Here is the task: {2}
+
+{3}
+
+For completing this, I will send you:
+{4}
+Are you capable of doing this with no cries and no excuses? 
     </ChallengeDescr>
     <ResetComplete>Reset Complete Challenges</ResetComplete>
     <TalkTo>Talk to {0}</TalkTo>

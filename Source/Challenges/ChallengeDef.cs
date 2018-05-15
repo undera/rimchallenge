@@ -89,7 +89,6 @@ namespace Verse
 
 		public static void GenerateNonOverlappingCoordinates()
         {
-			Log.Message("GenerateNonOverlappingCoordinates");
             foreach (ChallengeDef current in DefDatabase<ChallengeDef>.AllDefsListForReading)
             {
 				current.x = current.TabViewX;
@@ -157,7 +156,7 @@ namespace Verse
 
 		internal string RewardsText()
 		{
-            string stringBuilder = "Rewards: \n";
+            string stringBuilder = "";
             foreach (ThingCountClass current in reward)
             {
                 string stringLabel = GenLabel.ThingLabel(current.thingDef, null, current.count).CapitalizeFirst();
