@@ -7,6 +7,7 @@ namespace Rimchallenge
 {
 	public class ChallengeAvailableLetter : StandardLetter
 	{
+		internal Pawn giver;
 		internal ChallengeDef challenge;
         public ChallengeAvailableLetter()
 		{
@@ -30,6 +31,9 @@ namespace Rimchallenge
                 {
                     action = delegate
                     {
+						if (giver == ChallengeManager.instance.questOwner) {
+							ChallengeManager.instance.SetQuestOwner(null);
+						}
 						ChallengeManager.instance.StartChallenge(challenge);
                         Find.LetterStack.RemoveLetter(this);
                     },

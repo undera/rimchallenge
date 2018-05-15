@@ -85,6 +85,25 @@ namespace Rimchallenge
 			progress = 0;
 		}
 
+		public static Letter MakeLetter(ChallengeDef challenge, Pawn author=null)
+        {
+            string text = "Hey survivor!\n\nI'm interested in changing this world to better, and would appreciate your help by sharing some goods. Here's the task:\n";
+            text += "\n" + challenge.description;
+            text += "\n\n" + challenge.RewardsText();
+            text += "\n\nAre you capable of doing this?";
+
+            ChallengeAvailableLetter letter = new ChallengeAvailableLetter();
+            letter.label = "Challenge Available";
+            letter.title = "Message Over Radio from a Stranger: " + challenge.LabelCap;
+            letter.text = text;
+            letter.radioMode = true;
+            letter.challenge = challenge;
+			letter.giver = author;
+            letter.StartTimeout(60000);
+
+            return letter;
+        }
+
 		internal void SetQuestOwner(Pawn pawn)
 		{
 			questOwner = pawn;

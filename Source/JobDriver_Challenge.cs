@@ -29,16 +29,19 @@ namespace RimWorld
 			Toil giveChallenge = new Toil();
             giveChallenge.initAction = delegate
             {
-                Pawn actor = giveChallenge.actor;
+                //Pawn actor = giveChallenge.actor;
+                //Find.WindowStack.Add(new Dialog_Challenge(actor, this.TargetPawn));
 
-				Log.Message("Actor: "+actor);
-				Log.Message("Target: " + TargetPawn);
-				Log.Message("Quest owner: " + ChallengeManager.instance.questOwner);
-
-                //if (this.TargetPawn.CanTradeNow)
-                //{
-                //    Find.WindowStack.Add(new Dialog_Trade(actor, this.TargetPawn));
-                //}
+				Letter letter = ChallengeManager.MakeLetter(ChallengeManager.instance.questOwnerChallenge, this.TargetPawn);
+				letter.OpenLetter();
+                /*
+				DiaNode diaNode = new DiaNode(this.text);
+                diaNode.options.AddRange(this.Choices);
+                WindowStack arg_39_0 = Find.WindowStack;
+                DiaNode nodeRoot = diaNode;
+                bool flag = this.radioMode;
+                arg_39_0.Add(new Dialog_NodeTree(nodeRoot, false, flag, this.title));
+                */
             };
             yield return giveChallenge;
         }

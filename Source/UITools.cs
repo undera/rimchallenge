@@ -42,7 +42,7 @@ namespace Rimchallenge
 
 		public static void AddChallengeOptions(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
 		{
-			foreach (LocalTargetInfo current6 in GenUI.TargetsAt(clickPos, TargetingParameters.ForTrade(), true))
+			foreach (LocalTargetInfo current6 in GenUI.TargetsAt(clickPos, ForQuest(), true))
 			{
 				LocalTargetInfo dest = current6;
 				if (!pawn.CanReach(dest, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn))
@@ -71,17 +71,30 @@ namespace Rimchallenge
 					{
 						str = " (" + pTarg.Faction.Name + ")";
 					}
+
 					string label = string.Format("Talk to {0}", new object[]
 					{
-						pTarg.LabelShort + ", " + pTarg.TraderKind.label
+						pTarg.LabelShort
 					}) + str;
-					Action action = action4;
 					MenuOptionPriority priority2 = MenuOptionPriority.InitiateSocial;
 					Thing thing = dest.Thing;
-					opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action, priority2, null, thing, 0f, null, null), pawn, pTarg, "ReservedBy"));
+					FloatMenuOption opt = new FloatMenuOption(label, action4, priority2, null, thing, 0f, null, null);
+					opts.Add(FloatMenuUtility.DecoratePrioritizedTask(opt, pawn, pTarg, "ReservedBy"));
 				}
 			}
 		}
 
+		public static TargetingParameters ForQuest()
+		{
+			TargetingParameters targetingParameters = new TargetingParameters();
+			targetingParameters.canTargetPawns = true;
+			targetingParameters.canTargetBuildings = false;
+			targetingParameters.mapObjectTargetsMustBeAutoAttackable = false;
+			targetingParameters.validator = delegate (TargetInfo x)
+			{
+				return x.Thing is Pawn && x.Thing == ChallengeManager.instance.questOwner;
+			};
+			return targetingParameters;
+		}
 	}
 }

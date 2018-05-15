@@ -52,7 +52,7 @@ namespace Rimchallenge
 			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				Log.Message(p + " can trade " + p.CanTradeNow);
+				Log.Message(p + " can trade " + p.trader);
 			}
 			ChallengeManager.instance.SetQuestOwner(__result.RandomElement());
 		}
@@ -73,7 +73,6 @@ namespace Rimchallenge
 			{
 				if (current.Thing is Pawn && ChallengeManager.instance.questOwner == current.Thing)
 				{
-					Log.Message("Working with: " + pawn);
 					UITools.AddChallengeOptions(clickPos, pawn, __result);
 				}
 			}

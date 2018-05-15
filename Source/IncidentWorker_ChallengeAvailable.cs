@@ -29,27 +29,11 @@ namespace RimWorld
 				return false;
 			}
 
-			Find.LetterStack.ReceiveLetter(GetLetter(offeredChallenge), null);
+			Find.LetterStack.ReceiveLetter(ChallengeManager.MakeLetter(offeredChallenge), null);
 
 			return true;
 		}
 
-		private Letter GetLetter(ChallengeDef challenge)
-		{
-			string text = "Hey survivor!\n\nI'm interested in changing this world to better, and would appreciate your help by sharing some goods. Here's the task:\n";
-			text += "\n" + challenge.description;
-			text += "\n\n" + challenge.RewardsText();
-            text += "\n\nAre you capable of doing this?";
 
-			ChallengeAvailableLetter letter = new ChallengeAvailableLetter();
-			letter.label = "Challenge Available";
-			letter.title = "Message Over Radio from a Stranger: " + challenge.LabelCap;
-			letter.text = text;
-			letter.radioMode = true;
-			letter.challenge = challenge;
-			letter.StartTimeout(60000);
-            
-			return letter;
-		}
 	}
 }
