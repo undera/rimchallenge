@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using System.Text;
 
+// TODO: translate
 namespace Rimchallenge
 {   
 	[StaticConstructorOnStartup]

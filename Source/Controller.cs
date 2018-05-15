@@ -34,7 +34,7 @@ namespace Rimchallenge
         public override void DoSettingsWindowContents(Rect inRect)
 		{
 			Rect btnRect = new Rect(inRect.x+inRect.width / 3, inRect.y+inRect.height / 3, inRect.width / 3, inRect.height / 3);
-			if (Widgets.ButtonText(btnRect, "Reset Complete Challenges", true, false, true))
+			if (Widgets.ButtonText(btnRect, "ResetComplete".Translate(), true, false, true))
 			{
 				GetSettings<CompletedChallengesList>().Reset();
 				WriteSettings();

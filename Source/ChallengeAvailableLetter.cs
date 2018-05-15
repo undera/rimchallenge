@@ -27,7 +27,7 @@ namespace Rimchallenge
         {
             get
             {
-				return new DiaOption("Challenge Accepted!")
+				return new DiaOption("ChallengeAccepted".Translate())
                 {
                     action = delegate
                     {

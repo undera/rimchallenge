@@ -47,7 +47,7 @@ namespace Rimchallenge
 				LocalTargetInfo dest = current6;
 				if (!pawn.CanReach(dest, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn))
 				{
-					opts.Add(new FloatMenuOption("Can't talk (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
+					opts.Add(new FloatMenuOption("CantTalk".Translate()+" (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
 				}
 				else if (pawn.skills.GetSkill(SkillDefOf.Social).TotallyDisabled)
 				{
@@ -72,7 +72,7 @@ namespace Rimchallenge
 						str = " (" + pTarg.Faction.Name + ")";
 					}
 
-					string label = string.Format("Talk to {0}", new object[]
+					string label = "TalkTo".Translate(new object[]
 					{
 						pTarg.LabelShort
 					}) + str;
