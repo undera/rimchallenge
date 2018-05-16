@@ -16,6 +16,7 @@ namespace Verse
 		private List<Thing> reward = new List<Thing>(0);
 
 		internal int targetValue=0;
+		internal int rewardValue = 100;
 
 		public List<ChallengeDef> prerequisites=new List<ChallengeDef>(0);
 
@@ -173,7 +174,9 @@ namespace Verse
 				if (rewardDef.NullOrEmpty())
 				{
 					ItemCollectionGenerator_Rewards gen = new ItemCollectionGenerator_Rewards();
-					reward = gen.Generate(default(ItemCollectionGeneratorParams));
+					ItemCollectionGeneratorParams conf = default(ItemCollectionGeneratorParams);
+					conf.totalMarketValue = rewardValue;
+					reward = gen.Generate(conf);
 				}
 				else {
 					foreach (ThingCountClass t in rewardDef) {

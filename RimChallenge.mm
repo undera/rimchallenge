@@ -54,6 +54,7 @@
 <node COLOR="#990000" CREATED="1525595377101" ID="ID_112100544" MODIFIED="1526125400819" TEXT="Survive N days without losing people">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="14"/>
+<node COLOR="#111111" CREATED="1526487313158" ID="ID_1516823256" MODIFIED="1526487319237" TEXT="Send some raids"/>
 </node>
 <node COLOR="#990000" CREATED="1525598587639" ID="ID_1419298482" MODIFIED="1526125404880" TEXT="Survive N days with single colonist">
 <edge STYLE="bezier" WIDTH="thin"/>
@@ -85,10 +86,12 @@
 <node COLOR="#00b439" CREATED="1525597279769" ID="ID_1017006801" MODIFIED="1526125247750" TEXT="Skill Aspect">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1525597283710" ID="ID_263531753" MODIFIED="1526125956450" TEXT="Reach max skill level">
+<node COLOR="#990000" CREATED="1525597283710" FOLDED="true" ID="ID_263531753" MODIFIED="1526388803429" TEXT="Reach max skill level">
 <font NAME="SansSerif" SIZE="14"/>
-<icon BUILTIN="full-1"/>
-<node COLOR="#111111" CREATED="1525597359606" ID="ID_218766357" MODIFIED="1525597364877" TEXT="Notify skill levelups"/>
+<icon BUILTIN="button_ok"/>
+<node COLOR="#111111" CREATED="1525597359606" ID="ID_218766357" MODIFIED="1526388796298" TEXT="Notify skill levelups">
+<icon BUILTIN="button_ok"/>
+</node>
 </node>
 </node>
 <node COLOR="#00b439" CREATED="1525596294757" ID="ID_885087713" MODIFIED="1525596300804" TEXT="Battle Aspect">
@@ -108,6 +111,15 @@
 <icon BUILTIN="help"/>
 <node COLOR="#111111" CREATED="1525598259054" ID="ID_632823640" MODIFIED="1525598267495" TEXT="Brawler everyone"/>
 </node>
+<node COLOR="#990000" CREATED="1526401742929" ID="ID_566479034" MODIFIED="1526401756905" TEXT="Survive x4 siege">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1526401757415" ID="ID_1744209887" MODIFIED="1526401763638" TEXT="Survive x4 raid">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1526485280400" ID="ID_1724661825" MODIFIED="1526485280401" TEXT="">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
 </node>
 <node COLOR="#00b439" CREATED="1525597148514" ID="ID_1683975976" MODIFIED="1525597157422" TEXT="Resource Aspect">
 <edge STYLE="bezier" WIDTH="thin"/>
@@ -117,6 +129,9 @@
 <icon BUILTIN="full-1"/>
 </node>
 <node COLOR="#990000" CREATED="1525597196938" ID="ID_1906628803" MODIFIED="1525597205794" TEXT="Have all resource types in stock">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1526400751745" ID="ID_1842990083" MODIFIED="1526400764317" TEXT="Raids triggered by this">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
@@ -136,12 +151,15 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1525601115871" ID="ID_1121338960" MODIFIED="1525601119563" TEXT="Trading Aspect">
+<node COLOR="#00b439" CREATED="1525601115871" ID="ID_1121338960" MODIFIED="1526489214214" TEXT="Trading Aspect">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1526125617045" ID="ID_275921772" MODIFIED="1526125670315" TEXT="Trade out N silver">
 <font NAME="SansSerif" SIZE="14"/>
 <icon BUILTIN="full-1"/>
+</node>
+<node COLOR="#990000" CREATED="1526489215173" ID="ID_1105529905" MODIFIED="1526489224044" TEXT="Have single deal of N silver">
+<font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
 <node COLOR="#00b439" CREATED="1525596342171" ID="ID_1168456165" MODIFIED="1525596344715" TEXT="Social Aspect">
@@ -240,6 +258,9 @@
 </node>
 <node COLOR="#111111" CREATED="1525601150474" ID="ID_1853370767" MODIFIED="1525601156234" TEXT="Produce and sell each drug"/>
 </node>
+<node COLOR="#990000" CREATED="1526400686160" ID="ID_1250022060" MODIFIED="1526400705205" TEXT="&quot;Police raid&quot; triggered by a lot of drugs on storage">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
 </node>
 <node COLOR="#00b439" CREATED="1525598031659" ID="ID_568786748" MODIFIED="1525598035541" TEXT="Construction Aspect">
 <edge STYLE="bezier" WIDTH="thin"/>
@@ -295,6 +316,9 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 <node COLOR="#990000" CREATED="1525595714252" ID="ID_220981569" MODIFIED="1525595728335" TEXT="Change colony place N times">
+<font NAME="SansSerif" SIZE="14"/>
+</node>
+<node COLOR="#990000" CREATED="1526401067918" ID="ID_1375776363" MODIFIED="1526401076784" TEXT="LAunch N colonists into space">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>

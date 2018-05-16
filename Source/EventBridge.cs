@@ -38,6 +38,9 @@ namespace Rimchallenge
 			patch(typeof(Mineable), nameof(Mineable.Destroy), null, nameof(OnDestroyMined));
 
 			patch(typeof(SkillRecord), nameof(SkillRecord.Learn), nameof(BeforeSkillLearned), nameof(OnSkillLearned));
+
+			patch(typeof(GenRecipe), "PostProcessProduct", null, nameof(OnThingProduced));
+
 		}
 
 		public static void OnMapLoaded()
@@ -51,7 +54,7 @@ namespace Rimchallenge
 			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				Log.Message(p + " can trade " + (p.trader != null));
+				Log.Message(p + " can trade " + p.TraderKind.label);
 				if (p.trader != null) {
 					return;
 				}
@@ -115,5 +118,10 @@ namespace Rimchallenge
 			Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
 			ChallengeManager.instance.currentChallenge.OnSkillLearned(__instance, pawn, __state);
 		}
-	}
+
+		public static void OnThingProduced(Thing __result, Pawn worker)
+        {
+			ChallengeManager.instance.currentChallenge.OnThingProduced(__result, worker);
+        }
+    }
 }

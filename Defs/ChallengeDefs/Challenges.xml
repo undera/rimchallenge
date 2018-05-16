@@ -6,11 +6,7 @@
         <label>Reach 10 Colonists</label>
         <description>Have 10 colonists at the same time</description>
         <targetValue>10</targetValue>
-        <rewardDef>
-            <MealSurvivalPack>20</MealSurvivalPack>
-            <Medicine>5</Medicine>
-            <Silver>100</Silver>
-        </rewardDef>    
+        <rewardValue>100</rewardValue>
         <TabViewX>0</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -20,11 +16,7 @@
         <label>Reach 20 Colonists</label>
         <description>Have 20 colonists at the same time. Can you manage this to happen?</description>
         <targetValue>20</targetValue>
-        <rewardDef>
-            <MealSurvivalPack>20</MealSurvivalPack>
-            <Medicine>10</Medicine>
-            <Gold>50</Gold>
-        </rewardDef>            
+        <rewardValue>1000</rewardValue>
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
@@ -37,11 +29,7 @@
         <label>Reach 50 Colonists</label>
         <description>Have 20 colonists at the same time. Is it possible at all?</description>
         <targetValue>50</targetValue>
-        <rewardDef>
-            <Component>20</Component>
-            <GlitterworldMedicine>10</GlitterworldMedicine>
-            <Gold>500</Gold>
-        </rewardDef>            
+        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
@@ -55,9 +43,7 @@
         <label>Kill 100 Animals</label>
         <description>You need some fresh meat to feed your growing colony. It's easy to get it from wildlife around.</description>
         <targetValue>100</targetValue>
-        <rewardDef>
-            <Gun_HeavySMG>1</Gun_HeavySMG>
-        </rewardDef>            
+        <rewardValue>100</rewardValue>
         <TabViewX>1</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -67,9 +53,7 @@
         <label>Kill 500 Animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
         <targetValue>500</targetValue>
-        <rewardDef>
-            <Gun_AssaultRifle>2</Gun_AssaultRifle>
-        </rewardDef>            
+        <rewardValue>500</rewardValue>
         <prerequisites>
              <li>kill100animals</li>
         </prerequisites>
@@ -82,9 +66,7 @@
         <label>Kill 1000 Animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
         <targetValue>1000</targetValue>
-        <rewardDef>
-            <Gun_ChargeRifle>3</Gun_ChargeRifle>
-        </rewardDef>            
+        <rewardValue>1000</rewardValue>
         <prerequisites>
              <li>kill500animals</li>
         </prerequisites>
@@ -95,13 +77,11 @@
         <defName>killAllAnimals</defName>
         <workerClass>Challenge_KillAnimalsAll</workerClass>
         <label>Kill All Animals</label>
-        <description>Okay, that's enough of them eating your crops, getting mad and attacking colonists. 
-            Just clean up the map, and your pets too.
+        <description>Just clean up the map from all animals. That's enough of them eating your crops, getting mad and attacking colonists. 
+            And don't forget your pets, 'cause I have allergy.
         </description>
         <applicability>Only available on maps with a lot of wildlife.</applicability>
-        <rewardDef>
-            <Gun_Minigun>1</Gun_Minigun>
-        </rewardDef>            
+        <rewardValue>10000</rewardValue>
         <TabViewX>1</TabViewX>
         <TabViewY>3</TabViewY>
     </ChallengeDef>
@@ -113,13 +93,7 @@
         <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
-        <rewardDef>
-            <Jade>200</Jade>
-            <Uranium>100</Uranium>
-            <Steel>50</Steel>
-            <Plasteel>20</Plasteel>
-            <Gold>10</Gold>
-        </rewardDef>            
+        <rewardValue>100</rewardValue>        
         <TabViewX>2</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -129,13 +103,7 @@
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <rewardDef>
-            <Jade>500</Jade>
-            <Uranium>250</Uranium>
-            <Steel>500</Steel>
-            <Plasteel>200</Plasteel>
-            <Gold>100</Gold>
-        </rewardDef>            
+        <rewardValue>500</rewardValue>         
         <prerequisites>
              <li>mineOut100</li>
         </prerequisites>
@@ -148,13 +116,7 @@
         <label>Mine Out All</label>
         <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <rewardDef>
-            <Jade>2000</Jade>
-            <Uranium>1000</Uranium>
-            <Steel>500</Steel>
-            <Plasteel>200</Plasteel>
-            <Gold>1000</Gold>
-        </rewardDef>            
+        <rewardValue>1000</rewardValue>          
         <prerequisites>
              <li>mineOutResources</li>
         </prerequisites>
@@ -168,6 +130,7 @@
         <label>Become a Master</label>
         <description>Teach one of your colonists to be a master (level 14) in some skill</description>
         <targetValue>14</targetValue>
+        <rewardValue>500</rewardValue>
         <TabViewX>3</TabViewX>
         <TabViewY>0</TabViewY>
     </ChallengeDef>
@@ -177,10 +140,33 @@
         <label>Become a Legendary Master</label>
         <description>Teach one of your colonists to be a legendary master (level 20) in some skill</description>
         <targetValue>20</targetValue>
+        <rewardValue>1000</rewardValue>
         <prerequisites>
              <li>reachSkill14</li>
         </prerequisites>
         <TabViewX>3</TabViewX>
         <TabViewY>1</TabViewY>
     </ChallengeDef>
+
+    <ChallengeDef>
+        <defName>masterpieceSculpture</defName>
+        <workerClass>Challenge_Masterpiece</workerClass>
+        <label>Outshine Michelangelo</label>
+        <description>Build a legendary masterpiece sculpture, the one of unpreceded beauty and market value.</description>
+        <targetValue>1</targetValue>
+        <rewardValue>1000</rewardValue>
+        <TabViewX>4</TabViewX>
+        <TabViewY>0</TabViewY>
+    </ChallengeDef>
+    <ChallengeDef>
+        <defName>masterpieceApparel</defName>
+        <workerClass>Challenge_Masterpiece</workerClass>
+        <label>Haute Couture</label>
+        <description>Sew apparel of stunning quality, dress the colonist to the envy of all guests.</description>
+        <targetValue>2</targetValue>
+        <rewardValue>1000</rewardValue>
+        <TabViewX>4</TabViewX>
+        <TabViewY>1</TabViewY>
+    </ChallengeDef>
+
 </Defs>

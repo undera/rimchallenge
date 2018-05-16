@@ -70,6 +70,10 @@ namespace Verse
 		public virtual void OnSkillLearned(SkillRecord skill, Pawn pawn, int oldSkillLevel)
         {
         }
+
+		public virtual void OnThingProduced(Thing result, Pawn worker)
+        {
+        }
    	}
 
 	public class ChallengeWorkerNone : ChallengeWorker
