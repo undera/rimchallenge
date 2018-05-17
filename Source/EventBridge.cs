@@ -54,8 +54,13 @@ namespace Rimchallenge
 			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				Log.Message(p + " can trade " + p.TraderKind.label);
+				if (p.TraderKind != null)
+				{
+					Log.Message(p + " can trade " + p.TraderKind.label);
+				}
+
 				if (p.trader != null) {
+					Log.Message("INterrupt on "+p.Label);
 					return;
 				}
 			}

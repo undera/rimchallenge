@@ -5,166 +5,168 @@ using UnityEngine;
 
 namespace Verse
 {
-	public class ChallengeDef:Def
+	public class ChallengeDef : Def
 	{
-		public Type workerClass=typeof(ChallengeWorker);
+		public Type workerClass = typeof(ChallengeWorker);
 
-        [MustTranslate]
+		[MustTranslate]
 		public string messageComplete = "You have completed the challenge! Get your well-deserved reward!";
 
-		private List<ThingCountClass> rewardDef=new List<ThingCountClass>(0);
+		private List<ThingCountClass> rewardDef = new List<ThingCountClass>(0);
 		private List<Thing> reward = new List<Thing>(0);
 
-		internal int targetValue=0;
+		internal int targetValue = 0;
 		internal int rewardValue = 100;
 
-		public List<ChallengeDef> prerequisites=new List<ChallengeDef>(0);
+		public List<ChallengeDef> prerequisites = new List<ChallengeDef>(0);
 
-		internal float TabViewX=0;
-        internal float TabViewY=0;
+		internal float TabViewX = 0;
+		internal float TabViewY = 0;
 
 		private float x = 1f;
 
-        private float y = 1f;
+		private float y = 1f;
 
 		private ChallengeWorker _checker;
-        internal string applicability="";
+		internal string applicability = "";
 
-     
-		public ChallengeWorker checkerInstance { 
-			get { 
+
+		public ChallengeWorker checkerInstance
+		{
+			get
+			{
 				if (_checker == null)
-                {
-                    _checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this); // TODO: won't constructors do undesired resource hogs?
-                }
+				{
+					_checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this); // TODO: won't constructors do undesired resource hogs?
+				}
 				return _checker;
 			}
 		}
 
 		public float TabViewFlexX
-        {
-            get
-            {
-                return this.x;
-            }
-        }
+		{
+			get
+			{
+				return this.x;
+			}
+		}
 
 		public float TabViewFlexY
-        {
-            get
-            {
-                return this.y;
-            }
-        }
+		{
+			get
+			{
+				return this.y;
+			}
+		}
 
 		public bool IsFinished
-        {
+		{
 			get; set; // TODO remember and save
-        }
+		}
 
-        public bool CanStartNow
-        {
-            get
-            {
+		public bool CanStartNow
+		{
+			get
+			{
 				if (IsFinished)
 				{
 					return false;
 				}
 
 				for (int m = 0; m < this.prerequisites.CountAllowNull<ChallengeDef>(); m++)
-                {
+				{
 					ChallengeDef required = this.prerequisites[m];
 					if (required != null && !required.IsFinished)
-                    {
+					{
 						return false;
-                    }
-                }
+					}
+				}
 
 				return checkerInstance.CanPick();
-            }
-        }
+			}
+		}
 
 		public float EstimateProgressFloat()
-        {
+		{
 			return checkerInstance.getProgressFloat();
-        }
+		}
 
 		public static void GenerateNonOverlappingCoordinates()
-        {
-            foreach (ChallengeDef current in DefDatabase<ChallengeDef>.AllDefsListForReading)
-            {
+		{
+			foreach (ChallengeDef current in DefDatabase<ChallengeDef>.AllDefsListForReading)
+			{
 				current.x = current.TabViewX;
 				current.y = current.TabViewY;
-            }
-            int num = 0;
-            while (true)
-            {
-                bool flag = false;
-                foreach (ChallengeDef current2 in DefDatabase<ChallengeDef>.AllDefsListForReading)
-                {
-                    foreach (ChallengeDef current3 in DefDatabase<ChallengeDef>.AllDefsListForReading)
-                    {
-                        if (current2 != current3)
-                        {
-                            bool flag2 = Mathf.Abs(current2.x - current3.x) < 0.5f;
-                            bool flag3 = Mathf.Abs(current2.y - current3.y) < 0.25f;
-                            if (flag2 && flag3)
-                            {
-                                flag = true;
-                                if (current2.x <= current3.x)
-                                {
-                                    current2.x -= 0.1f;
-                                    current3.x += 0.1f;
-                                }
-                                else
-                                {
-                                    current2.x += 0.1f;
-                                    current3.x -= 0.1f;
-                                }
-                                if (current2.y <= current3.y)
-                                {
-                                    current2.y -= 0.1f;
-                                    current3.y += 0.1f;
-                                }
-                                else
-                                {
-                                    current2.y += 0.1f;
-                                    current3.y -= 0.1f;
-                                }
-                                current2.x += 0.001f;
-                                current2.y += 0.001f;
-                                current3.x -= 0.001f;
-                                current3.y -= 0.001f;
-                                ChallengeDef.ClampInCoordinateLimits(current2);
-                                ChallengeDef.ClampInCoordinateLimits(current3);
-                            }
-                        }
-                    }
-                }
-                if (!flag)
-                {
-                    break;
-                }
-                num++;
-                if (num > 200)
-                {
-                    goto Block_4;
-                }
-            }
-            return;
-        Block_4:
-            Log.Error("Couldn't relax research project coordinates apart after " + 200 + " passes.");
-        }
+			}
+			int num = 0;
+			while (true)
+			{
+				bool flag = false;
+				foreach (ChallengeDef current2 in DefDatabase<ChallengeDef>.AllDefsListForReading)
+				{
+					foreach (ChallengeDef current3 in DefDatabase<ChallengeDef>.AllDefsListForReading)
+					{
+						if (current2 != current3)
+						{
+							bool flag2 = Mathf.Abs(current2.x - current3.x) < 0.5f;
+							bool flag3 = Mathf.Abs(current2.y - current3.y) < 0.25f;
+							if (flag2 && flag3)
+							{
+								flag = true;
+								if (current2.x <= current3.x)
+								{
+									current2.x -= 0.1f;
+									current3.x += 0.1f;
+								}
+								else
+								{
+									current2.x += 0.1f;
+									current3.x -= 0.1f;
+								}
+								if (current2.y <= current3.y)
+								{
+									current2.y -= 0.1f;
+									current3.y += 0.1f;
+								}
+								else
+								{
+									current2.y += 0.1f;
+									current3.y -= 0.1f;
+								}
+								current2.x += 0.001f;
+								current2.y += 0.001f;
+								current3.x -= 0.001f;
+								current3.y -= 0.001f;
+								ChallengeDef.ClampInCoordinateLimits(current2);
+								ChallengeDef.ClampInCoordinateLimits(current3);
+							}
+						}
+					}
+				}
+				if (!flag)
+				{
+					break;
+				}
+				num++;
+				if (num > 200)
+				{
+					goto Block_4;
+				}
+			}
+			return;
+		Block_4:
+			Log.Error("Couldn't relax research project coordinates apart after " + 200 + " passes.");
+		}
 
 		internal string RewardsText()
 		{
-            string stringBuilder = "";
+			string stringBuilder = "";
 			foreach (Thing current in GetReward())
-            {
+			{
 				string stringLabel = GenLabel.ThingLabel(current.def, null, current.stackCount).CapitalizeFirst();
-                stringBuilder += ("   -" + stringLabel + "\n");
-            }
-            return stringBuilder;
+				stringBuilder += ("   -" + stringLabel + "\n");
+			}
+			return stringBuilder;
 		}
 
 		public IEnumerable<Thing> GetReward()
@@ -173,16 +175,19 @@ namespace Verse
 			{
 				if (rewardDef.NullOrEmpty())
 				{
-					ItemCollectionGenerator_Rewards gen = new ItemCollectionGenerator_Rewards();
+					ItemCollectionGenerator gen = new ItemCollectionGenerator_Rewards();
 					ItemCollectionGeneratorParams conf = default(ItemCollectionGeneratorParams);
-					conf.totalMarketValue = rewardValue;
+					conf.validator = ((ThingDef td) => td != ThingDefOf.Silver);
+					conf.totalMarketValue = Rand.Range(rewardValue/2f, rewardValue);
 					reward = gen.Generate(conf);
 				}
-				else {
-					foreach (ThingCountClass t in rewardDef) {
+				else
+				{
+					foreach (ThingCountClass t in rewardDef)
+					{
 						Thing thing = ThingMaker.MakeThing(t.thingDef);
-                        thing.stackCount = t.count;
-						reward.Add(thing);					
+						thing.stackCount = t.count;
+						reward.Add(thing);
 					}
 				}
 			}
@@ -190,20 +195,20 @@ namespace Verse
 		}
 
 		private static void ClampInCoordinateLimits(ChallengeDef rp)
-        {
-            if (rp.x < 0f)
-            {
-                rp.x = 0f;
-            }
-            if (rp.y < 0f)
-            {
-                rp.y = 0f;
-            }
-            if (rp.y > 6.5f)
-            {
-                rp.y = 6.5f;
-            }
-        }
+		{
+			if (rp.x < 0f)
+			{
+				rp.x = 0f;
+			}
+			if (rp.y < 0f)
+			{
+				rp.y = 0f;
+			}
+			if (rp.y > 6.5f)
+			{
+				rp.y = 6.5f;
+			}
+		}
 
 	}
 }
