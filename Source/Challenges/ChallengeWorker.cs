@@ -9,6 +9,8 @@ namespace Verse
 {
 	public abstract class ChallengeWorker
 	{
+		private static readonly IntRange RaidDelay = new IntRange(2000, 5000);
+
 		public ChallengeDef def { get; set; }
 		public Pawn giverPawn;
 		private int _progress = 0;
@@ -40,7 +42,7 @@ namespace Verse
 		{
 			def.IsFinished = true;
 
-			if (giverPawn!=null)
+			if (giverPawn != null)
 			{
 				Log.Message("Affect " + giverPawn.Faction + " with " + (def.rewardValue / 500f));
 				giverPawn.Faction.AffectGoodwillWith(Faction.OfPlayer, def.rewardValue / 500f);
@@ -56,17 +58,20 @@ namespace Verse
 
 		}
 
-		public void Interrupt() { 
-            if (giverPawn != null)
-            {
-				string text = "MessageRelationsDegrade".Translate(new object[]
-                {
-					giverPawn.Faction
-                });
-				Messages.Message(text.CapitalizeFirst(), MessageTypeDefOf.NegativeEvent);
-				Log.Message("Affect "+ giverPawn.Faction+" with "+(-def.rewardValue / 500f));
+		public void Interrupt()
+		{
+			if (giverPawn != null)
+			{
 				giverPawn.Faction.AffectGoodwillWith(Faction.OfPlayer, -def.rewardValue / 500f);
-            }
+				string text = "MessageRelationsDegrade".Translate(new object[] {giverPawn.Faction});
+				Messages.Message(text.CapitalizeFirst(), MessageTypeDefOf.NegativeEvent);
+				Log.Message("Affect " + giverPawn.Faction + " with " + (-def.rewardValue / 500f));
+
+				if (giverPawn.Faction.RelationWith(Faction.OfPlayer).hostile) {
+					TriggerRaid(giverPawn.Faction);
+				}
+
+			}
 			ChallengeManager.instance.ClearChallenge();
 		}
 
@@ -97,6 +102,27 @@ namespace Verse
 
 		public virtual void OnThingProduced(Thing result, Pawn worker)
 		{
+		}
+
+		public void TriggerRaid(Faction enemyFac)
+		{
+			Map map = Find.AnyPlayerHomeMap;
+			IntVec3 spawnSpot;
+			if (!CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => map.reachability.CanReachColony(c), map, CellFinder.EdgeRoadChance_Neutral, out spawnSpot))
+			{
+				return;
+			}
+
+			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, map);
+			incidentParms.forced = true;
+			incidentParms.faction = enemyFac;
+			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+			incidentParms.raidArrivalMode = PawnsArriveMode.EdgeWalkIn;
+			incidentParms.spawnCenter = spawnSpot;
+			incidentParms.points *= 1.35f;
+			int when = Find.TickManager.TicksGame + ChallengeWorker.RaidDelay.RandomInRange;
+			QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), when);
+			Find.Storyteller.incidentQueue.Add(qi);
 		}
 	}
 
