@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Defs>
-    <ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>10colonists</defName>
         <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 10 Colonists</label>
@@ -9,8 +9,8 @@
         <rewardValue>1000</rewardValue>
         <TabViewX>0</TabViewX>
         <TabViewY>0</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>20colonists</defName>
         <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 20 Colonists</label>
@@ -22,8 +22,8 @@
         </prerequisites>
         <TabViewX>0</TabViewX>
         <TabViewY>1</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>50colonists</defName>
         <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 50 Colonists</label>
@@ -35,9 +35,9 @@
         </prerequisites>
         <TabViewX>0</TabViewX>
         <TabViewY>2</TabViewY>
-    </ChallengeDef>
+    </Challenges.ChallengeDef>
 
-    <ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>kill100animals</defName>
         <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 100 Animals</label>
@@ -46,8 +46,8 @@
         <rewardValue>1000</rewardValue>
         <TabViewX>1</TabViewX>
         <TabViewY>0</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>kill500animals</defName>
         <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 500 Animals</label>
@@ -59,8 +59,8 @@
         </prerequisites>
         <TabViewX>1</TabViewX>
         <TabViewY>1</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>kill1000animals</defName>
         <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 1000 Animals</label>
@@ -72,8 +72,8 @@
         </prerequisites>
         <TabViewX>1</TabViewX>
         <TabViewY>2</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>killAllAnimals</defName>
         <workerClass>Challenges.Challenge_KillAnimalsAll</workerClass>
         <label>Kill All Animals</label>
@@ -84,9 +84,9 @@
         <rewardValue>20000</rewardValue>
         <TabViewX>1</TabViewX>
         <TabViewY>3</TabViewY>
-    </ChallengeDef>
+    </Challenges.ChallengeDef>
 
-    <ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>mineOut100</defName>
         <workerClass>Challenges.Challenge_MineOutN</workerClass>
         <label>Mine Out 100 Tiles</label>
@@ -96,8 +96,8 @@
         <rewardValue>1000</rewardValue>        
         <TabViewX>2</TabViewX>
         <TabViewY>0</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>mineOutResources</defName>
         <workerClass>Challenges.Challenge_MineOutResources</workerClass>
         <label>Mine Out All Resources</label>
@@ -109,8 +109,8 @@
         </prerequisites>
         <TabViewX>2</TabViewX>
         <TabViewY>1</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>mineOutAll</defName>
         <workerClass>Challenges.Challenge_MineOutAll</workerClass>
         <label>Mine Out All</label>
@@ -122,9 +122,9 @@
         </prerequisites>
         <TabViewX>2</TabViewX>
         <TabViewY>2</TabViewY>
-    </ChallengeDef>
+    </Challenges.ChallengeDef>
 
-    <ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>reachSkill14</defName>
         <workerClass>Challenges.Challenge_SkillLevel</workerClass>
         <label>Become a Master</label>
@@ -133,8 +133,8 @@
         <rewardValue>5000</rewardValue>
         <TabViewX>3</TabViewX>
         <TabViewY>0</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>reachSkill20</defName>
         <workerClass>Challenges.Challenge_SkillLevel</workerClass>
         <label>Become a Legendary Master</label>
@@ -146,9 +146,9 @@
         </prerequisites>
         <TabViewX>3</TabViewX>
         <TabViewY>1</TabViewY>
-    </ChallengeDef>
+    </Challenges.ChallengeDef>
 
-    <ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>masterpieceSculpture</defName>
         <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Outshine Michelangelo</label>
@@ -157,8 +157,8 @@
         <rewardValue>10000</rewardValue>
         <TabViewX>4</TabViewX>
         <TabViewY>0</TabViewY>
-    </ChallengeDef>
-    <ChallengeDef>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
         <defName>masterpieceApparel</defName>
         <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Haute Couture</label>
@@ -167,6 +167,6 @@
         <rewardValue>10000</rewardValue>
         <TabViewX>4</TabViewX>
         <TabViewY>1</TabViewY>
-    </ChallengeDef>
+    </Challenges.ChallengeDef>
 
 </Defs>

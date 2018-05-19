@@ -3,7 +3,7 @@
 
   <JobDef>
 	<defName>ChallengeGiverJob</defName>
-	<driverClass>JobDriver_Challenge</driverClass>
+	<driverClass>Rimchallenge.JobDriver_Challenge</driverClass>
 	<reportString>checking for quests with TargetA.</reportString>
   </JobDef>
   

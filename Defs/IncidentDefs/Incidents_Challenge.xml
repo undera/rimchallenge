@@ -6,18 +6,12 @@
 		<label>Challenge Available</label>
         <letterLabel>Challenge Available</letterLabel>
 
-        <!--
-        <letterText>Challenge Available Descr</letterText>
-        <letterDef>PositiveEvent</letterDef>
-        
-        <minRefireDays>1</minRefireDays>
-        -->
 		<category>Misc</category>
         <targetTypes>
           <li>MapPlayerHome</li>
         </targetTypes>
-		<workerClass>IncidentWorker_ChallengeAvailable</workerClass>
-		<baseChance>100</baseChance>
+		<workerClass>Rimchallenge.IncidentWorker_ChallengeAvailable</workerClass>
+		<baseChance>10</baseChance>
 	</IncidentDef>
 
 </Defs>
