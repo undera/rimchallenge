@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class Challenge_KillAnimalsAll : Challenge_KillAnimals
 	{

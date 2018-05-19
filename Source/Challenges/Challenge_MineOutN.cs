@@ -1,7 +1,8 @@
 ﻿using RimWorld;
 using RimWorld.Planet;
+using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class Challenge_MineOutN : ChallengeWorker
 	{

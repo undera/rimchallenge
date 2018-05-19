@@ -1,5 +1,7 @@
 ﻿using System;
-namespace Verse
+using Verse;
+
+namespace Challenges
 {
 	public class Challenge_MineOutAll : Challenge_MineOutResources
 	{

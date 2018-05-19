@@ -4,7 +4,7 @@ using Rimchallenge;
 using Verse;
 using Verse.AI;
 
-namespace RimWorld
+namespace Rimchallenge
 {
 	public class JobDriver_Challenge : JobDriver
     {

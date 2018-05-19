@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class Challenge_NColonists : ChallengeWorker
 	{

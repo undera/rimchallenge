@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Linq;
+using Challenges;
 using Rimchallenge;
+using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace RimWorld
+namespace Rimchallenge
 {
 	public class IncidentWorker_ChallengeAvailable : IncidentWorker
 	{

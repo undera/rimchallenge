@@ -5,7 +5,7 @@ using RimWorld;
 using Verse;
 using System;
 
-namespace Verse
+namespace Challenges
 {
 	public abstract class ChallengeWorker
 	{
@@ -116,7 +116,7 @@ namespace Verse
 			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, map);
 			incidentParms.forced = true;
 			incidentParms.faction = enemyFac;
-			incidentParms.raidStrategy = RaidStrategyDefOf.ImmediateAttack;
+			incidentParms.raidStrategy = DefDatabase<RaidStrategyDef>.AllDefs.RandomElement();
 			incidentParms.raidArrivalMode = PawnsArriveMode.EdgeWalkIn;
 			incidentParms.spawnCenter = spawnSpot;
 			incidentParms.points *= 1.35f;

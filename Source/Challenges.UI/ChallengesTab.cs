@@ -6,6 +6,7 @@ using Verse.Sound;
 using System;
 using System.Linq;
 using System.Text;
+using Challenges;
 
 // TODO: translate
 namespace Rimchallenge

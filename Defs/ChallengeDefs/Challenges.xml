@@ -2,7 +2,7 @@
 <Defs>
     <ChallengeDef>
         <defName>10colonists</defName>
-        <workerClass>Challenge_NColonists</workerClass>
+        <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 10 Colonists</label>
         <description>Have 10 colonists at the same time</description>
         <targetValue>10</targetValue>
@@ -12,7 +12,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>20colonists</defName>
-        <workerClass>Challenge_NColonists</workerClass>
+        <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 20 Colonists</label>
         <description>Have 20 colonists at the same time. Can you manage this to happen?</description>
         <targetValue>20</targetValue>
@@ -25,7 +25,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>50colonists</defName>
-        <workerClass>Challenge_NColonists</workerClass>
+        <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 50 Colonists</label>
         <description>Have 20 colonists at the same time. Is it possible at all?</description>
         <targetValue>50</targetValue>
@@ -39,7 +39,7 @@
 
     <ChallengeDef>
         <defName>kill100animals</defName>
-        <workerClass>Challenge_KillAnimals</workerClass>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 100 Animals</label>
         <description>You need some fresh meat to feed your growing colony. It's easy to get it from wildlife around.</description>
         <targetValue>100</targetValue>
@@ -49,7 +49,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>kill500animals</defName>
-        <workerClass>Challenge_KillAnimals</workerClass>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 500 Animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
         <targetValue>500</targetValue>
@@ -62,7 +62,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>kill1000animals</defName>
-        <workerClass>Challenge_KillAnimals</workerClass>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
         <label>Kill 1000 Animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
         <targetValue>1000</targetValue>
@@ -75,7 +75,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>killAllAnimals</defName>
-        <workerClass>Challenge_KillAnimalsAll</workerClass>
+        <workerClass>Challenges.Challenge_KillAnimalsAll</workerClass>
         <label>Kill All Animals</label>
         <description>Just clean up the map from all animals. That's enough of them eating your crops, getting mad and attacking colonists. 
             And don't forget your pets, 'cause I have allergy.
@@ -88,7 +88,7 @@
 
     <ChallengeDef>
         <defName>mineOut100</defName>
-        <workerClass>Challenge_MineOutN</workerClass>
+        <workerClass>Challenges.Challenge_MineOutN</workerClass>
         <label>Mine Out 100 Tiles</label>
         <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
@@ -99,7 +99,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>mineOutResources</defName>
-        <workerClass>Challenge_MineOutResources</workerClass>
+        <workerClass>Challenges.Challenge_MineOutResources</workerClass>
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
@@ -112,7 +112,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>mineOutAll</defName>
-        <workerClass>Challenge_MineOutAll</workerClass>
+        <workerClass>Challenges.Challenge_MineOutAll</workerClass>
         <label>Mine Out All</label>
         <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
@@ -126,7 +126,7 @@
 
     <ChallengeDef>
         <defName>reachSkill14</defName>
-        <workerClass>Challenge_SkillLevel</workerClass>
+        <workerClass>Challenges.Challenge_SkillLevel</workerClass>
         <label>Become a Master</label>
         <description>Teach one of your colonists to be a master (level 14) in some skill</description>
         <targetValue>14</targetValue>
@@ -136,7 +136,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>reachSkill20</defName>
-        <workerClass>Challenge_SkillLevel</workerClass>
+        <workerClass>Challenges.Challenge_SkillLevel</workerClass>
         <label>Become a Legendary Master</label>
         <description>Teach one of your colonists to be a legendary master (level 20) in some skill</description>
         <targetValue>20</targetValue>
@@ -150,7 +150,7 @@
 
     <ChallengeDef>
         <defName>masterpieceSculpture</defName>
-        <workerClass>Challenge_Masterpiece</workerClass>
+        <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Outshine Michelangelo</label>
         <description>Build a legendary masterpiece sculpture, the one of unpreceded beauty and market value.</description>
         <targetValue>1</targetValue>
@@ -160,7 +160,7 @@
     </ChallengeDef>
     <ChallengeDef>
         <defName>masterpieceApparel</defName>
-        <workerClass>Challenge_Masterpiece</workerClass>
+        <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Haute Couture</label>
         <description>Create apparel of stunning quality, dress the colonist to the envy of all guests.</description>
         <targetValue>2</targetValue>

@@ -42,6 +42,7 @@
     <Compile Include="Challenges.UI\UITools.cs" />
     <Compile Include="Challenges\Challenge_SkillLevel.cs" />
     <Compile Include="Challenges\Challenge_Masterpiece.cs" />
+    <Compile Include="Challenges\Challenge_SurviveRaids.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

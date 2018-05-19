@@ -6,6 +6,7 @@ using Harmony;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Challenges;
 
 namespace Rimchallenge
 {

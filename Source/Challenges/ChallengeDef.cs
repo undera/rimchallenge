@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
+using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class ChallengeDef : Def
 	{

@@ -1,7 +1,8 @@
 ﻿using System;
 using RimWorld;
+using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class Challenge_Masterpiece : ChallengeWorker
 	{

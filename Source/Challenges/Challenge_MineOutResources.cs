@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using Verse;
 
-namespace Verse
+namespace Challenges
 {
 	public class Challenge_MineOutResources : Challenge_MineOutN
 	{
