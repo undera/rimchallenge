@@ -5,11 +5,11 @@ namespace Verse
 {
 	public class Challenge_MineOutN : ChallengeWorker
 	{
-		public Challenge_MineOutN(ChallengeDef def) : base(def)
+		public Challenge_MineOutN(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 		}
 
-        public override void OnDestroyMined(Mineable block)
+		public override void OnDestroyMined(Mineable block)
 		{
 			progress++;
             if (progress >= def.targetValue)

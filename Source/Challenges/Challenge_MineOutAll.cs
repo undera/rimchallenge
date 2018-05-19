@@ -3,7 +3,7 @@ namespace Verse
 {
 	public class Challenge_MineOutAll : Challenge_MineOutResources
 	{
-		public Challenge_MineOutAll(ChallengeDef def) : base(def)
+		public Challenge_MineOutAll(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 			totalTiles = TileCount(true);
 		}

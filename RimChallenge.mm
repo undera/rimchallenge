@@ -347,10 +347,11 @@
 <font NAME="SansSerif" SIZE="16"/>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1526152090825" ID="ID_921020640" MODIFIED="1526152115883" POSITION="right" TEXT="Maybe also &quot;Quest Giver&quot; way to enable it?">
+<node COLOR="#0033ff" CREATED="1526152090825" ID="ID_921020640" MODIFIED="1526726495032" POSITION="right" TEXT="Maybe also &quot;Quest Giver&quot; way to enable it?">
 <edge STYLE="sharp_bezier" WIDTH="8"/>
 <font NAME="SansSerif" SIZE="18"/>
 <icon BUILTIN="help"/>
+<icon BUILTIN="button_ok"/>
 </node>
 <node COLOR="#0033ff" CREATED="1525627738568" ID="ID_1372767184" MODIFIED="1526152121838" POSITION="right" TEXT="Lifecycle">
 <edge STYLE="sharp_bezier" WIDTH="8"/>

@@ -3,7 +3,7 @@ namespace Verse
 {
 	public class Challenge_KillAnimals : ChallengeWorker
 	{
-		public Challenge_KillAnimals(ChallengeDef def) : base(def)
+		public Challenge_KillAnimals(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 		}
 

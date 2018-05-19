@@ -5,7 +5,7 @@ namespace Verse
 {
 	public class Challenge_Masterpiece : ChallengeWorker
 	{
-		public Challenge_Masterpiece(ChallengeDef def) : base(def)
+		public Challenge_Masterpiece(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 		}
 

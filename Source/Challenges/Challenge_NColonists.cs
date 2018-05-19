@@ -8,7 +8,7 @@ namespace Verse
 	public class Challenge_NColonists : ChallengeWorker
 	{
 		private int colonistCount = -1;
-		public Challenge_NColonists(ChallengeDef def) : base(def)
+		public Challenge_NColonists(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 		}
 

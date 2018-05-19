@@ -168,18 +168,18 @@ namespace Rimchallenge
 				Widgets.Label(rect6, "Locked".Translate());
 				Text.Anchor = TextAnchor.UpperLeft;
 			}
-			else if (Prefs.DevMode && !ChallengeManager.instance.HasChallenge() && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
+			else if (Prefs.DevMode && Widgets.ButtonText(rect6, "Accept This Challenge", true, false, true))
 			{
 				SoundDef.Named("ResearchStart").PlayOneShotOnCamera(null);
-				ChallengeManager.instance.StartChallenge(selectedChallenge);
+				ChallengeManager.instance.StartChallenge(selectedChallenge,Find.WorldPawns.AllPawnsAlive.RandomElement());
 			}
-			if (showDebugBtns)
+			if (Prefs.DevMode)
 			{
 				Rect rect7 = rect6;
 				rect7.x += rect7.width + 20f;
 				if (Widgets.ButtonText(rect7, "Debug Insta-finish", true, false, true))
 				{
-					ChallengeManager.instance.StartChallenge(selectedChallenge);
+					ChallengeManager.instance.StartChallenge(selectedChallenge,Find.WorldPawns.AllPawnsAlive.RandomElement());
 					ChallengeManager.instance.currentChallenge.Complete();
 				}
 			}

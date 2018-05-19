@@ -12,6 +12,7 @@ namespace Rimchallenge
 		public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone();
 
 		public ChallengeDef currentChallengeDef;
+		public Pawn currentChallengeGiver;
 		public int progress = 0;
 		public static ChallengeManager instance { get; private set; }
 
@@ -47,7 +48,7 @@ namespace Rimchallenge
 		public override void LoadedGame()
 		{
 			Log.Message("Loaded game: " + currentChallengeDef + " with " + progress);
-			StartChallenge(currentChallengeDef);
+			StartChallenge(currentChallengeDef, currentChallengeGiver);
 			currentChallenge.progress = progress;
 		}
 
@@ -55,6 +56,7 @@ namespace Rimchallenge
 		{
 			//Log.Message("Expose data called for ChallengeManager");
 			Scribe_Defs.Look<ChallengeDef>(ref this.currentChallengeDef, "currentChallenge");
+			Scribe_References.Look<Pawn>(ref this.currentChallengeGiver, "currentChallengeGiver");
 			Scribe_Values.Look<int>(ref this.progress, "progress");
 			Scribe_References.Look<Pawn>(ref this.questOwner, "questOwner");
 			Scribe_Defs.Look<ChallengeDef>(ref this.questOwnerChallenge, "questOwnerChallenge");
@@ -65,13 +67,18 @@ namespace Rimchallenge
 			return currentChallenge != null && !(currentChallenge is ChallengeWorkerNone);
 		}
 
-		public void StartChallenge(ChallengeDef challengeDef)
+		public void StartChallenge(ChallengeDef challengeDef, Pawn giver)
 		{
+			if (HasChallenge())
+			{
+				currentChallenge.Interrupt();
+			}
+
 			if (challengeDef != null)
 			{
 				Log.Message("Picked a challenge: " + challengeDef);
 				currentChallengeDef = challengeDef;
-				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
+				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef, giver);
 				Log.Message("Current progress: " + currentChallenge.getProgressFloat());
 			}
 		}
@@ -80,6 +87,7 @@ namespace Rimchallenge
 		{
 			currentChallenge = new ChallengeWorkerNone();
 			currentChallengeDef = null;
+			currentChallengeGiver = null;
 			progress = 0;
 		}
 

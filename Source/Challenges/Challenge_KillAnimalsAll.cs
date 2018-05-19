@@ -5,7 +5,7 @@ namespace Verse
 	public class Challenge_KillAnimalsAll : Challenge_KillAnimals
 	{
 		private int totalAnimals = 0;
-		public Challenge_KillAnimalsAll(ChallengeDef def) : base(def)
+		public Challenge_KillAnimalsAll(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
 			totalAnimals = animalCount;
 		}

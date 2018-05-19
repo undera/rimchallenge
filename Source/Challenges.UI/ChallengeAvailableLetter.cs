@@ -34,7 +34,7 @@ namespace Rimchallenge
 						if (giver == ChallengeManager.instance.questOwner) {
 							ChallengeManager.instance.SetQuestOwner(null);
 						}
-						ChallengeManager.instance.StartChallenge(challenge);
+						ChallengeManager.instance.StartChallenge(challenge, giver);
                         Find.LetterStack.RemoveLetter(this);
                     },
                     resolveTree = true
