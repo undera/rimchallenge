@@ -23,11 +23,6 @@ Each traveler group that passes by will have a person with asterisk pulsing, whi
 
 ![](About/ChallengeBringer.png)
 
-## Challenges Overview Tab
-It adds a button in bottom button line called "Challenges", click on it to open challenge view, where you can see possible challenges and their status.
-
-![](About/ChallengeTab.png)
-
 
 ## Help Improving 
 

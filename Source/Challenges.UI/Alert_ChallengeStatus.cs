@@ -8,7 +8,14 @@ namespace Rimchallenge
 	{
 		public override string GetLabel()
 		{
-			return ChallengeManager.instance.currentChallenge.def.LabelCap;
+			if (ChallengeManager.instance.HasChallenge())
+			{
+				return ChallengeManager.instance.currentChallenge.def.LabelCap;
+			}
+			else
+			{
+				return "";
+			}
 		}
 
 		public override string GetExplanation()

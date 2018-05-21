@@ -28,6 +28,8 @@ namespace Rimchallenge
 			{
 				Controller.checkFinished(def);
 			}
+
+			DefDatabase<MainButtonDef>.GetNamed("ChallengesTab").buttonVisible=Prefs.DevMode;
 		}
 
 		internal ChallengeDef GetOfferedChallenge()
@@ -80,8 +82,8 @@ namespace Rimchallenge
 				Log.Message("Picked a challenge: " + challengeDef);
 				currentChallengeDef = challengeDef;
 				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef, giver);
-				Log.Message("Current progress: " + currentChallenge.getProgressFloat());
 				currentChallenge.Started();
+				Log.Message("Current progress: " + currentChallenge.getProgressFloat());
 			}
 		}
 

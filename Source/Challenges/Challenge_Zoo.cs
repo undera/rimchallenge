@@ -26,40 +26,53 @@ namespace Challenges
 		}
 
 		private void Check()
-        {
+		{
 			HashSet<PawnKindDef> found = new HashSet<PawnKindDef>();
-			foreach (Pawn pawn in Find.AnyPlayerHomeMap.mapPawns.AllPawns.Where((Pawn x) => x.RaceProps.Animal && x.Faction == Faction.OfPlayer)) {
-				if (allZooableAnimals.Contains(pawn.kindDef)) {
+			foreach (Pawn pawn in Find.AnyPlayerHomeMap.mapPawns.AllPawns.Where((Pawn x) => x.RaceProps.Animal))
+			{
+				if (!canExit(pawn) || pawn.Faction == Faction.OfPlayer && allZooableAnimals.Contains(pawn.kindDef))
+				{
 					found.Add(pawn.kindDef);
 				}
 			}
+
 			progress = found.Count();
 			if (progress >= def.targetValue)
 			{
 				Complete();
 			}
-			else { 
-				hint="You heard that there is also "+allZooableAnimals.Where(x=>!found.Contains(x)).RandomElement().label+" on this planet...";
+			else
+			{
+				hint = "You heard that there is also " + allZooableAnimals.Where(x => !found.Contains(x)).RandomElement().label + " on this planet...";
 			}
-        }
-
-        public override void Started()
-		{
-			def.targetValue = allZooableAnimals.Count() / def.param1;
 		}
 
-        public override void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
+		private bool canExit(Pawn pawn)
 		{
-			if (allZooableAnimals.Contains(pawn.kindDef)) {
+			IntVec3 spot;
+			return RCellFinder.TryFindRandomExitSpot(pawn, out spot, TraverseMode.ByPawn);
+		}
+
+		public override void Started()
+		{
+			def.targetValue = allZooableAnimals.Count() / def.param1;
+			Check();
+		}
+
+		public override void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
+		{
+			if (allZooableAnimals.Contains(pawn.kindDef))
+			{
 				Check();
 			}
 		}
 
 		public override void OnPawnFactionSet(Pawn pawn)
 		{
-			if (allZooableAnimals.Contains(pawn.kindDef)) {
-                Check();
-            }
+			if (allZooableAnimals.Contains(pawn.kindDef))
+			{
+				Check();
+			}
 		}
 	}
 }

@@ -31,6 +31,9 @@ namespace Challenges
 			{
 				Complete();
 			}
+			else {
+				hint = "Look, there is " + Find.AnyPlayerHomeMap.mapPawns.AllPawns.Where((Pawn x) => x.AnimalOrWildMan()).RandomElement().Label+" still alive";
+			}
 		}
 
 		public override bool CanPick()
