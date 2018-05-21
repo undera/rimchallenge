@@ -47,21 +47,13 @@ namespace Rimchallenge
 		public static void OnMapLoaded()
 		{
 			ChallengeDef.GenerateNonOverlappingCoordinates();
-			// TODO load saved status
 		}
 
 		public static void OnGroupSpawned(IncidentWorker_NeutralGroup __instance, List<Pawn> __result)
 		{
-			Log.Message("Spawned group by " + __instance);
 			foreach (Pawn p in __result)
 			{
-				if (p.TraderKind != null)
-				{
-					Log.Message(p + " can trade " + p.TraderKind.label);
-				}
-
 				if (p.trader != null) {
-					Log.Message("INterrupt on "+p.Label);
 					return;
 				}
 			}

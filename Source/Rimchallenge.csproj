@@ -43,6 +43,8 @@
     <Compile Include="Challenges\Challenge_SkillLevel.cs" />
     <Compile Include="Challenges\Challenge_Masterpiece.cs" />
     <Compile Include="Challenges\Challenge_SurviveRaids.cs" />
+    <Compile Include="Challenges\Challenge_Zoo.cs" />
+    <Compile Include="Challenges.UI\Alert_ChallengeStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />

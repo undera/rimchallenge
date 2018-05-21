@@ -153,7 +153,7 @@
         <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Outshine Michelangelo</label>
         <description>Build a legendary masterpiece sculpture, the one of unpreceded beauty and market value.</description>
-        <targetValue>1</targetValue>
+        <param1>1</param1>
         <rewardValue>10000</rewardValue>
         <TabViewX>4</TabViewX>
         <TabViewY>0</TabViewY>
@@ -163,10 +163,72 @@
         <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Haute Couture</label>
         <description>Create apparel of stunning quality, dress the colonist to the envy of all guests.</description>
-        <targetValue>2</targetValue>
+        <param1>2</param1>
         <rewardValue>10000</rewardValue>
         <TabViewX>4</TabViewX>
         <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
 
+    <!-- Postponed due to question how to track raids completion
+    <Challenges.ChallengeDef>
+        <defName>survive3Raids</defName>
+        <workerClass>Challenges.Challenge_SurviveRaids</workerClass>
+        <label>Survive Triple Raid</label>
+        <description>TODO</description>
+        <param1>1</param1>
+        <rewardValue>2000</rewardValue>
+        <TabViewX>5</TabViewX>
+        <TabViewY>0</TabViewY>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
+        <defName>survive3Raids2Siege</defName>
+        <workerClass>Challenges.Challenge_SurviveRaids</workerClass>
+        <label>Survive Double Siege and Triple Raid</label>
+        <description>TODO</description>
+        <param1>2</param1>
+        <rewardValue>5000</rewardValue>
+         <prerequisites>
+             <li>survive3Raids</li>
+        </prerequisites>
+        <TabViewX>5</TabViewX>
+        <TabViewY>1</TabViewY>
+    </Challenges.ChallengeDef>
+    -->
+
+    <Challenges.ChallengeDef>
+        <defName>zooSmall</defName>
+        <workerClass>Challenges.Challenge_Zoo</workerClass>
+        <label>Own Small Zoo</label>
+        <description>Own a small zoo of different kinds of animals. Tame or buy them.</description>
+        <param1>4</param1>
+        <rewardValue>500</rewardValue>
+        <TabViewX>5</TabViewX>
+        <TabViewY>0</TabViewY>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
+        <defName>zooMedium</defName>
+        <workerClass>Challenges.Challenge_Zoo</workerClass>
+        <label>Own Medium Zoo</label>
+        <description>Own a zoo of all kinds of animals possible in the game</description>
+        <param1>2</param1>
+        <rewardValue>2000</rewardValue>
+        <prerequisites>
+             <li>zooSmall</li>
+        </prerequisites>
+        <TabViewX>5</TabViewX>
+        <TabViewY>1</TabViewY>        
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
+        <defName>zooBig</defName>
+        <workerClass>Challenges.Challenge_Zoo</workerClass>
+        <label>Own Ultimate Zoo</label>
+        <description>Own a zoo of all kinds of animals possible in the game</description>
+        <param1>1</param1>
+        <rewardValue>10000</rewardValue>
+        <prerequisites>
+             <li>zooMedium</li>
+        </prerequisites>
+        <TabViewX>5</TabViewX>
+        <TabViewY>2</TabViewY>
+    </Challenges.ChallengeDef>
 </Defs>

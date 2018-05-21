@@ -16,6 +16,7 @@ namespace Challenges
 		private List<ThingCountClass> rewardDef = new List<ThingCountClass>(0);
 		private List<Thing> reward = new List<Thing>(0);
 
+		internal int param1 = 0;
 		internal int targetValue = 0;
 		internal int rewardValue = 100;
 

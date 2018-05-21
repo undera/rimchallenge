@@ -11,7 +11,9 @@ namespace Challenges
 	{
 		private static readonly IntRange RaidDelay = new IntRange(2000, 5000);
 
-		public ChallengeDef def { get; set; }
+		public ChallengeDef def { get; set; } = new ChallengeDef();
+		public string hint { get; protected set; } = null;
+
 		public Pawn giverPawn;
 		private int _progress = 0;
 
@@ -78,6 +80,9 @@ namespace Challenges
 		public virtual bool CanPick()
 		{
 			return true;
+		}
+
+		public virtual void Started() { 
 		}
 
 		public virtual void OnPawnKilled(Pawn pawn, DamageInfo dinfo)

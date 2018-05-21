@@ -7,7 +7,12 @@ namespace Challenges
 	{
 		public Challenge_MineOutAll(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
-			totalTiles = TileCount(true);
+		}
+
+        public override void Started()
+		{
+			count = -1;
+			totalTiles = TileCount(false);
 		}
 
 		protected override int targetTiles

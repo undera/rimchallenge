@@ -12,7 +12,12 @@ namespace Challenges
 		protected int count = -1;
 		public Challenge_MineOutResources(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
-			totalTiles = TileCount(false);
+		}
+
+        public override void Started()
+		{
+			count = -1;
+			totalTiles = TileCount(true);
 		}
 
 		public override void OnDestroyMined(Mineable block)
@@ -45,9 +50,9 @@ namespace Challenges
 			}
 		}
 
-		public static int TileCount(bool onlyResources = false)
+		public int TileCount(bool onlyResources = false)
 		{
-			int count = 0;
+			int cnt = 0;
 			Map map = Find.AnyPlayerHomeMap;
 			foreach (IntVec3 current in map.AllCells)
 			{
@@ -61,17 +66,17 @@ namespace Challenges
 						{
 							continue;
 						}
-						count++;
+						cnt++;
+						hint = "There is still some "+mineable.def.building.mineableThing.label+" to mine";
 					}
 				}
 			}
-			Log.Message("Resource count: " + count);
-			return count;
+			Log.Message("Tile count: " + cnt);
+			return cnt;
 		}
 
 		private static bool isResource(ThingDef mthing)
 		{
-
 			foreach (ThingCategoryDef tcDef in mthing.thingCategories)
 			{
 				if (ThingCategoryDefOf.Chunks.childCategories.Contains(tcDef))
@@ -79,7 +84,6 @@ namespace Challenges
 					return false;
 				}
 			}
-			//Log.Message("Mineable " + mthing);
 			return true;
 		}
 	}

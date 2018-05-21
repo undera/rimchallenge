@@ -60,7 +60,7 @@ namespace Challenges
 
 		private ThingCategoryDef getItemCategory()
 		{
-			switch (def.targetValue)
+			switch (def.param1)
 			{
 				case 1:
 					return ThingCategoryDefOf.Art;

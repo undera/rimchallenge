@@ -81,6 +81,7 @@ namespace Rimchallenge
 				currentChallengeDef = challengeDef;
 				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef, giver);
 				Log.Message("Current progress: " + currentChallenge.getProgressFloat());
+				currentChallenge.Started();
 			}
 		}
 

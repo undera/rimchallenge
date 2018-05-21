@@ -8,6 +8,10 @@ namespace Challenges
 		private int totalAnimals = 0;
 		public Challenge_KillAnimalsAll(ChallengeDef def, Pawn giver) : base(def, giver)
 		{
+		}
+
+        public override void Started()
+		{
 			totalAnimals = animalCount;
 		}
 
