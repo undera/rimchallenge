@@ -1,6 +1,8 @@
 ﻿using System;
 using Challenges;
 using RimWorld;
+using UnityEngine;
+using Verse;
 
 namespace Rimchallenge
 {
@@ -10,7 +12,8 @@ namespace Rimchallenge
 		{
 			if (ChallengeManager.instance.HasChallenge())
 			{
-				return ChallengeManager.instance.currentChallenge.def.LabelCap;
+				ChallengeWorker cur = ChallengeManager.instance.currentChallenge;
+				return cur.def.LabelCap+" - "+((int)(100 * cur.getProgressFloat())) + "%";
 			}
 			else
 			{
@@ -42,5 +45,15 @@ namespace Rimchallenge
 		{
 			return ChallengeManager.instance.HasChallenge();
 		}
+
+        /*
+        public override Rect DrawAt(float topY, bool minimized)
+		{
+			Rect rect= base.DrawAt(topY, minimized);
+			Rect rect2 = new Rect(rect.x, rect.y, rect.width*ChallengeManager.instance.currentChallenge.getProgressFloat(), rect.height);
+			GUI.DrawTexture(rect2, TexUI.HighlightSelectedTex);
+			return rect;
+		}
+		*/
 	}
 }

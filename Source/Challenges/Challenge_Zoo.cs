@@ -18,7 +18,6 @@ namespace Challenges
 				foreach (PawnKindDef pkdef in DefDatabase<PawnKindDef>.AllDefs.Where(x => x.RaceProps.Animal))
 				{
 					allZooableAnimals.Add(pkdef);
-					Log.Message(pkdef + " " + pkdef.RaceProps.wildness);
 					cnt++;
 				}
 				Log.Message("Total animal kind count: " + allZooableAnimals.Count());
@@ -30,7 +29,7 @@ namespace Challenges
 			HashSet<PawnKindDef> found = new HashSet<PawnKindDef>();
 			foreach (Pawn pawn in Find.AnyPlayerHomeMap.mapPawns.AllPawns.Where((Pawn x) => x.RaceProps.Animal))
 			{
-				if (!canExit(pawn) || pawn.Faction == Faction.OfPlayer && allZooableAnimals.Contains(pawn.kindDef))
+				if (pawn.Spawned && !pawn.Dead && !canExit(pawn) || pawn.Faction == Faction.OfPlayer && allZooableAnimals.Contains(pawn.kindDef))
 				{
 					found.Add(pawn.kindDef);
 				}

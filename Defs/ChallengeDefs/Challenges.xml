@@ -162,7 +162,7 @@
         <defName>masterpieceApparel</defName>
         <workerClass>Challenges.Challenge_Masterpiece</workerClass>
         <label>Make "Haute Couture"</label>
-        <description>Create apparel of stunning quality, dress the colonist to the envy of all guests.</description>
+        <description>Create apparel of legendary beauty, dress the colonist to the envy of all guests.</description>
         <param1>2</param1>
         <rewardValue>10000</rewardValue>
         <TabViewX>4</TabViewX>
