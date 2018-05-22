@@ -15,6 +15,8 @@ namespace Challenges
 			totalAnimals = animalCount;
 		}
 
+		public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
+
 		public override float getProgressFloat()
 		{
 			if (animalCount>totalAnimals)
@@ -45,5 +47,6 @@ namespace Challenges
 			}
 			return base.CanPick();
 		}
+
 	}
 }

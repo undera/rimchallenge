@@ -87,6 +87,46 @@
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
+        <defName>kill25people</defName>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
+        <label>Kill 25 people</label>
+        <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
+        <param1>1</param1>
+        <targetValue>10</targetValue>
+        <rewardValue>500</rewardValue>
+        <TabViewX>1.5</TabViewX>
+        <TabViewY>0</TabViewY>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
+        <defName>kill100people</defName>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
+        <label>Kill 100 people</label>
+        <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
+        <param1>1</param1>
+        <targetValue>100</targetValue>
+        <rewardValue>5000</rewardValue>
+        <TabViewX>1.5</TabViewX>
+        <TabViewY>1</TabViewY>
+        <prerequisites>
+             <li>kill25people</li>
+        </prerequisites>
+    </Challenges.ChallengeDef>
+    <Challenges.ChallengeDef>
+        <defName>kill500people</defName>
+        <workerClass>Challenges.Challenge_KillAnimals</workerClass>
+        <label>Kill 500 people</label>
+        <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
+        <param1>1</param1>
+        <targetValue>500</targetValue>
+        <rewardValue>10000</rewardValue>
+        <TabViewX>1.5</TabViewX>
+        <TabViewY>2</TabViewY>
+        <prerequisites>
+             <li>kill100people</li>
+        </prerequisites>
+    </Challenges.ChallengeDef>
+    
+    <Challenges.ChallengeDef>
         <defName>mineOut100</defName>
         <workerClass>Challenges.Challenge_MineOutN</workerClass>
         <label>Mine Out 100 Tiles</label>

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Verse;
 
 namespace Challenges
@@ -11,7 +12,7 @@ namespace Challenges
 
 		public override void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
 		{
-			if (pawn.AnimalOrWildMan() && Challenge_NColonists.AllColonists.Cast<Thing>().Contains(dinfo.Instigator)) {
+			if (isRightType(pawn) && Challenge_NColonists.AllColonists.Cast<Thing>().Contains(dinfo.Instigator)) {
 				progress++;
 				if (progress >= def.targetValue) {
 					Complete();
@@ -19,6 +20,15 @@ namespace Challenges
 			}
 		}
 
-		public static int animalCount { get { return Find.AnyPlayerHomeMap.mapPawns.AllPawns.Count((Pawn x) => x.AnimalOrWildMan()); } }
+		private bool isRightType(Pawn pawn)
+		{
+			switch (def.param1)
+			{
+				case 1: 
+					return pawn.RaceProps.Humanlike;
+				default: 
+					return pawn.RaceProps.Animal;
+			}
+		}
 	}
 }
