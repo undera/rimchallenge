@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RaidStrategyDef>
+    <defName>StealStrat</defName>
+    <workerClass>Rimchallenge.RaidStrategyWorker_Steal</workerClass>
+    <letterLabelEnemy>robbery</letterLabelEnemy>
+    <arrivalTextEnemy>They will try to steal things from you.</arrivalTextEnemy>
+    <arriveModes>
+      <li>EdgeDrop</li>
+      <li>EdgeWalkIn</li>
+      <li>CenterDrop</li>
+    </arriveModes>
+  </RaidStrategyDef>
+</Defs>

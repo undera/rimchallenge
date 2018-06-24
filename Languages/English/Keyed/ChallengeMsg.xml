@@ -23,4 +23,6 @@ Are you capable of doing this with no cries and no excuses?
     <MessageSkillChanged>{0} has reached level {2}-{1} in {3} </MessageSkillChanged>
     <MessageThingProduced>{0} has finished {1}</MessageThingProduced>
     <MessageRelationsDegrade>Relations with {0} are now worse because of challenge failed</MessageRelationsDegrade>
+    <robbery>Robbery!</robbery>
+    <RobberyRaid>While you were asleep, a group of {0} from {1} have arrived, trying to rob you! You can let them go with your stuff, this will improve their relations with you, or you can attack them.</RobberyRaid>
 </LanguageData>

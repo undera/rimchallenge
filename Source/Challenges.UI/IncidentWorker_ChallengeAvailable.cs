@@ -1,9 +1,5 @@
-﻿using System;
-using System.Linq;
-using Challenges;
-using Rimchallenge;
+﻿using Challenges;
 using RimWorld;
-using RimWorld.Planet;
 using Verse;
 
 namespace Rimchallenge

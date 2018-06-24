@@ -45,10 +45,14 @@
     <Compile Include="Challenges\Challenge_SurviveRaids.cs" />
     <Compile Include="Challenges\Challenge_Zoo.cs" />
     <Compile Include="Challenges.UI\Alert_ChallengeStatus.cs" />
+    <Compile Include="Thieves\IncidentWorker_Robbery.cs" />
+    <Compile Include="Thieves\RaidStrategyWorker_Steal.cs" />
+    <Compile Include="Thieves\LordJob_StealUnconditional.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Challenges\" />
     <Folder Include="Challenges.UI\" />
+    <Folder Include="Thieves\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

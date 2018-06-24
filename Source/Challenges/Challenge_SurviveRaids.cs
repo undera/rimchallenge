@@ -20,6 +20,9 @@ namespace Challenges
 		{
 			switch (def.param1)
 			{
+				case 0:
+					StartRaid(new IntRange(100, 500), DefDatabase<RaidStrategyDef>.GetNamed("StealStrat"));
+                    break;
 				case 1:
 					StartRaid(new IntRange(100, 500), DefDatabase<RaidStrategyDef>.GetNamed("ImmediateAttack"));
 					StartRaid(new IntRange(100, 500), DefDatabase<RaidStrategyDef>.GetNamed("ImmediateAttackSmart"));

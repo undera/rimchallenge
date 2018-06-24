@@ -35,10 +35,6 @@ namespace Rimchallenge
 		internal ChallengeDef GetOfferedChallenge()
 		{
 			IEnumerable<ChallengeDef> possible = DefDatabase<ChallengeDef>.AllDefs.Where(x => x.CanStartNow && x != currentChallengeDef).ToList();
-			foreach (ChallengeDef def in possible)
-			{
-				Log.Message("Possible: " + def);
-			}
 			return possible.RandomElementWithFallback(null);
 		}
 
