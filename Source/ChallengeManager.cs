@@ -46,7 +46,7 @@ namespace Rimchallenge
 
 		public override void LoadedGame()
 		{
-			Log.Message("Loaded game: " + currentChallengeDef + " with " + progress);
+			Log.Message("Loaded game, challenge is: " + currentChallengeDef + " with progress " + progress);
 			StartChallenge(currentChallengeDef, currentChallengeGiver);
 			currentChallenge.progress = progress;
 		}

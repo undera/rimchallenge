@@ -11,6 +11,7 @@
         <workerClass>Rimchallenge.IncidentWorker_ChallengeAvailable</workerClass>
         <baseChance>2</baseChance>
     </IncidentDef>
+    <!--
     <IncidentDef>
         <defName>Robbery</defName>
         <workerClass>Rimchallenge.IncidentWorker_Robbery</workerClass>
@@ -21,4 +22,5 @@
             <li>MapPlayerHome</li>
         </targetTypes>
     </IncidentDef>
+    -->
 </Defs>
