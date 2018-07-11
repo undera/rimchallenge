@@ -33,7 +33,6 @@
     <Compile Include="Challenges\Challenge_MineOutResources.cs" />
     <Compile Include="Challenges\Challenge_MineOutAll.cs" />
     <Compile Include="CompletedChallengesList.cs" />
-    <Compile Include="Challenges.UI\UITools.cs" />
     <Compile Include="Challenges\Challenge_SkillLevel.cs" />
     <Compile Include="Challenges\Challenge_Masterpiece.cs" />
     <Compile Include="Challenges\Challenge_SurviveRaids.cs" />

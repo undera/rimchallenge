@@ -26,7 +26,6 @@ namespace Rimchallenge
 		{
 			patch(typeof(Map), nameof(Map.FinalizeInit), null, nameof(OnMapLoaded));
 			patch(typeof(IncidentWorker_NeutralGroup), "SpawnPawns", null, nameof(OnGroupSpawned));
-			patch(typeof(PawnRenderer), nameof(PawnRenderer.RenderPawnAt), null, nameof(RenderPawnAt), new[] { typeof(Vector3), typeof(RotDrawMode), typeof(bool) });
 
 			// CHALLENGE HOOKS BELOW
 			patch(typeof(Pawn), nameof(Pawn.Kill), null, nameof(OnPawnKilled));
@@ -50,24 +49,8 @@ namespace Rimchallenge
 
 		public static void OnGroupSpawned(IncidentWorker_NeutralGroup __instance, List<Pawn> __result)
 		{
-			foreach (Pawn p in __result)
-			{
-				if (p.trader != null) {
-					return;
-				}
-			}
-			ChallengeManager.instance.SetQuestOwner(__result.RandomElementWithFallback(null));
 		}
-
-		public static void RenderPawnAt(PawnRenderer __instance)
-		{
-			Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-
-			if (ChallengeManager.instance.questOwner == pawn)
-			{
-				UITools.RenderAsteriskOverlay(pawn);
-			}
-		}
+  
   
 
 		// CHALLENGES BELOW
@@ -83,11 +66,6 @@ namespace Rimchallenge
 
 		public static void OnPawnDestroyed(Pawn __instance)
 		{
-			if (ChallengeManager.instance.questOwner == __instance)
-			{
-				ChallengeManager.instance.SetQuestOwner(null);
-			}
-
 			ChallengeManager.instance.currentChallenge.OnPawnDestroyed(__instance);
 		}
 

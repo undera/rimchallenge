@@ -6,7 +6,7 @@ namespace Challenges
 {
 	public class Challenge_SkillLevel : ChallengeWorker
 	{		
-		public Challenge_SkillLevel(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_SkillLevel(ChallengeDef def) : base(def)
 		{
 		}
 

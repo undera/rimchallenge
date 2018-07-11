@@ -10,7 +10,7 @@ namespace Challenges
 	{
 		public static HashSet<PawnKindDef> allZooableAnimals = new HashSet<PawnKindDef>();
 
-		public Challenge_Zoo(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_Zoo(ChallengeDef def) : base(def)
 		{
 			if (allZooableAnimals.Count() == 0)
 			{

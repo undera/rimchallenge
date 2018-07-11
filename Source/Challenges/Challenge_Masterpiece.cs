@@ -6,7 +6,7 @@ namespace Challenges
 {
 	public class Challenge_Masterpiece : ChallengeWorker
 	{
-		public Challenge_Masterpiece(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_Masterpiece(ChallengeDef def) : base(def)
 		{
 		}
 

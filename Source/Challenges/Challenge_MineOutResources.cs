@@ -10,7 +10,7 @@ namespace Challenges
 	{
 		protected int totalTiles = 0;
 		protected int count = -1;
-		public Challenge_MineOutResources(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_MineOutResources(ChallengeDef def) : base(def)
 		{
 		}
 

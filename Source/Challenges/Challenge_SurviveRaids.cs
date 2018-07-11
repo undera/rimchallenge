@@ -7,7 +7,7 @@ namespace Challenges
 {
 	public class Challenge_SurviveRaids : ChallengeWorker
 	{
-		public Challenge_SurviveRaids(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_SurviveRaids(ChallengeDef def) : base(def)
 		{
 		}
 

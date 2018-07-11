@@ -14,7 +14,6 @@ namespace Challenges
 		public ChallengeDef def { get; set; } = new ChallengeDef();
 		public string hint { get; protected set; } = null;
 
-		public Pawn giverPawn;
 		private int _progress = 0;
 
 		public int progress
@@ -27,10 +26,9 @@ namespace Challenges
 			}
 		}
 
-		public ChallengeWorker(ChallengeDef def, Pawn giver)
+		public ChallengeWorker(ChallengeDef def)
 		{
 			this.def = def;
-			this.giverPawn = giver;
 		}
 
 		public virtual float getProgressFloat()
@@ -44,12 +42,6 @@ namespace Challenges
 		{
 			def.IsFinished = true;
 
-			if (giverPawn != null)
-			{
-				Log.Message("Affect " + giverPawn.Faction + " with " + (def.rewardValue / 500f));
-				giverPawn.Faction.AffectGoodwillWith(Faction.OfPlayer, def.rewardValue / 500f);
-			}
-
 			ChallengeManager.instance.ClearChallenge();
 			Controller.ChallengeComplete(def);
 
@@ -62,18 +54,6 @@ namespace Challenges
 
 		public void Interrupt()
 		{
-			if (giverPawn != null)
-			{
-				giverPawn.Faction.AffectGoodwillWith(Faction.OfPlayer, -def.rewardValue / 500f);
-				string text = "MessageRelationsDegrade".Translate(new object[] {giverPawn.Faction});
-				Messages.Message(text.CapitalizeFirst(), MessageTypeDefOf.NegativeEvent);
-				Log.Message("Affect " + giverPawn.Faction + " with " + (-def.rewardValue / 500f));
-
-				if (giverPawn.Faction.RelationWith(Faction.OfPlayer).hostile) {
-					TriggerRaid(giverPawn.Faction);
-				}
-
-			}
 			ChallengeManager.instance.ClearChallenge();
 		}
 
@@ -133,7 +113,7 @@ namespace Challenges
 
 	public class ChallengeWorkerNone : ChallengeWorker
 	{
-		public ChallengeWorkerNone() : base(null, null)
+		public ChallengeWorkerNone() : base(null)
 		{
 		}
 	}

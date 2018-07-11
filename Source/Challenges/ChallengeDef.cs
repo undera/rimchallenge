@@ -39,7 +39,7 @@ namespace Challenges
 			{
 				if (_checker == null)
 				{
-					_checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this, null); // TODO: won't constructors do undesired resource hogs?
+					_checker = (ChallengeWorker)Activator.CreateInstance(this.workerClass, this);
 				}
 				return _checker;
 			}

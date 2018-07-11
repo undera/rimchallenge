@@ -8,7 +8,7 @@ namespace Challenges
 	public class Challenge_NColonists : ChallengeWorker
 	{
 		private int colonistCount = -1;
-		public Challenge_NColonists(ChallengeDef def, Pawn giver) : base(def, giver)
+		public Challenge_NColonists(ChallengeDef def) : base(def)
 		{
 		}
 
