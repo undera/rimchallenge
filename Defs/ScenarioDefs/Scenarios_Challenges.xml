@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ScenarioDef>
+        <defName>Challenge_Picker</defName>
+        <label>Pick a Challenge</label>
+        <description>You will pick a challenge from list of available challenges, after choosing storyteller and generating world map.</description>
+        <scenario>
+            <summary>Choose interesting goals to achieve in game</summary>
+
+            <playerFaction>
+                <def>PlayerFaction</def>
+                <factionDef>PlayerColony</factionDef>
+            </playerFaction>
+
+            <parts>
+                <li Class="Rimchallenge.ScenPart_PickChallenge">
+                    <def>ScenPart_PickChallenge</def>
+                </li>
+
+                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+                  <def>ConfigPage_ConfigureStartingPawns</def>
+                  <pawnCount>3</pawnCount>
+                </li>
+
+                <!-- Player starting stuff spawn method-->
+                <li Class="ScenPart_PlayerPawnsArriveMethod">
+                  <def>PlayerPawnsArriveMethod</def>
+                  <method>DropPods</method>
+                  <visible>false</visible>
+                </li>
+
+                         
+            </parts>
+       
+        </scenario>
+    </ScenarioDef>
+</Defs>
