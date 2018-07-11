@@ -27,7 +27,6 @@ namespace Rimchallenge
 			patch(typeof(Map), nameof(Map.FinalizeInit), null, nameof(OnMapLoaded));
 			patch(typeof(IncidentWorker_NeutralGroup), "SpawnPawns", null, nameof(OnGroupSpawned));
 			patch(typeof(PawnRenderer), nameof(PawnRenderer.RenderPawnAt), null, nameof(RenderPawnAt), new[] { typeof(Vector3), typeof(RotDrawMode), typeof(bool) });
-			patch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.ChoicesAtFor), null, nameof(ChoicesAtFor));
 
 			// CHALLENGE HOOKS BELOW
 			patch(typeof(Pawn), nameof(Pawn.Kill), null, nameof(OnPawnKilled));
@@ -69,17 +68,7 @@ namespace Rimchallenge
 				UITools.RenderAsteriskOverlay(pawn);
 			}
 		}
-
-		public static void ChoicesAtFor(List<FloatMenuOption> __result, Vector3 clickPos, Pawn pawn)
-		{
-			foreach (LocalTargetInfo current in GenUI.TargetsAt(clickPos, TargetingParameters.ForAttackAny(), true))
-			{
-				if (current.Thing is Pawn && ChallengeManager.instance.questOwner == current.Thing)
-				{
-					UITools.AddChallengeOptions(clickPos, pawn, __result);
-				}
-			}
-		}
+  
 
 		// CHALLENGES BELOW
 		public static void OnPawnKilled(Pawn __instance, DamageInfo dinfo)

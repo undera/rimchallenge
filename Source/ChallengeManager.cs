@@ -91,20 +91,6 @@ namespace Rimchallenge
 			progress = 0;
 		}
 
-		public static Letter MakeLetter(ChallengeDef challenge, Pawn author)
-		{
-			ChallengeAvailableLetter letter = new ChallengeAvailableLetter();
-			letter.label = "ChallengeAvailable".Translate();
-			letter.title = "ChallengeAvailable".Translate() + ": " + challenge.LabelCap;
-			letter.text = "ChallengeDescr".Translate(new[] { author.LabelShort, author.Faction.Name, challenge.label, challenge.description, challenge.RewardsText() });
-			letter.radioMode = true;
-			letter.challenge = challenge;
-			letter.giver = author;
-			letter.StartTimeout(60000);
-
-			return letter;
-		}
-
 		internal void SetQuestOwner(Pawn pawn)
 		{
 			questOwner = pawn;

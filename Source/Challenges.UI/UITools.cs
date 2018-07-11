@@ -39,50 +39,7 @@ namespace Rimchallenge
 			var material = FadedMaterialPool.FadedVersionOf(mat, num2);
 			Graphics.DrawMesh(mesh, drawPos, Quaternion.identity, material, 0);
 		}
-
-		public static void AddChallengeOptions(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
-		{
-			foreach (LocalTargetInfo current6 in GenUI.TargetsAt(clickPos, ForQuest(), true))
-			{
-				LocalTargetInfo dest = current6;
-				if (!pawn.CanReach(dest, PathEndMode.OnCell, Danger.Deadly, false, TraverseMode.ByPawn))
-				{
-					opts.Add(new FloatMenuOption("CantTalk".Translate()+" (" + "NoPath".Translate() + ")", null, MenuOptionPriority.Default, null, null, 0f, null, null));
-				}
-				else if (pawn.skills.GetSkill(SkillDefOf.Social).TotallyDisabled)
-				{
-					opts.Add(new FloatMenuOption("CannotPrioritizeWorkTypeDisabled".Translate(new object[]
-					{
-						SkillDefOf.Social.LabelCap
-					}), null, MenuOptionPriority.Default, null, null, 0f, null, null));
-				}
-				else
-				{
-					Pawn pTarg = (Pawn)dest.Thing;
-					Action action4 = delegate
-					{
-						Job job = new Job(ChallengeJobDefOf.ChallengeGiverJob, pTarg);
-						job.playerForced = true;
-						pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-						PlayerKnowledgeDatabase.KnowledgeDemonstrated(ConceptDefOf.InteractingWithTraders, KnowledgeAmount.Total);
-					};
-					string str = string.Empty;
-					if (pTarg.Faction != null)
-					{
-						str = " (" + pTarg.Faction.Name + ")";
-					}
-
-					string label = "TalkTo".Translate(new object[]
-					{
-						pTarg.LabelShort
-					}) + str;
-					MenuOptionPriority priority2 = MenuOptionPriority.InitiateSocial;
-					Thing thing = dest.Thing;
-					FloatMenuOption opt = new FloatMenuOption(label, action4, priority2, null, thing, 0f, null, null);
-					opts.Add(FloatMenuUtility.DecoratePrioritizedTask(opt, pawn, pTarg, "ReservedBy"));
-				}
-			}
-		}
+  
 
 		public static TargetingParameters ForQuest()
 		{
