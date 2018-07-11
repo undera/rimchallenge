@@ -21,7 +21,8 @@ namespace Challenges
 
         public override bool CanPick()
         {
-            return Find.AnyPlayerHomeMap.TileInfo.hilliness >= Hilliness.LargeHills;
+			Tile tile = Find.World.grid[Find.GameInitData.startingTile];
+            return tile.hilliness >= Hilliness.LargeHills;
         }
 	}
 }

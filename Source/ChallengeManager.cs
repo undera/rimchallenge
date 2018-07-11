@@ -29,7 +29,7 @@ namespace Rimchallenge
 				Controller.checkFinished(def);
 			}
 
-			DefDatabase<MainButtonDef>.GetNamed("ChallengesTab").buttonVisible=Prefs.DevMode;
+			//DefDatabase<MainButtonDef>.GetNamed("ChallengesTab").buttonVisible=Prefs.DevMode;
 		}
 
 		internal ChallengeDef GetOfferedChallenge()

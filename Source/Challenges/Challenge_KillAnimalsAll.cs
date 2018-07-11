@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using RimWorld.Planet;
 using Verse;
 
 namespace Challenges
@@ -41,7 +42,8 @@ namespace Challenges
 
 		public override bool CanPick()
 		{
-			if (Find.AnyPlayerHomeMap.Biome.animalDensity < 1.5f)
+			Tile tile = Find.World.grid[Find.GameInitData.startingTile];
+			if (tile.biome.animalDensity < 1.5f)
 			{
 				return false;
 			}
