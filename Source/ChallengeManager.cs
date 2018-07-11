@@ -40,8 +40,10 @@ namespace Rimchallenge
 		{
 			Log.Message("Loaded game, challenge is: " + currentChallengeDef + " with progress " + progress);
 			StartChallenge(currentChallengeDef);
-			currentChallenge.progress = progress;
-			Log.Message("Current progress: " + currentChallenge.getProgressFloat());
+			if (currentChallenge != null)
+			{
+				currentChallenge.progress = progress;
+			}
 		}
 
 		public override void ExposeData()
