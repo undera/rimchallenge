@@ -10,19 +10,21 @@ Completed challenges are remembered by game and not available for choice in any 
 
 
 
-## Incoming Challenge Message
+## Picking a Challenge
 
-If you don't have active challenge, you may receive incoming radio message from one of the factions around. You can accept or reject it.
+Once you have this mod enabled, you will be offered a list of challenges to choose from. This list will appear after choosing landing site on world map. Some of challenges can only be chosen if your landing site has biome or terrain. Unavailable and complete challenges will be grayed out.
 
-![](About/ChallengeEnvelope.png)
+![](About/PickChallenge.png)
 
+## Completing The Challenge
 
-## Challenge Bringer
+Once you have active challenge, you will see small alert on the right, helping to track your challenge progress. You can move mouse over that alert to get some more details:
 
-Each traveler group that passes by will have a person with asterisk pulsing, which is a challenge giver sign. Talk to challenge giver if you want to change your current challenge.
+![](About/SidebarAlert.png)
 
-![](About/ChallengeBringer.png)
+Finally, when your challenge is complete, the game will offer you to quit to menu, or continue playing with reward given to your colonists.
 
+![](About/CompleteDialog.png)
 
 ## Help Improving 
 

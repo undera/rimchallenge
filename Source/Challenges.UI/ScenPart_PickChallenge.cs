@@ -9,6 +9,12 @@ namespace Rimchallenge
 {
 	public class ScenPart_PickChallenge:ScenPart
     {
+		public ScenPart_PickChallenge() {
+			def = new ScenPartDef();
+			def.description = "You wull be offered to pick a challenge.";
+			def.label = "Pick a challenge";
+		}
+
         internal void setChallenge(ChallengeDef selectedChallenge)
         {
 			Log.Message("Picking challenge...");
@@ -19,5 +25,6 @@ namespace Rimchallenge
 		{
 			yield return new Page_PickChallenge();
 		}
+  
     }
 }

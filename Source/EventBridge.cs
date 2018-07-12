@@ -53,6 +53,13 @@ namespace Rimchallenge
   
 		public static void OnBeginScenarioConfiguration(Scenario scen)
         {
+			foreach (ScenPart partItem in scen.AllParts) {
+				if (partItem is ScenPart_PickChallenge)
+				{
+					return;
+				}
+			}
+
 			Log.Message("Adding challenges step to scenario");
 			List<ScenPart> parts = Traverse.Create(scen).Field("parts").GetValue<List<ScenPart>>();
 			ScenPart part = new ScenPart_PickChallenge();
