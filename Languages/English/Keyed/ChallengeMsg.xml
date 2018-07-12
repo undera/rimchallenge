@@ -1,26 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-    <ChallengeAvailable>Challenge Available</ChallengeAvailable>
-    <ChallengeAccepted>Challenge Accepted!</ChallengeAccepted>
-    <ChallengeCompleted>Challenge Completed</ChallengeCompleted>
-    <ChallengeDescr>
-Hey survivor!
+    <ChallengeCompletedEndDialog>
+Challenge Complete!
 
-My name is {0} from {1}. I want to see what kind of neighbor you are. Are you weak and not worth talking to, or you are man of a word? I wanna challenge you!
-        
-Here is the task: {2}
+You have succesfully finished a hard task: {0}
 
-{3}
+{1}
 
-For completing this, I will send you:
-{4}
-Are you capable of doing this with no cries and no excuses? 
-    </ChallengeDescr>
+You can quit game now, or continue playing rest of scenario. If you will continue playing, you will receive a challenge reward:
+{2}
+</ChallengeCompletedEndDialog>
     <ResetComplete>Reset Complete Challenges</ResetComplete>
-    <TalkTo>Talk to {0}</TalkTo>
-    <CantTalk>Can't talk</CantTalk>
 
     <MessageSkillChanged>{0} has reached level {2}-{1} in {3} </MessageSkillChanged>
     <MessageThingProduced>{0} has finished {1}</MessageThingProduced>
-    <MessageRelationsDegrade>Relations with {0} are now worse because of challenge failed</MessageRelationsDegrade>
 </LanguageData>

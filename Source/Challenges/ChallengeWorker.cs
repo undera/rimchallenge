@@ -44,12 +44,17 @@ namespace Challenges
 
 			ChallengeManager.instance.ClearChallenge();
 			Controller.ChallengeComplete(def);
+			IEnumerable<Thing> reward = def.GetReward();
+
+			string rewardText = "";
+			foreach (Thing thing in reward ) {
+				rewardText += "  - " + GenLabel.ThingLabel(thing.def, thing.Stuff, thing.stackCount).CapitalizeFirst() + "\n";
+			}
+
+			GenGameEnd.EndGameDialogMessage("ChallengeCompletedEndDialog".Translate(new[] { def.label, def.description, rewardText }));
 
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.AnyPlayerHomeMap); // drop around base
-			TargetInfo targetInfo = new TargetInfo(dropSpot, Find.AnyPlayerHomeMap, false);
-			Find.LetterStack.ReceiveLetter("ChallengeCompleted".Translate(), def.messageComplete, LetterDefOf.PositiveEvent, targetInfo, null);
-			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, def.GetReward());
-
+			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, reward);
 		}
 
 		public void Interrupt()
@@ -62,7 +67,8 @@ namespace Challenges
 			return true;
 		}
 
-		public virtual void Started() { 
+		public virtual void Started()
+		{
 		}
 
 		public virtual void OnPawnKilled(Pawn pawn, DamageInfo dinfo)
