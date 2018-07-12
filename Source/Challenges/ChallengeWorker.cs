@@ -113,7 +113,7 @@ namespace Challenges
 
 	public class ChallengeWorkerNone : ChallengeWorker
 	{
-		public ChallengeWorkerNone() : base(null)
+		public ChallengeWorkerNone(ChallengeDef def) : base(def)
 		{
 		}
 	}

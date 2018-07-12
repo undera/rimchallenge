@@ -12,6 +12,11 @@ namespace Rimchallenge
 	{
 		private ChallengeDef selectedChallenge;
 
+		private Vector2 challengesScrollPosition = Vector2.zero;
+
+        private float totalChallengeListHeight;
+
+
         public Page_PickChallenge()
 		{
 			foreach (ChallengeDef cDef in DefDatabase<ChallengeDef>.AllDefs)
@@ -27,6 +32,14 @@ namespace Rimchallenge
 				return "Pick Your Challenge";
 			}
 		}
+
+		public override void PreOpen()
+        {
+            base.PreOpen();
+			if (selectedChallenge == null) {
+				selectedChallenge = DefDatabase<ChallengeDef>.AllDefs.FirstOrFallback(null);
+			}
+        }
 
 		public override void DoWindowContents(Rect inRect)
 		{
@@ -58,10 +71,6 @@ namespace Rimchallenge
 			}
 			return false;
 		}
-
-		private Vector2 challengesScrollPosition = Vector2.zero;
-
-		private float totalChallengeListHeight;
 
 		private void DoChallengeSelectionList(Rect rect)
 		{

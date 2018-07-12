@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Defs>
     <Challenges.ChallengeDef>
+        <defName>no_challenge</defName>
+        <workerClass>Challenges.ChallengeWorkerNone</workerClass>
+        <label>None</label>
+        <description>Have no challenge at this time</description>
+    </Challenges.ChallengeDef>
+
+    <Challenges.ChallengeDef>
         <defName>10colonists</defName>
         <workerClass>Challenges.Challenge_NColonists</workerClass>
         <label>Reach 10 colonists</label>
         <description>Have 10 colonists at the same time</description>
         <targetValue>10</targetValue>
         <rewardValue>1000</rewardValue>
-        <TabViewX>0</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>20colonists</defName>
@@ -20,8 +25,6 @@
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
-        <TabViewX>0</TabViewX>
-        <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>50colonists</defName>
@@ -33,8 +36,6 @@
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
-        <TabViewX>0</TabViewX>
-        <TabViewY>2</TabViewY>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -44,8 +45,6 @@
         <description>You need some fresh meat to feed your growing colony. It's easy to get it from wildlife around.</description>
         <targetValue>100</targetValue>
         <rewardValue>1000</rewardValue>
-        <TabViewX>1</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill500animals</defName>
@@ -57,8 +56,6 @@
         <prerequisites>
              <li>kill100animals</li>
         </prerequisites>
-        <TabViewX>1</TabViewX>
-        <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill1000animals</defName>
@@ -70,8 +67,6 @@
         <prerequisites>
              <li>kill500animals</li>
         </prerequisites>
-        <TabViewX>1</TabViewX>
-        <TabViewY>2</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>killAllAnimals</defName>
@@ -82,8 +77,6 @@
         </description>
         <applicability>Only available on maps with a lot of wildlife.</applicability>
         <rewardValue>20000</rewardValue>
-        <TabViewX>1</TabViewX>
-        <TabViewY>3</TabViewY>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -94,8 +87,6 @@
         <param1>1</param1>
         <targetValue>10</targetValue>
         <rewardValue>500</rewardValue>
-        <TabViewX>1.5</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill100people</defName>
@@ -105,8 +96,6 @@
         <param1>1</param1>
         <targetValue>100</targetValue>
         <rewardValue>5000</rewardValue>
-        <TabViewX>1.5</TabViewX>
-        <TabViewY>1</TabViewY>
         <prerequisites>
              <li>kill25people</li>
         </prerequisites>
@@ -119,8 +108,6 @@
         <param1>1</param1>
         <targetValue>500</targetValue>
         <rewardValue>10000</rewardValue>
-        <TabViewX>1.5</TabViewX>
-        <TabViewY>2</TabViewY>
         <prerequisites>
              <li>kill100people</li>
         </prerequisites>
@@ -134,8 +121,6 @@
         <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
         <rewardValue>1000</rewardValue>        
-        <TabViewX>2</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>mineOutResources</defName>
@@ -147,8 +132,6 @@
         <prerequisites>
              <li>mineOut100</li>
         </prerequisites>
-        <TabViewX>2</TabViewX>
-        <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>mineOutAll</defName>
@@ -160,8 +143,6 @@
         <prerequisites>
              <li>mineOutResources</li>
         </prerequisites>
-        <TabViewX>2</TabViewX>
-        <TabViewY>2</TabViewY>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -171,8 +152,6 @@
         <description>Teach one of your colonists to be a master (level 14) in some skill</description>
         <targetValue>14</targetValue>
         <rewardValue>5000</rewardValue>
-        <TabViewX>3</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>reachSkill20</defName>
@@ -184,8 +163,6 @@
         <prerequisites>
              <li>reachSkill14</li>
         </prerequisites>
-        <TabViewX>3</TabViewX>
-        <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -195,8 +172,6 @@
         <description>Build a legendary masterpiece sculpture, the one of unpreceded beauty and market value.</description>
         <param1>1</param1>
         <rewardValue>10000</rewardValue>
-        <TabViewX>4</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>masterpieceApparel</defName>
@@ -205,8 +180,6 @@
         <description>Create apparel of legendary beauty, dress the colonist to the envy of all guests.</description>
         <param1>2</param1>
         <rewardValue>10000</rewardValue>
-        <TabViewX>4</TabViewX>
-        <TabViewY>1</TabViewY>
     </Challenges.ChallengeDef>
 
     <!-- Postponed due to question how to track raids completion
@@ -242,8 +215,6 @@
         <description>Own a small zoo of different kinds of animals, 1/4 of possible. Tame or buy them, or just hold them in enclosure.</description>
         <param1>4</param1>
         <rewardValue>1000</rewardValue>
-        <TabViewX>5</TabViewX>
-        <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>zooMedium</defName>
@@ -255,8 +226,6 @@
         <prerequisites>
              <li>zooSmall</li>
         </prerequisites>
-        <TabViewX>5</TabViewX>
-        <TabViewY>1</TabViewY>        
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>zooBig</defName>
@@ -268,7 +237,5 @@
         <prerequisites>
              <li>zooMedium</li>
         </prerequisites>
-        <TabViewX>5</TabViewX>
-        <TabViewY>2</TabViewY>
     </Challenges.ChallengeDef>
 </Defs>

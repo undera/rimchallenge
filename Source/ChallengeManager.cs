@@ -8,7 +8,7 @@ namespace Rimchallenge
 {
 	public class ChallengeManager : GameComponent
 	{
-		public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone();
+		public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone(null);
 
 		public ChallengeDef currentChallengeDef;
 		public int progress = 0;
@@ -77,7 +77,7 @@ namespace Rimchallenge
 		public void ClearChallenge()
 		{
 			Log.Message("Clearing challenge");
-			currentChallenge = new ChallengeWorkerNone();
+			currentChallenge = new ChallengeWorkerNone(null);
 			currentChallengeDef = null;
 			progress = 0;
 		}
