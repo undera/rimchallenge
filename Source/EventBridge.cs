@@ -26,6 +26,7 @@ namespace Rimchallenge
 		{
 			patch(typeof(Map), nameof(Map.FinalizeInit), null, nameof(OnMapLoaded));
 			patch(typeof(IncidentWorker_NeutralGroup), "SpawnPawns", null, nameof(OnGroupSpawned));
+			patch(typeof(Page_SelectScenario), nameof(Page_SelectScenario.BeginScenarioConfiguration), nameof(OnBeginScenarioConfiguration), null);
 
 			// CHALLENGE HOOKS BELOW
 			patch(typeof(Pawn), nameof(Pawn.Kill), null, nameof(OnPawnKilled));
@@ -44,13 +45,19 @@ namespace Rimchallenge
 
 		public static void OnMapLoaded()
 		{
-			ChallengeDef.GenerateNonOverlappingCoordinates();
 		}
 
 		public static void OnGroupSpawned(IncidentWorker_NeutralGroup __instance, List<Pawn> __result)
 		{
 		}
   
+		public static void OnBeginScenarioConfiguration(Scenario scen)
+        {
+			Log.Message("Adding challenges step to scenario");
+			List<ScenPart> parts = Traverse.Create(scen).Field("parts").GetValue<List<ScenPart>>();
+			ScenPart part = new ScenPart_PickChallenge();
+			parts.Insert(0, part);
+        }
   
 
 		// CHALLENGES BELOW
