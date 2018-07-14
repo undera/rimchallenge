@@ -20,7 +20,7 @@ namespace Challenges
 			totalTiles = TileCount(true);
 		}
 
-		public override void OnDestroyMined(Mineable block)
+		public override void OnDestroyMined(Mineable block, Pawn actor)
 		{
 			count = -1;
 			if (targetTiles <= 0)

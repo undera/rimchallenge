@@ -4,6 +4,7 @@ using Rimchallenge;
 using RimWorld;
 using Verse;
 using System;
+using UnityEngine;
 
 namespace Challenges
 {
@@ -51,11 +52,36 @@ namespace Challenges
 				rewardText += "  - " + GenLabel.ThingLabel(thing.def, thing.Stuff, thing.stackCount).CapitalizeFirst() + "\n";
 			}
 
-			GenGameEnd.EndGameDialogMessage("ChallengeCompletedEndDialog".Translate(new[] { def.label, def.description, rewardText }));
+			EndGameDialogMessage("ChallengeCompletedEndDialog".Translate(new[] { def.label, def.description, rewardText }));
 
 			IntVec3 dropSpot = DropCellFinder.TradeDropSpot(Find.AnyPlayerHomeMap); // drop around base
 			DropPodUtility.DropThingsNear(dropSpot, Find.AnyPlayerHomeMap, reward);
 		}
+
+		private void EndGameDialogMessage(string msg)
+        {
+			bool allowKeepPlaying = true;
+			Color screenFillColor = Color.clear;
+			DiaNode diaNode = new DiaNode(msg);
+            if (allowKeepPlaying)
+            {
+                DiaOption diaOption = new DiaOption("GameOverKeepPlaying".Translate());
+                diaOption.resolveTree = true;
+                diaNode.options.Add(diaOption);
+            }
+            DiaOption diaOption2 = new DiaOption("GameOverMainMenu".Translate());
+            diaOption2.action = delegate
+            {
+                GenScene.GoToMainMenu();
+            };
+            diaOption2.resolveTree = true;
+            diaNode.options.Add(diaOption2);
+			Dialog_NodeTree dialog_NodeTree = new Dialog_GameEnd(diaNode, true, false, "Challenge Complete!");
+            dialog_NodeTree.screenFillColor = screenFillColor;
+            dialog_NodeTree.silenceAmbientSound = !allowKeepPlaying;
+            dialog_NodeTree.closeOnEscapeKey = allowKeepPlaying;
+            Find.WindowStack.Add(dialog_NodeTree);
+        }
 
 		public void Interrupt()
 		{
@@ -83,7 +109,7 @@ namespace Challenges
 		{
 		}
 
-		public virtual void OnDestroyMined(Mineable block)
+		public virtual void OnDestroyMined(Mineable block, Pawn actor)
 		{
 		}
 

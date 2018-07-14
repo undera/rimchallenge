@@ -12,7 +12,7 @@ namespace Rimchallenge
 {
 	public static class EventBridge
 	{
-		private static HarmonyInstance harmony = HarmonyInstance.Create("rimworld.undera4.challenge");
+        private static HarmonyInstance harmony = HarmonyInstance.Create("rimworld.undera4.challenge");
 
 		private static void patch(Type type, string srcName, string preName, string postName, Type[] hint=null)
 		{
@@ -35,7 +35,7 @@ namespace Rimchallenge
 			// FIXME when escape pod colonist joins, nothing happens
 
 			patch(typeof(Mineable), nameof(Mineable.DestroyMined), null, nameof(OnDestroyMined));
-			patch(typeof(Mineable), nameof(Mineable.Destroy), null, nameof(OnDestroyMined));
+			patch(typeof(Mineable), nameof(Mineable.Destroy), null, nameof(OnDestroyMineable));
 
 			patch(typeof(SkillRecord), nameof(SkillRecord.Learn), nameof(BeforeSkillLearned), nameof(OnSkillLearned));
 
@@ -83,10 +83,15 @@ namespace Rimchallenge
 			ChallengeManager.instance.currentChallenge.OnPawnDestroyed(__instance);
 		}
 
-		public static void OnDestroyMined(Mineable __instance)
+		public static void OnDestroyMined(Mineable __instance, Pawn pawn)
 		{
-			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance);
+			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance, pawn);
 		}
+
+		public static void OnDestroyMineable(Mineable __instance)
+        {
+			ChallengeManager.instance.currentChallenge.OnDestroyMined(__instance, null);
+        }
 
 		public static void BeforeSkillLearned(SkillRecord __instance, ref int __state) {
 			__state = __instance.levelInt;

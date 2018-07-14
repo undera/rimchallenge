@@ -10,10 +10,14 @@ namespace Challenges
 		{
 		}
 
-		public override void OnDestroyMined(Mineable block)
+		public override void OnDestroyMined(Mineable block, Pawn actor)
 		{
-			progress++;
-            if (progress >= def.targetValue)
+			if (actor!=null && actor.Faction.IsPlayer)
+			{
+				progress++;
+			}
+
+			if (progress >= def.targetValue)
             {
                 Complete();
             }
