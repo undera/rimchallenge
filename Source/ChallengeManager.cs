@@ -9,9 +9,7 @@ namespace Rimchallenge
 {
 	public class ChallengeManager : GameComponent
 	{
-		public static readonly Texture2D campImage = ContentFinder<Texture2D>.Get("UI/camp3", true);
-
-		public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone(null);
+        public ChallengeWorker currentChallenge { get; private set; } = new ChallengeWorkerNone(null);
 
 		public ChallengeDef currentChallengeDef;
 		public int progress = 0;

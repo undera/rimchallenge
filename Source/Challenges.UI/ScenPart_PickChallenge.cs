@@ -10,7 +10,7 @@ namespace Rimchallenge
 	public class ScenPart_PickChallenge:ScenPart
     {
 		public ScenPart_PickChallenge() {
-			def = new ScenPartDef();
+			def = DefDatabase<ScenPartDef>.AllDefs.FirstOrFallback(new ScenPartDef());
 			def.description = "You wull be offered to pick a challenge.";
 			def.label = "Pick a challenge";
 		}
