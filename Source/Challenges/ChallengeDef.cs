@@ -18,7 +18,6 @@ namespace Challenges
 
 		internal int param1 = 0;
 		internal int targetValue = 0;
-		internal int rewardValue = 100;
 
 		public List<ChallengeDef> prerequisites = new List<ChallengeDef>(0);
 
@@ -107,18 +106,17 @@ namespace Challenges
 			{
 				if (rewardDef.NullOrEmpty())
 				{
-					ItemCollectionGenerator gen = new ItemCollectionGenerator_Rewards();
-					ItemCollectionGeneratorParams conf = default(ItemCollectionGeneratorParams);
+					ThingSetMaker gen = ThingSetMakerDefOf.Reward_ItemStashQuestContents.root;
+					ThingSetMakerParams conf = default(ThingSetMakerParams);
 					conf.validator = ((ThingDef td) => td != ThingDefOf.Silver);
-					conf.totalMarketValue = Rand.Range(rewardValue/2f, rewardValue);
 					reward = gen.Generate(conf);
 				}
 				else
 				{
 					foreach (ThingCountClass t in rewardDef)
 					{
-						Thing thing = ThingMaker.MakeThing(t.thingDef);
-						thing.stackCount = t.count;
+						Thing thing = ThingMaker.MakeThing(t.thing.def, t.thing.Stuff);
+						thing.stackCount = t.Count;
 						reward.Add(thing);
 					}
 				}

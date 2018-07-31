@@ -37,7 +37,7 @@ namespace Rimchallenge
         {
             base.PreOpen();
 			if (selectedChallenge == null) {
-				selectedChallenge = DefDatabase<ChallengeDef>.AllDefs.FirstOrFallback(null);
+				selectedChallenge = DefDatabase<ChallengeDef>.AllDefs.RandomElementWithFallback(null);
 			}
         }
 

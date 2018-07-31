@@ -79,7 +79,6 @@ namespace Challenges
 			Dialog_NodeTree dialog_NodeTree = new Dialog_GameEnd(diaNode, true, false, "Challenge Complete!");
             dialog_NodeTree.screenFillColor = screenFillColor;
             dialog_NodeTree.silenceAmbientSound = !allowKeepPlaying;
-            dialog_NodeTree.closeOnEscapeKey = allowKeepPlaying;
             Find.WindowStack.Add(dialog_NodeTree);
         }
 
@@ -119,27 +118,6 @@ namespace Challenges
 
 		public virtual void OnThingProduced(Thing result, Pawn worker)
 		{
-		}
-
-		public void TriggerRaid(Faction enemyFac)
-		{
-			Map map = Find.AnyPlayerHomeMap;
-			IntVec3 spawnSpot;
-			if (!CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => map.reachability.CanReachColony(c), map, CellFinder.EdgeRoadChance_Neutral, out spawnSpot))
-			{
-				return;
-			}
-
-			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, map);
-			incidentParms.forced = true;
-			incidentParms.faction = enemyFac;
-			incidentParms.raidStrategy = DefDatabase<RaidStrategyDef>.AllDefs.RandomElement();
-			incidentParms.raidArrivalMode = PawnsArriveMode.EdgeWalkIn;
-			incidentParms.spawnCenter = spawnSpot;
-			incidentParms.points *= 1.35f;
-			int when = Find.TickManager.TicksGame + ChallengeWorker.RaidDelay.RandomInRange;
-			QueuedIncident qi = new QueuedIncident(new FiringIncident(IncidentDefOf.RaidEnemy, null, incidentParms), when);
-			Find.Storyteller.incidentQueue.Add(qi);
 		}
 	}
 

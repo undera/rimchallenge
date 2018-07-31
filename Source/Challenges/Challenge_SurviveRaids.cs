@@ -59,7 +59,7 @@ namespace Challenges
 				return;
 			}
 
-			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(Find.Storyteller.def, IncidentCategory.ThreatBig, map);
+			IncidentParms incidentParms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, map);
 			incidentParms.forced = true;
 			incidentParms.faction = Find.FactionManager.RandomEnemyFaction();
 			incidentParms.points = Challenge_NColonists.AllColonists.Count()*100f;

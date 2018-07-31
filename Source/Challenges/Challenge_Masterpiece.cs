@@ -30,15 +30,11 @@ namespace Challenges
                 {
                     case QualityCategory.Awful:
 						flag = MessageTypeDefOf.TaskCompletion; break;
-                    case QualityCategory.Shoddy:
-						flag = MessageTypeDefOf.TaskCompletion; break;
                     case QualityCategory.Poor:
 						flag = MessageTypeDefOf.TaskCompletion; break;
                     case QualityCategory.Normal:
 						flag = MessageTypeDefOf.NeutralEvent; break;
                     case QualityCategory.Good:
-						flag = MessageTypeDefOf.NeutralEvent; break;
-                    case QualityCategory.Superior:
 						flag = MessageTypeDefOf.NeutralEvent; break;
                     case QualityCategory.Excellent:
 						flag = MessageTypeDefOf.PositiveEvent; break;
@@ -63,7 +59,7 @@ namespace Challenges
 			switch (def.param1)
 			{
 				case 1:
-					return ThingCategoryDefOf.Art;
+					return ThingCategoryDefOf.BuildingsArt;
 				case 2:
 					return ThingCategoryDefOf.Apparel;
 				default:

@@ -56,8 +56,11 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="0Harmony">
-      <HintPath>Lib\0Harmony.dll</HintPath>
+      <HintPath>packages\Lib.Harmony.1.2.0\lib\net35\0Harmony.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

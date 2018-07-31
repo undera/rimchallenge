@@ -6,6 +6,7 @@ DEST=$ROOT/rimchallenge
 rm -rf $DEST
 mkdir -p $DEST
 cp -r ./About $DEST/
+rm -f ./Assemblies/*.pdb
 cp -r ./Assemblies $DEST/
 cp -r ./Defs $DEST/
 cp -r ./Textures $DEST/

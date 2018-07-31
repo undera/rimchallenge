@@ -13,7 +13,6 @@
         <label>Reach 10 colonists</label>
         <description>Have 10 colonists at the same time</description>
         <targetValue>10</targetValue>
-        <rewardValue>1000</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>20colonists</defName>
@@ -21,7 +20,6 @@
         <label>Reach 20 colonists</label>
         <description>Have 20 colonists at the same time. Can you manage this to happen?</description>
         <targetValue>20</targetValue>
-        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>10colonists</li>
         </prerequisites>
@@ -32,7 +30,6 @@
         <label>Reach 50 colonists</label>
         <description>Have 20 colonists at the same time. Is it possible at all?</description>
         <targetValue>50</targetValue>
-        <rewardValue>100000</rewardValue>
         <prerequisites>
              <li>20colonists</li>
         </prerequisites>
@@ -44,7 +41,6 @@
         <label>Kill 100 animals</label>
         <description>You need some fresh meat to feed your growing colony. It's easy to get it from wildlife around.</description>
         <targetValue>100</targetValue>
-        <rewardValue>1000</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill500animals</defName>
@@ -52,7 +48,6 @@
         <label>Kill 500 animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
         <targetValue>500</targetValue>
-        <rewardValue>5000</rewardValue>
         <prerequisites>
              <li>kill100animals</li>
         </prerequisites>
@@ -63,7 +58,6 @@
         <label>Kill 1000 animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
         <targetValue>1000</targetValue>
-        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>kill500animals</li>
         </prerequisites>
@@ -73,10 +67,8 @@
         <workerClass>Challenges.Challenge_KillAnimalsAll</workerClass>
         <label>Kill all animals</label>
         <description>Just clean up the map from all animals. That's enough of them eating your crops, getting mad and attacking colonists. 
-            And don't forget your pets, 'cause I have allergy.
-        </description>
+            And don't forget your pets, 'cause I have allergy.</description>
         <applicability>Only available on maps with a lot of wildlife.</applicability>
-        <rewardValue>20000</rewardValue>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -86,7 +78,6 @@
         <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
         <param1>1</param1>
         <targetValue>10</targetValue>
-        <rewardValue>500</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill100people</defName>
@@ -95,7 +86,6 @@
         <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
         <param1>1</param1>
         <targetValue>100</targetValue>
-        <rewardValue>5000</rewardValue>
         <prerequisites>
              <li>kill25people</li>
         </prerequisites>
@@ -107,7 +97,6 @@
         <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
         <param1>1</param1>
         <targetValue>500</targetValue>
-        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>kill100people</li>
         </prerequisites>
@@ -120,7 +109,6 @@
         <description>Yo dwarves! There is some rock ahead! Mine out 100 blocks of rock.</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
         <targetValue>100</targetValue>
-        <rewardValue>1000</rewardValue>        
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>mineOutResources</defName>
@@ -128,7 +116,6 @@
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <rewardValue>5000</rewardValue>         
         <prerequisites>
              <li>mineOut100</li>
         </prerequisites>
@@ -139,7 +126,6 @@
         <label>Mine Out All</label>
         <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <rewardValue>10000</rewardValue>          
         <prerequisites>
              <li>mineOutResources</li>
         </prerequisites>
@@ -151,7 +137,6 @@
         <label>Become a master</label>
         <description>Teach one of your colonists to be a master (level 14) in some skill</description>
         <targetValue>14</targetValue>
-        <rewardValue>5000</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>reachSkill20</defName>
@@ -159,7 +144,6 @@
         <label>Become a Legendary Master</label>
         <description>Teach one of your colonists to be a legendary master (level 20) in some skill</description>
         <targetValue>20</targetValue>
-        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>reachSkill14</li>
         </prerequisites>
@@ -171,7 +155,6 @@
         <label>Outshine Michelangelo</label>
         <description>Build a legendary masterpiece sculpture, the one of unpreceded beauty and market value.</description>
         <param1>1</param1>
-        <rewardValue>10000</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>masterpieceApparel</defName>
@@ -179,7 +162,6 @@
         <label>Make "Haute Couture"</label>
         <description>Create apparel of legendary beauty, dress the colonist to the envy of all guests.</description>
         <param1>2</param1>
-        <rewardValue>10000</rewardValue>
     </Challenges.ChallengeDef>
 
     <!-- Postponed due to question how to track raids completion
@@ -189,7 +171,6 @@
         <label>Survive Triple Raid</label>
         <description>TODO</description>
         <param1>1</param1>
-        <rewardValue>2000</rewardValue>
         <TabViewX>5</TabViewX>
         <TabViewY>0</TabViewY>
     </Challenges.ChallengeDef>
@@ -199,7 +180,6 @@
         <label>Survive Double Siege and Triple Raid</label>
         <description>TODO</description>
         <param1>2</param1>
-        <rewardValue>5000</rewardValue>
          <prerequisites>
              <li>survive3Raids</li>
         </prerequisites>
@@ -214,7 +194,6 @@
         <label>Own small zoo</label>
         <description>Own a small zoo of different kinds of animals, 1/4 of possible. Tame or buy them, or just hold them in enclosure.</description>
         <param1>4</param1>
-        <rewardValue>1000</rewardValue>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>zooMedium</defName>
@@ -222,7 +201,6 @@
         <label>Own medium zoo</label>
         <description>Own a medium-sized zoo with 1/2 of all kinds of animals possible in the game</description>
         <param1>2</param1>
-        <rewardValue>5000</rewardValue>
         <prerequisites>
              <li>zooSmall</li>
         </prerequisites>
@@ -233,7 +211,6 @@
         <label>Own ultimate zoo</label>
         <description>Own a zoo of all kinds of animals possible in the game</description>
         <param1>1</param1>
-        <rewardValue>10000</rewardValue>
         <prerequisites>
              <li>zooMedium</li>
         </prerequisites>
