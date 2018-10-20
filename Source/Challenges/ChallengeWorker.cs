@@ -36,7 +36,11 @@ namespace Challenges
 		{
 			//Log.Message("Def "+def);
 			//Log.Message("Det "+progress + " " + def.targetValue);
-			return (float)progress / def.targetValue;
+			if (def.targetValue != 0)
+			{
+				return (float)progress / def.targetValue;
+			}
+			else { return 0f; }
 		}
 
 		public void Complete()
@@ -48,7 +52,8 @@ namespace Challenges
 			IEnumerable<Thing> reward = def.GetReward();
 
 			string rewardText = "";
-			foreach (Thing thing in reward ) {
+			foreach (Thing thing in reward)
+			{
 				rewardText += "  - " + GenLabel.ThingLabel(thing.def, thing.Stuff, thing.stackCount).CapitalizeFirst() + "\n";
 			}
 
@@ -59,28 +64,28 @@ namespace Challenges
 		}
 
 		private void EndGameDialogMessage(string msg)
-        {
+		{
 			bool allowKeepPlaying = true;
 			Color screenFillColor = Color.clear;
 			DiaNode diaNode = new DiaNode(msg);
-            if (allowKeepPlaying)
-            {
-                DiaOption diaOption = new DiaOption("GameOverKeepPlaying".Translate());
-                diaOption.resolveTree = true;
-                diaNode.options.Add(diaOption);
-            }
-            DiaOption diaOption2 = new DiaOption("GameOverMainMenu".Translate());
-            diaOption2.action = delegate
-            {
-                GenScene.GoToMainMenu();
-            };
-            diaOption2.resolveTree = true;
-            diaNode.options.Add(diaOption2);
+			if (allowKeepPlaying)
+			{
+				DiaOption diaOption = new DiaOption("GameOverKeepPlaying".Translate());
+				diaOption.resolveTree = true;
+				diaNode.options.Add(diaOption);
+			}
+			DiaOption diaOption2 = new DiaOption("GameOverMainMenu".Translate());
+			diaOption2.action = delegate
+			{
+				GenScene.GoToMainMenu();
+			};
+			diaOption2.resolveTree = true;
+			diaNode.options.Add(diaOption2);
 			Dialog_NodeTree dialog_NodeTree = new Dialog_GameEnd(diaNode, true, false, "Challenge Complete!");
-            dialog_NodeTree.screenFillColor = screenFillColor;
-            dialog_NodeTree.silenceAmbientSound = !allowKeepPlaying;
-            Find.WindowStack.Add(dialog_NodeTree);
-        }
+			dialog_NodeTree.screenFillColor = screenFillColor;
+			dialog_NodeTree.silenceAmbientSound = !allowKeepPlaying;
+			Find.WindowStack.Add(dialog_NodeTree);
+		}
 
 		public void Interrupt()
 		{

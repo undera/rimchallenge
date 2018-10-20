@@ -20,9 +20,6 @@
         <label>Reach 20 colonists</label>
         <description>Have 20 colonists at the same time. Can you manage this to happen?</description>
         <targetValue>20</targetValue>
-        <prerequisites>
-             <li>10colonists</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>50colonists</defName>
@@ -30,9 +27,6 @@
         <label>Reach 50 colonists</label>
         <description>Have 20 colonists at the same time. Is it possible at all?</description>
         <targetValue>50</targetValue>
-        <prerequisites>
-             <li>20colonists</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -48,9 +42,6 @@
         <label>Kill 500 animals</label>
         <description>Roll up your sleeves, theres a lot of shooting practice expected!</description>
         <targetValue>500</targetValue>
-        <prerequisites>
-             <li>kill100animals</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill1000animals</defName>
@@ -58,9 +49,6 @@
         <label>Kill 1000 animals</label>
         <description>Actually, you can make a lot of apparel from all this skin!</description>
         <targetValue>1000</targetValue>
-        <prerequisites>
-             <li>kill500animals</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>killAllAnimals</defName>
@@ -86,9 +74,6 @@
         <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
         <param1>1</param1>
         <targetValue>100</targetValue>
-        <prerequisites>
-             <li>kill25people</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>kill500people</defName>
@@ -97,9 +82,6 @@
         <description>Your settlement suffers from raids, let's have you gratified for beating those burglars.</description>
         <param1>1</param1>
         <targetValue>500</targetValue>
-        <prerequisites>
-             <li>kill100people</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     
     <Challenges.ChallengeDef>
@@ -116,9 +98,6 @@
         <label>Mine Out All Resources</label>
         <description>Mine out all of resources hidden in rocks on the map</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <prerequisites>
-             <li>mineOut100</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>mineOutAll</defName>
@@ -126,9 +105,6 @@
         <label>Mine Out All</label>
         <description>Don't leave a single mineable rock tile!</description>
         <applicability>Only available on maps with high hills or mountains</applicability>
-        <prerequisites>
-             <li>mineOutResources</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -144,9 +120,6 @@
         <label>Become a Legendary Master</label>
         <description>Teach one of your colonists to be a legendary master (level 20) in some skill</description>
         <targetValue>20</targetValue>
-        <prerequisites>
-             <li>reachSkill14</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
 
     <Challenges.ChallengeDef>
@@ -201,9 +174,6 @@
         <label>Own medium zoo</label>
         <description>Own a medium-sized zoo with 1/2 of all kinds of animals possible in the game</description>
         <param1>2</param1>
-        <prerequisites>
-             <li>zooSmall</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
     <Challenges.ChallengeDef>
         <defName>zooBig</defName>
@@ -211,8 +181,5 @@
         <label>Own ultimate zoo</label>
         <description>Own a zoo of all kinds of animals possible in the game</description>
         <param1>1</param1>
-        <prerequisites>
-             <li>zooMedium</li>
-        </prerequisites>
     </Challenges.ChallengeDef>
 </Defs>

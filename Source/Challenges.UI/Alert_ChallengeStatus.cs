@@ -13,7 +13,13 @@ namespace Rimchallenge
 			if (ChallengeManager.instance.HasChallenge())
 			{
 				ChallengeWorker cur = ChallengeManager.instance.currentChallenge;
-				return cur.def.LabelCap+" - "+((int)(100 * cur.getProgressFloat())) + "%";
+				if (cur.getProgressFloat() >= 0)
+				{
+					return cur.def.LabelCap + " - " + ((int)(100 * cur.getProgressFloat())) + "%";
+				}
+				else {
+					return cur.def.LabelCap;
+				}
 			}
 			else
 			{
@@ -30,9 +36,12 @@ namespace Rimchallenge
 			{
 				text += cur.progress + "/" + cur.def.targetValue;
 			}
-			else
+			else if (cur.getProgressFloat() >= 0)
 			{
 				text += ((int)(100 * cur.getProgressFloat())) + "%";
+			}
+			else {
+				text += "N/A";
 			}
 
 			if (cur.hint != null) {

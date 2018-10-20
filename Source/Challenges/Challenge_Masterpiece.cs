@@ -54,6 +54,11 @@ namespace Challenges
 			}
 		}
 
+        public override float getProgressFloat()
+		{
+			return -1;
+		}
+
 		private ThingCategoryDef getItemCategory()
 		{
 			switch (def.param1)

@@ -14,7 +14,7 @@ namespace Challenges
 		{
 		}
 
-        public override void Started()
+		public override void Started()
 		{
 			count = -1;
 			totalTiles = TileCount(true);
@@ -67,7 +67,7 @@ namespace Challenges
 							continue;
 						}
 						cnt++;
-						hint = "There is still some "+mineable.def.building.mineableThing.label+" to mine";
+						hint = "There is still some " + mineable.def.building.mineableThing.label + " to mine";
 					}
 				}
 			}

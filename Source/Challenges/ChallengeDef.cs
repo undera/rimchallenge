@@ -84,11 +84,6 @@ namespace Challenges
 			}
 		}
 
-		public float EstimateProgressFloat()
-		{
-			return checkerInstance.getProgressFloat();
-		}
-
 		internal string RewardsText()
 		{
 			string stringBuilder = "";

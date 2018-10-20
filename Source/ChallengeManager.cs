@@ -35,12 +35,15 @@ namespace Rimchallenge
         
 		public override void StartedNewGame()
 		{
+			Log.Message("Started new game, challenge is: " + currentChallengeDef + " with progress " + progress);
+			currentChallenge.Started();
 		}
 
 		public override void LoadedGame()
 		{
 			Log.Message("Loaded game, challenge is: " + currentChallengeDef + " with progress " + progress);
 			StartChallenge(currentChallengeDef);
+			currentChallenge.Started();
 			if (currentChallenge != null)
 			{
 				currentChallenge.progress = progress;
@@ -71,7 +74,6 @@ namespace Rimchallenge
 				Log.Message("Picked a challenge: " + challengeDef);
 				currentChallengeDef = challengeDef;
 				currentChallenge = (ChallengeWorker)Activator.CreateInstance(challengeDef.workerClass, challengeDef);
-				currentChallenge.Started();
 			}
 		}
 
